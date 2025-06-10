@@ -1,0 +1,28 @@
+{
+  "name": "projet-cine-delices-front",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/O-clock-Behemoth/projet-cine-delices-front#readme",
+  "bugs": {
+    "url": "https://github.com/O-clock-Behemoth/projet-cine-delices-front/issues",
+    "source":"index.html"
+  },               
+  "repository": {  
+    "type": "git", 
+    "url": "git+https://github.com/O-clock-Behemoth/projet-cine-delices-front.git"
+  },               
+  "license": "ISC",
+  "author": "",    
+  "type": "module",
+  "scripts": {     
+  "start":"npx parcel src/index.html"
+  },               
+  "dependencies": {
+    "express": "^5.1.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },               
+  "devDependencies": {
+    "parcel": "^2.15.2"
+  }
+}
