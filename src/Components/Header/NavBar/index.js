@@ -1,4 +1,3 @@
-import React from "react";
 // Appel de notre composant NavLink depuis react-router-dom
 import { NavLink } from "react-router-dom";
 
