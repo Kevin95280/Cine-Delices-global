@@ -1,20 +1,23 @@
 import React from "react";
+// Appel de notre composant NavLink depuis react-router-dom
+import { NavLink } from "react-router-dom";
 
 export default function NavBar() {
   return (
-    // composant navbar pour la navigation "Recettes" et "Films & Séries"
+    // Composant navbar pour la navigation "Recettes" et "Films & Séries"
     <nav>
       <ul>
         <li>
-          <a href="#">
+          <a href="/">
+            {/* Image du logo à compléter */}
             <img src="#" alt="logo cine-delices" />
           </a>
         </li>
         <li>
-          <a href="/recettes">Recettes</a>
+          <NavLink to="/recettes">Recettes</NavLink>
         </li>
         <li>
-          <a href="/films-series">Films & Séries</a>
+          <NavLink to="/films-series">Films & Séries</NavLink>
         </li>
       </ul>
     </nav>
