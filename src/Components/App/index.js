@@ -1,7 +1,12 @@
-import React from "react";
+import Cards from "../Cards";
+import Card from "../Cards/Card";
 
 export default function App() {
     return (
-        <h1>Test</h1>
+        <Cards title={'Top recettes'}>
+            <Card title={'Recette 1'} authorName={'toto'}/>
+            <Card title={'Recette 2'} authorName={'toto'}/>
+            <Card title={'Recette 3'} authorName={'toto'}/>
+        </Cards>
     )
 }
