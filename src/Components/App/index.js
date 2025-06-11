@@ -1,7 +1,14 @@
 import React from "react";
+// Import de nos différents composants
+import Header from "../Header";
+import NavBar from "../Header/NavBar";
 
 export default function App() {
     return (
-        <h1>Test</h1>
+        <>
+        <Header>
+            <NavBar/>
+        </Header>
+        </>
     )
 }
