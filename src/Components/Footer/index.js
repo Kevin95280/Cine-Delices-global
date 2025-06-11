@@ -1,26 +1,32 @@
 import React from "react";
+// Appel de notre composant NavLink depuis react-router-dom
+import { NavLink } from "react-router-dom";
 
 export default function Footer() {
   return (
-    // liste de liens nous menant vers une page spécifique
-    <nav>
-      <ul>
-        <li>
-          <a href="/mentions-legales">Mentions légales</a>
-        </li>
-        <li>
-          <a href="/contact">Contact</a>
-        </li>
-        <li>
-          <a href="/a-propos">À propos</a>
-        </li>
-        <li>
-          <a href="/politique-de-confidentialite">Politique de confidentialité</a>
-        </li>
-        <li>
-          <a href="/cgu">CGU</a>
-        </li>
-      </ul>
-    </nav>
+    <footer>
+      {/* liste de liens de navigation du footer */}
+      <nav>
+        <ul>
+          <li>
+            <NavLink to="/mentions-legales">Mentions légales</NavLink>
+          </li>
+          <li>
+            <NavLink to="/contact">Contact</NavLink>
+          </li>
+          <li>
+            <NavLink to="/a-propos">À propos</NavLink>
+          </li>
+          <li>
+            <NavLink to="/politique-de-confidentialite">
+              Politique de confidentialité
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/cgu">CGU</NavLink>
+          </li>
+        </ul>
+      </nav>
+    </footer>
   );
 }
