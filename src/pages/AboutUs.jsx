@@ -8,15 +8,15 @@ export default function AboutUs() {
         <meta name="description" content="Apprenez en un peu plus sur nous" />
       </Helmet>
 
-      <div className="about">
-        <section className="about__intro" aria-labelledby="about-cine-delices">
+      <section className="about">
+        <article className="about__intro" aria-labelledby="about-cine-delices">
           <h1 id="about-cine-delices" className="about__title">
             À propos de Ciné-Délices
           </h1>
           <img className="about__logo" src="#" alt="logo du site" />
-        </section>
+        </article>
 
-        <section
+        <article
           className="about__section"
           aria-labelledby="what-is-cine-delices"
         >
@@ -34,9 +34,9 @@ export default function AboutUs() {
             l'ambiance d'un film, notre objectif est de faire voyager vos
             papilles autant que votre imagination.
           </p>
-        </section>
+        </article>
 
-        <section className="about__section" aria-labelledby="who-we-are">
+        <article className="about__section" aria-labelledby="who-we-are">
           <h2 id="who-we-are" className="about__subtitle">
             Qui sommes-nous ?
           </h2>
@@ -50,9 +50,9 @@ export default function AboutUs() {
             sensorielles pour renforcer l'attachement du public à ses œuvres
             favorites.
           </p>
-        </section>
+        </article>
 
-        <section className="about__section" aria-labelledby="for-whom">
+        <article className="about__section" aria-labelledby="for-whom">
           <h2 id="for-whom">Pour qui ?</h2>
           <p className="about__text">
             Ce site s'adresse à tous les amoureux de saveurs et de fictions :
@@ -72,8 +72,8 @@ export default function AboutUs() {
               </li>
             </ul>
           </nav>
-        </section>
-      </div>
+        </article>
+      </section>
     </>
   );
 }
