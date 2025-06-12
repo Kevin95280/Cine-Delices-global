@@ -9,32 +9,31 @@ export default function Home() {
     <>
         {/* Header avec navigation */}
         <Header />
-        <div className="home">
-            {/* Chemin src à compléter avec l'image du logo */}
-            <img src="#" alt="logo cine-delices" />
-            <h1>Le goût du cinéma, dans votre assiette.</h1>
-
-        {/* Section des Top Recettes */}
-        <section className="top-recipes">
-            <h2>Top recettes</h2>
-            <Cards>
-                {/* Exemple de carte pour les tests */}
-                {/* <Card title="Recette Test" authorName="Auteur Test" /> */}
-                {/* Cartes supplémentaires... */}
-            </Cards>
-        </section>
-
-        {/* Section des Recettes récentes */}
-        <section className="recent-recipes">
-            <h2>Recettes récentes</h2>
-            <Cards>
-                {/* Exemple de carte pour les tests */}
-                {/* <Card title="Recette Test" authorName="Auteur Test" /> */}
-                {/* Cartes supplémentaires... */}
-            </Cards>
-        </section>
-        </div>
-
+        <main>
+            <div className="home">
+                {/* Chemin src à compléter avec l'image du logo */}
+                <img src="#" alt="logo cine-delices" />
+                <h1>Le goût du cinéma, dans votre assiette.</h1>
+            {/* Section des Top Recettes */}
+            <section className="top-recipes">
+                <h2>Top recettes</h2>
+                <Cards>
+                    {/* Exemple de carte pour les tests */}
+                    {/* <Card title="Recette Test" authorName="Auteur Test" /> */}
+                    {/* Cartes supplémentaires... */}
+                </Cards>
+            </section>
+            {/* Section des Recettes récentes */}
+            <section className="recent-recipes">
+                <h2>Recettes récentes</h2>
+                <Cards>
+                    {/* Exemple de carte pour les tests */}
+                    {/* <Card title="Recette Test" authorName="Auteur Test" /> */}
+                    {/* Cartes supplémentaires... */}
+                </Cards>
+            </section>
+            </div>
+        </main>
         {/* Footer avec liens utiles */}
         <Footer />
     </>
