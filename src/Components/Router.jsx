@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
 /*import Recipes from "../pages/Recipes";
 import RecipeDetail from "../pages/RecipeDetail";
+import Addrecipe from "../pages/AddRecipe";
 import MoviesSeries from "../pages/MoviesSeries";
 import MovieDetail from "../pages/MovieDetail";
 import Login from "../pages/Login";
@@ -10,9 +11,6 @@ import ForgotPassword from "../pages/ForgotPassword";
 import ResetPassword from "../pages/ResetPassword";
 import MyAccount from "../pages/MyAccount";
 import MyRecipes from "../pages/MyRecipes";
-import AccountForm from "../pages/AccountForm";
-import SearchForm from "../pages/SearchForm";
-import FilterForm from "../pages/FilterForm";
 import Contact from "../pages/Contact";*/
 import AboutUs from "../pages/AboutUs";
 import LegalNotice from "../pages/LegalNotice";
@@ -28,6 +26,7 @@ export default function AppRouter() {
         <Route path="/" element={<Home />} />
         {/*<Route path="/recipes" element={<Recipes />} />
         <Route path="/recipes/:recipe-id" element={<RecipeDetail />} />
+        <Route path="/add-recipe" element={<AddRecipe />} />
         <Route path="/movies-and-series" element={<MoviesSeries />} />
         <Route path="/movies-and-series/:movie-id" element={<MovieDetail />} />*/}
         
@@ -41,12 +40,7 @@ export default function AppRouter() {
         {/*<Route path="/my-account" element={<MyAccount />} />
         <Route path="/my-recipes" element={<MyRecipes />} />*/}
 
-        {/* Formulaires */}
-        {/*<Route path="/account-form" element={<AccountForm />} />
-        <Route path="/search-form" element={<SearchForm />} />
-        <Route path="/filter-form" element={<FilterForm />} />*/}
-
-        {/* Pages statiques */}
+        {/* Section Footer */}
         {/*<Route path="/contact" element={<Contact />} />/*/}
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/legal-notice" element={<LegalNotice />} />
