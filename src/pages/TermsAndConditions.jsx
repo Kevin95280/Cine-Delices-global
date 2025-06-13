@@ -1,4 +1,6 @@
 import { Helmet } from "react-helmet";
+import Header from "../Components/Header";
+import Footer from "../Components/Footer";
 
 export default function PrivacyPolicy() {
   return (
@@ -11,6 +13,10 @@ export default function PrivacyPolicy() {
         />
       </Helmet>
 
+      {/* contenu de nos pages de navigation principales */}
+      <Header />
+
+      {/* contenu de notre page CGU */}
       <main className="main">
         <section className="terms__and__conditions">
           <article
@@ -85,6 +91,9 @@ export default function PrivacyPolicy() {
           </article>
         </section>
       </main>
+
+      {/* contenu de nos pages de navigation secondaires */}
+      <Footer />
     </>
   );
 }
