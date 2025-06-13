@@ -10,50 +10,54 @@ export default function LegalNotice() {
           content="Mentions légales du site Ciné-Délices"
         />
       </Helmet>
-      <section>
-        <article className="legal__notice" aria-labelledby="legal-title">
-          <h1 id="legal-title" className="legal__title">
-            Mentions légales
-          </h1>
-        </article>
 
-        <article className="legal__infos" aria-labelledby="legal-title">
-          <h2 id="legal-infos-title" className="legal__subtitle">
-            Informations légales
-          </h2>
-          <div className="legal__info">
-            <p className="legal__label">Nom du site : Ciné-Délices</p>
-          </div>
-          <div className="legal__info">
-            <p className="legal__label">
-              Éditeur : O'Flix (projet fictif dans un cadre pédagogique)
-            </p>
-          </div>
-          <div className="legal__info">
-            <p className="legal__label">
-              Responsable de la publication : Kevin Coelho (Scrum Master)
-            </p>
-          </div>
-          <div className="legal__info">
-            <p className="legal__label">
-              Contact :
-              <a className="legal__link" href="mailto:contact@cine-delices.fr">
-                contact@cine-delices.fr
-              </a>
-            </p>
-          </div>
-          <div className="legal__info">
-            <p className="legal__label">
-              Hébergeur : Projet étudiant
-            </p>
-          </div>
-          <div className="legal__info">
-            <p className="legal__label">
-              Statut : Projet étudiant - sans but commercial
-            </p>
-          </div>
-        </article>
-      </section>
+      <main className="main">
+        <section>
+          <article className="legal__notice" aria-labelledby="legal-title">
+            <h1 id="legal-title" className="legal__title">
+              Mentions légales
+            </h1>
+          </article>
+
+          <article className="legal__infos" aria-labelledby="legal-title">
+            <h2 id="legal-infos-title" className="legal__subtitle">
+              Informations légales
+            </h2>
+            <div className="legal__info">
+              <p className="legal__label">Nom du site : Ciné-Délices</p>
+            </div>
+            <div className="legal__info">
+              <p className="legal__label">
+                Éditeur : O'Flix (projet fictif dans un cadre pédagogique)
+              </p>
+            </div>
+            <div className="legal__info">
+              <p className="legal__label">
+                Responsable de la publication : Kevin Coelho (Scrum Master)
+              </p>
+            </div>
+            <div className="legal__info">
+              <p className="legal__label">
+                Contact :
+                <a
+                  className="legal__link"
+                  href="mailto:contact@cine-delices.fr"
+                >
+                  contact@cine-delices.fr
+                </a>
+              </p>
+            </div>
+            <div className="legal__info">
+              <p className="legal__label">Hébergeur : Projet étudiant</p>
+            </div>
+            <div className="legal__info">
+              <p className="legal__label">
+                Statut : Projet étudiant - sans but commercial
+              </p>
+            </div>
+          </article>
+        </section>
+      </main>
     </>
   );
 }
