@@ -1,6 +1,7 @@
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import Cards from "../Components/Cards";
+import Card from "../Components/Cards/Card";
 
 
 export default function Home() {
@@ -18,8 +19,7 @@ return (
             <h2>Top recettes</h2>
             <Cards>
                 {/* Exemple de carte pour les tests */}
-                {/*
-                <Card title="Recette Test" authorName="Auteur Test" /> */}
+                <Card title="Recette Test" authorName="Auteur Test" />
                 {/* Cartes supplémentaires... */}
             </Cards>
         </section>
@@ -28,8 +28,7 @@ return (
             <h2>Recettes récentes</h2>
             <Cards>
                 {/* Exemple de carte pour les tests */}
-                {/*
-                <Card title="Recette Test" authorName="Auteur Test" /> */}
+                <Card title="Recette Test" authorName="Auteur Test" />
                 {/* Cartes supplémentaires... */}
             </Cards>
         </section>
