@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import Cards from "../components/Cards"; // Composant carousel pour les recettes associées
+import Cards from "../../Components/Cards"; // Composant carousel pour les recettes associées
 
 export default function MovieDetail() {
   const { movieId } = useParams(); // Récupère l'ID du film depuis l'URL (à utiliser plus tard pour l'appel à l'API)
