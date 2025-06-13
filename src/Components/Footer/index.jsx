@@ -8,21 +8,21 @@ export default function Footer() {
       <nav>
         <ul>
           <li>
-            <NavLink to="/mentions-legales">Mentions légales</NavLink>
+            <NavLink to="/legal-notice">Mentions légales</NavLink>
           </li>
           <li>
             <NavLink to="/contact">Contact</NavLink>
           </li>
           <li>
-            <NavLink to="/a-propos">À propos</NavLink>
+            <NavLink to="/about-us">À propos</NavLink>
           </li>
           <li>
-            <NavLink to="/politique-de-confidentialite">
+            <NavLink to="/privacy-policy">
               Politique de confidentialité
             </NavLink>
           </li>
           <li>
-            <NavLink to="/cgu">CGU</NavLink>
+            <NavLink to="/terms-and-conditions">CGU</NavLink>
           </li>
         </ul>
       </nav>
