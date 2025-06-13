@@ -14,7 +14,7 @@ import MyRecipes from "../pages/MyRecipes";
 import Contact from "../pages/Contact";*/
 import AboutUs from "../pages/AboutUs";
 import LegalNotice from "../pages/LegalNotice";
-// import PrivacyPolicy from "../pages/PrivacyPolicy";
+import PrivacyPolicy from "../pages/PrivacyPolicy";
 import TermsAndConditions from "../pages/TermsAndConditions";
 // import NotFound from "../pages/NotFound"; // Page 404*/
 
@@ -44,9 +44,8 @@ export default function AppRouter() {
         {/*<Route path="/contact" element={<Contact />} />/*/}
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/legal-notice" element={<LegalNotice />} />
-        {/* <Route path="/privacy-policy" element={<PrivacyPolicy />} /> */}
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
-
         {/* Page 404 */}
         {/*<Route path="*" element={<NotFound />} />*/}
       </Routes>
