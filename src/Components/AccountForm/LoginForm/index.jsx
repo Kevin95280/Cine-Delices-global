@@ -2,10 +2,11 @@
 import { useState } from "react";
 
 export default function LoginForm() {
+    // définition des variables d'état
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-
+    // handle pour la soumission du formulaire
     const handleSubmit = (e) => {
         e.preventDefault()
     }
@@ -18,6 +19,8 @@ export default function LoginForm() {
                     type="email"
                     id="email"
                     name="email"
+                    // prise en compte de la valeur du champ une fois rempli, ici spécifique à l'email
+                    // puis par la suite adapté en fonction de la valeur des autres champs
                     onChange={(e) => setEmail(e.target.value)}
                     value={formData.email}
                     required
