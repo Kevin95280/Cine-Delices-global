@@ -2,6 +2,7 @@ import Header from "../../Components/Header";
 import Footer from "../../Components/Footer";
 import FilterForm from "../../Components/FilterForm"; // Composant FilterForm pour les filtres
 import Cards from "../components/Cards"; // Composant Cards pour les caroussels
+import Card from "../components/Cards/Card"; // Composant Card pour les cartes individuelles
 
 export default function MoviesSeries() {
 return (
@@ -16,17 +17,23 @@ return (
         {/* Section : Les films & séries du moment */}
         <section>
             {/* Composant Cards pour afficher les films et séries (Titre + vignette) */}
-            <Cards />
+            <Cards>
+                <Card />
+            </Cards>
         </section>
 
         {/* Section : Pour vous faire peur */}
         <section>
-            <Cards />
+            <Cards>
+                <Card />
+            </Cards>
         </section>
 
         {/* Section : Pour vous faire rire */}
         <section>
-            <Cards />
+            <Cards>
+                <Card />
+            </Cards>
         </section>
     </main>
     {/* Footer avec liens utiles */}
