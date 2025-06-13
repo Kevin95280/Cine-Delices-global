@@ -62,7 +62,7 @@ export default function PrivacyPolicy() {
           </article>
 
           <article className="privacy__item" aria-labelledby="retention">
-            <h2 id="rentention" className="privacy__subtitle">
+            <h2 id="retention" className="privacy__subtitle">
               Conservation
             </h2>
             <p className="privacy__text">
