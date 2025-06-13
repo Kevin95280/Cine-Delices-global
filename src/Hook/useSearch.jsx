@@ -2,7 +2,7 @@
 import { useState } from "react"
 
 // Initialisation de notre hook personnalisé qui nous permettra de gérer la barre de recherche
-export default function useSarch() {
+export default function useSearch() {
 
     // Initialisation de nos variables d'état
     // Gestion des entrées utilisateurs dans le champ de recherche
