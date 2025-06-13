@@ -1,8 +1,8 @@
 import Header from "../../Components/Header";
 import Footer from "../../Components/Footer";
 import FilterForm from "../../Components/FilterForm"; // Composant FilterForm pour les filtres
-import Cards from "../components/Cards"; // Composant Cards pour les caroussels
-import Card from "../components/Cards/Card"; // Composant Card pour les cartes individuelles
+import Cards from "../../Components/Cards"; // Composant Cards pour les caroussels
+import Card from "../../Components/Cards/Card"; // Composant Card pour les cartes individuelles
 
 export default function MoviesSeries() {
 return (
