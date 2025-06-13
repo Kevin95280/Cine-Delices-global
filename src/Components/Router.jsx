@@ -40,15 +40,15 @@ export default function AppRouter() {
         <Route path="/my-account" element={<MyAccount />} />
         {/*<Route path="/my-recipes" element={<MyRecipes />} />*/}
 
-//         {/* Section Footer */}
-//         {/*<Route path="/contact" element={<Contact />} />/*/}
-//         <Route path="/about-us" element={<AboutUs />} />
-//         <Route path="/legal-notice" element={<LegalNotice />} />
-//         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-//         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
-//         {/* Page 404 */}
-//         {/*<Route path="*" element={<NotFound />} />*/}
-//       </Routes>
-//     </Router>
-//   );
-// }
+        {/* Section Footer */}
+        {/*<Route path="/contact" element={<Contact />} />/*/}
+        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/legal-notice" element={<LegalNotice />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+        {/* Page 404 */}
+        {/*<Route path="*" element={<NotFound />} />*/}
+      </Routes>
+    </Router>
+  );
+}
