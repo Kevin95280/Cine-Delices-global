@@ -31,7 +31,7 @@ export default function AppRouter() {
         <Route path="/movies-and-series/:movieId" element={<MovieSeriesDetail />} />
 
         {/* Authentification */}
-        {/*<Route path="/login" element={<Login />} />
+        {/* <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/reset-password/:token" element={<ResetPassword />} />*/}

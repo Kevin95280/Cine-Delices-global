@@ -23,7 +23,7 @@ export default function SignupForm() {
     }
     return (
         <form className="account-form" method="POST"
-            // action à l'événement
+            // handler d'action à l'événement
             onSubmit={handleSubmit}>
             <label htmlFor="username">Nom d'utilisateur
                 <input
