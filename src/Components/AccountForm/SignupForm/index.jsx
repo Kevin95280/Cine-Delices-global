@@ -14,13 +14,13 @@ export default function SignupForm() {
         if (password === confirmPassword) {
             return (
             alert("Nouveau compte créé !")
-        )}
+        )}  
         // si celle-ci renvoie false
         else {
             return (alert('Vos mots de passe ne sont pas identiques')
-
-        )}
-    }
+            
+        )}  
+    }       
     return (
         <form className="account-form" method="POST"
             // handler d'action à l'événement
