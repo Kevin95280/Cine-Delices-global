@@ -1,5 +1,6 @@
 import react, { useState } from "react";
-import bcrypt from "bcrypt"
+import bcrypt from "bcryptjs";
+import { redirect } from "react-router-dom";
 
 export default function LoginForm() {
     // définition des variables d'état
@@ -9,35 +10,49 @@ export default function LoginForm() {
     // hash du mot de passe entré dans le formulaire de connexion
     const hashedPassword = bcrypt.hashSync(password, bcrypt.genSaltSync());
 
+//     récupération des données utilisateur dans la BDD
+//     fetch('https:localhost:3000', {
+//         method: 'POST',
+//         headers: {
+//             Accept: 'application/json',
+//             'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify({
+//             email: email,
+//             password: hashedPassword,
+//         }),
+//     })
+// }
 
-    const userEmail = "toto@tata.fr";
-    const userPassword = "hello world!"
+const userEmail = "toto@tata.fr";
+const userPassword = "hello world!"
 
-    // hash du mot de passe correspondant à l'email entré dans le formulaire de connexion
-    const userHashedPassword = bcrypt.hashSync(userPassword, bcrypt.genSaltSync());
+// hash du mot de passe correspondant à l'email entré dans le formulaire de connexion
+const userHashedPassword = bcrypt.hashSync(userPassword, bcrypt.genSaltSync());
 
-    // comparaison des 2 mots de passe - renvoie un boolén, true si les mots de passe correspondent, sinon false
-    const doesPasswordMatch = bcrypt.compareSync(password, userHashedPassword)
+// comparaison des 2 mots de passe - renvoie un boolén, true si les mots de passe correspondent, sinon false
+const doesPasswordMatch = bcrypt.compareSync(password, userHashedPassword)
 
-    // handle pour la soumission du formulaire
-    const handleSubmit =
-        (e) => {
+// handle pour la soumission du formulaire
+const handleSubmit =
+    (e) => {
 
-            e.preventDefault()
+        e.preventDefault()
 
-            // conditions à la soumission pour être connecté
-            const authenticated = email === userEmail && doesPasswordMatch
-            if (authenticated) {
-                return (this.props.history.push('/'))
-            }
+        // conditions à la soumission pour être connecté
+        const authenticated = email === userEmail && doesPasswordMatch
+        if (authenticated) {
+            alert ('Vous êtes maintenant connecté')
+            // utilisation de useNavigate dans le router pour la redirection
+        }
 
-            // si les conditions ne sont pas remplies
-            else {
-        return (
-            alert("Email ou mot de passe incorrect")
-        )
+        // si les conditions ne sont pas remplies
+        else {
+            return (
+                alert("Email ou mot de passe incorrect")
+            )
+        }
     }
-}
 
 return (
     <form className="account-form" method="POST" onSubmit={handleSubmit}>
