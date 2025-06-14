@@ -1,5 +1,4 @@
-
-import { useState } from "react";
+import react, { useState } from "react";
 import bcrypt from "bcrypt"
 
 export default function LoginForm() {
@@ -8,7 +7,7 @@ export default function LoginForm() {
     const [password, setPassword] = useState('');
 
     // hash du mot de passe entré dans le formulaire de connexion
-    // const hashedPassword = bcrypt.hashSync(password, bcrypt.genSaltSync());
+    const hashedPassword = bcrypt.hashSync(password, bcrypt.genSaltSync());
 
 
     const userEmail = "toto@tata.fr";
