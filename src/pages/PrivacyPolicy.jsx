@@ -5,6 +5,7 @@ import Footer from "../Components/Footer";
 export default function PrivacyPolicy() {
   return (
     <>
+      {/* Helmet gère le contenu de la balise head, ici le titre ainsi que nos meta données afin d'améliorer le référencement (SEO)*/}
       <Helmet>
         <title>Privacy Policy</title>
         <meta

@@ -8,10 +8,8 @@ export default function MyAccount() {
   const user = [
     { label: "Nom", value: "Jean Dupont" },
     { label: "Email", value: "jean.dupont@example.com" },
-    { label: "Date de naissance", value: "15/04/1985" },
-    { label: "Date d'inscription", value: "12/02/2023" },
-    { label: "Dernière publication", value: "01/06/2025" },
-    { label: "Note moyenne", value: "4.5" },
+    { label: "Date de création", value: "JJ/MM/AAAA" },
+    { label: "Nombre de publications", value: "XX" },
   ];
 
   return (
