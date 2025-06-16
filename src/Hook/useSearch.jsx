@@ -37,14 +37,14 @@ export default function useSearch() {
     }
 
     // Mise à jour de la valeur du champ saisie par l'utilisateur
-    const handleChange = (event) => {
-        setSearchTerm(event.target.value);
+    const handleChange = (e) => {
+        setSearchTerm(e.target.value);
     }
 
     // Handler qui conditionnera notre action à la soumission de notre formulaire
-    const handleSubmit = (event) => {
+    const handleSubmit = (e) => {
         // On empêche le comportement par défaut (rafraîchissement de la page à la soumission du formulaire)
-        event.preventDefault();
+        e.preventDefault();
         // Condition : si la valeur du champ (sans espace avant et après)
         if (searchTerm.trim() !== "") {
             // On fait appel à notre API
