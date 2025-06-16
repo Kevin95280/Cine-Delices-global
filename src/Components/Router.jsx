@@ -11,13 +11,8 @@ import Signup from "../pages/Signup";
 import ForgotPassword from "../pages/ForgotPassword";
 import ResetPassword from "../pages/ResetPassword";*/
 import MyAccount from "../pages/Account/MyAccount";
-<<<<<<< MyRecipes
 import MyRecipes from "../pages/Account/MyRecipes";
-/*import Contact from "../pages/Contact";*/
-=======
-import MyRecipes from "../pages/MyRecipes";
 import Contact from "../pages/Contact";
->>>>>>> dev
 import AboutUs from "../pages/AboutUs";
 import LegalNotice from "../pages/LegalNotice";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
