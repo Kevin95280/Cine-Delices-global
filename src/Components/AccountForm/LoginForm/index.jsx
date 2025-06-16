@@ -16,12 +16,13 @@ export default function LoginForm() {
             const salt = await bcrypt.genSalt(10);
             // mot de passe haché avec le salage
             const hashedPassword = await bcrypt.hash(password, salt);
-            return hashedPassword;
+            if (!hashedPassword) {
+                throw error;
+            }
         }
         // en cas d'erreur
         catch (error) {
             console.error("Erreur lors du hachage du mot de passe", error);
-            throw error;
         }
     }
 
@@ -51,12 +52,13 @@ export default function LoginForm() {
             const salt = await bcrypt.genSalt(10);
             // mot de passe haché avec le salage
             const userHashedPassword = await bcrypt.hash(userPassword, salt);
-            return userHashedPassword;
+            if (!userHashedPassword) {
+                throw error;
+            }
         }
         // en cas d'erreur
         catch (error) {
             console.error("Erreur lors du hachage du mot de passe", error);
-            throw error;
         }
     }
 
