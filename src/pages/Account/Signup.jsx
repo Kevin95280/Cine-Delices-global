@@ -10,13 +10,14 @@ export default function Signup () {
     return (
     <>
         <Helmet>
-            <title>Connexion - Ciné-Délices</title>
-            <meta name="description" content="Connexion à l'espace réservé aux adhérents - Ciné-Délices" />
+            <title>Inscription - Ciné-Délices</title>
+            <meta name="description" content="Création d'un compte utilisateur - Ciné-Délices" />
         </Helmet>
         <Header>
             <NavBar />
             <SearchForm />
         </Header>
+        <h1>Créer votre compte </h1>
         <SignupForm />
         <Footer />
     </>
