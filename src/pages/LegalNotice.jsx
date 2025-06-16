@@ -1,8 +1,11 @@
 import { Helmet } from "react-helmet";
+import Header from "../Components/Header";
+import Footer from "../Components/Footer";
 
 export default function LegalNotice() {
   return (
     <>
+      {/* Helmet gère le contenu de la balise head, ici le titre ainsi que nos meta données afin d'améliorer le référencement (SEO)*/}
       <Helmet>
         <title>Legal Notice - Ciné-Délices</title>
         <meta
@@ -11,6 +14,10 @@ export default function LegalNotice() {
         />
       </Helmet>
 
+      {/* contenu de nos pages de navigation principales */}
+      <Header />
+
+      {/* contenu principal de notre page */}
       <main className="main">
         <section>
           <article className="legal__notice" aria-labelledby="legal-title">
@@ -58,6 +65,9 @@ export default function LegalNotice() {
           </article>
         </section>
       </main>
+
+      {/* contenu de nos pages de navigation secondaires */}
+      <Footer />
     </>
   );
 }
