@@ -3,7 +3,8 @@ import Home from "../pages/Home";
 import Recipes from "../pages/Food/Recipes";
 /*
 import RecipeDetail from "../pages/RecipeDetail";
-import Addrecipe from "../pages/AddRecipe";*/
+*/
+import AddRecipe from "../pages/Food/AddRecipe";
 import MoviesSeries from "../pages/Cinema/MoviesSeries";
 import MovieSeriesDetail from "../pages/Cinema/MovieSeriesDetail";
 /*import Login from "../pages/Login";
@@ -26,9 +27,8 @@ export default function AppRouter() {
         {/* Pages principales */}
         <Route path="/" element={<Home />} />
         <Route path="/recipes" element={<Recipes />} />
-        {/*
-        <Route path="/recipes/:recipeId" element={<RecipeDetail />} />
-        <Route path="/add-recipe" element={<AddRecipe />} />*/}
+        {/* <Route path="/recipes/:recipeId" element={<RecipeDetail />} /> */}
+        <Route path="/add-recipe" element={<AddRecipe />} />
         <Route path="/movies-and-series" element={<MoviesSeries />} />
         <Route path="/movies-and-series/:movieId" element={<MovieSeriesDetail />} />
 
