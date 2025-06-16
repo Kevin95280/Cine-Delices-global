@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet";
 import Header from "../../Components/Header";
+import NavBar from "../../Components/Header/NavBar/";
 import Footer from "../../Components/Footer";
 import Cards from "../../Components/Cards";
 import Card from "../../Components/Cards/Card";
@@ -18,7 +19,10 @@ export default function Recipes() {
       </Helmet>
 
       {/* contenu de nos pages de navigation principales */}
-      <Header />
+      <Header>
+        <NavBar />
+      </Header>
+
       {/* permet de filtrer nos recettes */}
       {/* <FilterForm /> */}
 

@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
 import Header from "../../Components/Header";
+import NavBar from "../../Components/Header/NavBar/";
 import Footer from "../../Components/Footer";
 
 export default function Recipes() {
@@ -55,7 +56,9 @@ export default function Recipes() {
       </Helmet>
 
       {/* contenu de nos pages de navigation principales */}
-      <Header />
+      <Header>
+        <NavBar />
+      </Header>
 
       {/* contenu principal de notre page */}
       <main className="main">
