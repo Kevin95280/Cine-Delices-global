@@ -11,8 +11,8 @@ import Signup from "../pages/Signup";
 import ForgotPassword from "../pages/ForgotPassword";
 import ResetPassword from "../pages/ResetPassword";*/
 import MyAccount from "../pages/Account/MyAccount";
-/*import MyRecipes from "../pages/MyRecipes";
-import Contact from "../pages/Contact";*/
+import MyRecipes from "../pages/MyRecipes";
+import Contact from "../pages/Contact";
 import AboutUs from "../pages/AboutUs";
 import LegalNotice from "../pages/LegalNotice";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
@@ -40,10 +40,10 @@ export default function AppRouter() {
 
         {/* Gestion utilisateur */}
         <Route path="/my-account" element={<MyAccount />} />
-        {/*<Route path="/my-recipes" element={<MyRecipes />} />*/}
+        <Route path="/my-recipes" element={<MyRecipes />} />
 
         {/* Section Footer */}
-        {/*<Route path="/contact" element={<Contact />} />/*/}
+        <Route path="/contact" element={<Contact />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/legal-notice" element={<LegalNotice />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
