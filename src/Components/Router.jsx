@@ -6,8 +6,8 @@ import RecipeDetail from "../pages/RecipeDetail";
 import Addrecipe from "../pages/AddRecipe";*/
 import MoviesSeries from "../pages/Cinema/MoviesSeries";
 import MovieSeriesDetail from "../pages/Cinema/MovieSeriesDetail";
+import Signup from "../pages/Account/Signup";
 /*import Login from "../pages/Login";
-import Signup from "../pages/Signup";
 import ForgotPassword from "../pages/ForgotPassword";
 import ResetPassword from "../pages/ResetPassword";*/
 import MyAccount from "../pages/Account/MyAccount";
@@ -33,8 +33,8 @@ export default function AppRouter() {
         <Route path="/movies-and-series/:movieId" element={<MovieSeriesDetail />} />
 
         {/* Authentification */}
-        {/* <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        {/* <Route path="/login" element={<Login />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/reset-password/:token" element={<ResetPassword />} />*/}
 
