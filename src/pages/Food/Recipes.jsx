@@ -19,6 +19,7 @@ export default function Recipes() {
 
       {/* contenu de nos pages de navigation principales */}
       <Header />
+
       {/* permet de filtrer nos recettes */}
       {/* <FilterForm /> */}
 
