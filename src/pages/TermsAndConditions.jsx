@@ -2,9 +2,10 @@ import { Helmet } from "react-helmet";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 
-export default function PrivacyPolicy() {
+export default function TermsAndConditions() {
   return (
     <>
+      {/* Helmet gère le contenu de la balise head, ici le titre ainsi que nos meta données afin d'améliorer le référencement (SEO)*/}
       <Helmet>
         <title>Terms and conditions</title>
         <meta
