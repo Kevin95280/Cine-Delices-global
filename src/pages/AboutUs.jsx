@@ -1,13 +1,20 @@
 import { Helmet } from "react-helmet";
+import Header from "../Components/Header";
+import Footer from "../Components/Footer";
 
 export default function AboutUs() {
   return (
     <>
+      {/* Helmet gère le contenu de la balise head, ici le titre ainsi que nos meta données afin d'améliorer le référencement (SEO)*/}
       <Helmet>
         <title>About - Ciné-Délices</title>
         <meta name="description" content="Apprenez en un peu plus sur nous" />
       </Helmet>
 
+      {/* contenu de nos pages de navigation principales */}
+      <Header />
+
+      {/* contenu principal de notre page */}
       <main className="main">
         <section className="about">
           <article
@@ -20,7 +27,10 @@ export default function AboutUs() {
             <img className="about__logo" src="#" alt="logo du site" />
           </article>
 
-          <article className="about__section" aria-labelledby="what-is-cine-delices">
+          <article
+            className="about__section"
+            aria-labelledby="what-is-cine-delices"
+          >
             <h2 id="what-is-cine-delices" className="about__subtitle">
               Qu'est-ce que Ciné-Délices ?
             </h2>
@@ -77,6 +87,9 @@ export default function AboutUs() {
           </article>
         </section>
       </main>
+
+      {/* contenu de nos pages de navigation secondaires */}
+      <Footer />
     </>
   );
 }
