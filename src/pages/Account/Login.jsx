@@ -1,8 +1,9 @@
 import { Helmet } from "react-helmet";
 import Header from "../../Components/Header";
 import NavBar from "../../Components/Header/NavBar";
+import LoginForm from "../../Components/AccountForm/LoginForm";
 import Footer from "../../Components/Footer";
-import { use, useState } from "react";
+import { useState } from "react";
 
 export default function Login () {
 
@@ -39,21 +40,7 @@ export default function Login () {
             </Header>
             <main className="main">
                 <h1>Se connecter</h1>
-                <form method="POST" action="/login" onSubmit={HandleSubmit} >
-                    <div>
-                        <label htmlFor="email" >
-                            Email
-                        </label>
-                        <input type="email" name="email" id="email" onChange={HandleEmailChange} />
-                    </div>
-                    <div>
-                        <label htmlFor="password">
-                            Mot de passe
-                        </label>
-                        <input type="password" name="password" id="password" onChange={HandlePasswordChange} />
-                    </div>
-                    <button>Connexion</button>
-                </form>
+                <LoginForm />
             </main>
             <Footer />
         </>
