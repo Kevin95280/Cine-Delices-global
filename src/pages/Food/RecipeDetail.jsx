@@ -6,7 +6,7 @@ import Footer from "../../Components/Footer";
 export default function Recipes() {
   // permettra d'afficher la recette en fonction de l'id présent dans l'URL
   const { recipeId } = useParams();
-  // déclaration d'une constante qui renvoie un tableau d'objet afin de simuler la BDD, ces informations seront récupéré plus tard via notre API
+  // déclaration d'une constante qui renvoie un objet afin de simuler la BDD, ces informations seront récupéré plus tard via notre API
   const recipe = {
     id: 1,
     title: "Escalope de dinde à la feta et tomates cerise",
@@ -19,7 +19,7 @@ export default function Recipes() {
               C'est une recette simple, rapide et colorée, idéale pour un
               déjeuner en semaine ou un dîner léger, servie avec une salade
               croquante ou un peu de riz.`,
-    people: "2 personnes",
+    servings: "2 personnes",
     preparationTime: "15 minutes",
     cookingTime: "20 minutes",
     budget: "bon marché",
@@ -40,7 +40,7 @@ export default function Recipes() {
       `Passez au four moyen (préchauffé à thermostat 6/180°C) environ 20 mn avant de passer à table.`,
       `Servez avec des petites pommes de terre ou des croquettes.`,
     ],
-    anecdote: `On raconte qu'un cuisinier pressé aurait renversé par mégarde des tomates cerises et de la feta sur des escalopes de dinde... Il a enfourné le tout pour ne rien gâcher et a créé une recette adorée depuis !`,
+    story: `On raconte qu'un cuisinier pressé aurait renversé par mégarde des tomates cerises et de la feta sur des escalopes de dinde... Il a enfourné le tout pour ne rien gâcher et a créé une recette adorée depuis !`,
   };
 
   return (
@@ -79,7 +79,7 @@ export default function Recipes() {
             </h2>
             <ul className="recipe__infos__list">
               <li className="recipe__info">
-                Nombres de parts : {recipe.people}
+                Nombres de parts : {recipe.servings}
               </li>
               <li className="recipe__info">
                 Temps de préparation : {recipe.preparationTime}
@@ -137,7 +137,7 @@ export default function Recipes() {
             <h2 className="recipe__subtitle" id="recipe-anecdote">
               Anecdote :
             </h2>
-            <p className="recipe__anecdote__text">{recipe.anecdote}</p>
+            <p className="recipe__anecdote__text">{recipe.story}</p>
           </article>
         </section>
       </main>
