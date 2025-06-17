@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import Header from "../../Components/Header";
 import NavBar from "../../Components/Header/NavBar";
+import SearchForm from "../../Components/Header/SearchForm";
 import LoginForm from "../../Components/AccountForm/LoginForm";
 import Footer from "../../Components/Footer";
 
@@ -13,6 +14,7 @@ export default function Login () {
             </Helmet>
             <Header>
                 <NavBar />
+                <SearchForm />
             </Header>
             <main className="main">
                 <h1>Se connecter</h1>
