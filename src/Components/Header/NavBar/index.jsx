@@ -1,5 +1,5 @@
 // Appel de notre composant NavLink depuis react-router-dom
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function NavBar() {
   return (
@@ -9,7 +9,7 @@ export default function NavBar() {
         <li>
           <Link to="/">
             {/* Image du logo à compléter */}
-            <img src="#" alt="logo cine-delices" />
+            <img src="/assets/logo_home.png" alt="logo cine-delices" className="logo_home" />
           </Link>
         </li>
         <li>
