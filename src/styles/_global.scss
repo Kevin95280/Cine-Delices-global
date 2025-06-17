@@ -50,9 +50,11 @@ a {
     justify-content: center;
     color: vars.$text-light;
 }
+
 .hero h1 {
     display: flex;
     justify-content: center;
+    font-family: bebas-neue, sans-serif;
     font-size: 48px;
     margin-bottom: 20px;
     margin-top: -20px;
