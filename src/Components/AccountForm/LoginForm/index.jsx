@@ -53,17 +53,18 @@ export default function LoginForm() {
             // mot de passe haché avec le salage
             const userHashedPassword = await bcrypt.hash(userPassword, salt);
             if (!userHashedPassword) {
-                throw error;
+                throw new Error("Erreur lors du hachage du mot de passe");
             }
         }
         // en cas d'erreur
         catch (error) {
-            console.error("Erreur lors du hachage du mot de passe", error);
+            console.error(error);
         }
     }
 
+    // Commenté pour le moment, problématique à régler lors de la création de la logique côté back
     // comparaison des 2 mots de passe - renvoie un boolén, true si les mots de passe correspondent, sinon false
-    const doesPasswordMatch = bcrypt.compareSync(password, userHashPassword)
+    // const doesPasswordMatch = bcrypt.compareSync(password, userHashPassword)
 
     // handle pour la soumission du formulaire
     const handleSubmit =
@@ -112,7 +113,7 @@ export default function LoginForm() {
                     required
                 />
             </label>
-            <button type="submit">Se connecter</button>
+            <button type="submit">Connexion</button>
         </form>
     )
 }
