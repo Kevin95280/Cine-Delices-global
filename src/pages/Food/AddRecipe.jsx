@@ -6,7 +6,7 @@ import SearchForm from "../../Components/Header/SearchForm";
 import Footer from "../../Components/Footer";
 
 export default function AddRecipe() {
-  // déclarations des étatas pour chaque champ du formulaire (valeur et fonction)
+  // déclarations des états pour chaque champ du formulaire (valeur et fonction)
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [type, setType] = useState("");
