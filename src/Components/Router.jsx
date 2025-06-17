@@ -6,8 +6,8 @@ import Recipes from "../pages/Food/Recipes";
 import MoviesSeries from "../pages/Cinema/MoviesSeries";
 import MovieSeriesDetail from "../pages/Cinema/MovieSeriesDetail";
 import Login from "../pages/Account/Login";
-/*import Signup from "../pages/Signup";
-import ForgotPassword from "../pages/ForgotPassword";
+import Signup from "../pages/Account/Signup";
+/*import ForgotPassword from "../pages/ForgotPassword";
 import ResetPassword from "../pages/ResetPassword";*/
 import MyAccount from "../pages/Account/MyAccount";
 /*import MyRecipes from "../pages/MyRecipes";
@@ -33,8 +33,8 @@ export default function AppRouter() {
         
         {/* Authentification */}
         <Route path="/login" element={<Login />} />
-        {/*<Route path="/signup" element={<Signup />} />
-        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/signup" element={<Signup />} />
+        {/* <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/reset-password/:token" element={<ResetPassword />} />*/}
 
         {/* Gestion utilisateur */}
