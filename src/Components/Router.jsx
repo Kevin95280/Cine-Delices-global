@@ -5,8 +5,8 @@ import Recipes from "../pages/Food/Recipes";
 /*import Addrecipe from "../pages/AddRecipe";*/
 import MoviesSeries from "../pages/Cinema/MoviesSeries";
 import MovieSeriesDetail from "../pages/Cinema/MovieSeriesDetail";
-import Login from "../pages/Login";
-import Signup from "../pages/Signup";
+import Login from "../pages/Account/Login";
+import Signup from "../pages/Account/Signup";
 /*import ForgotPassword from "../pages/ForgotPassword";
 import ResetPassword from "../pages/ResetPassword";*/
 import MyAccount from "../pages/Account/MyAccount";
