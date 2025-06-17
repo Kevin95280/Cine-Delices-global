@@ -1,9 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
+import RecipeDetail from "../pages/Food/RecipeDetail";
 import Recipes from "../pages/Food/Recipes";
-/*
-import RecipeDetail from "../pages/RecipeDetail";
-import Addrecipe from "../pages/AddRecipe";*/
+//import Addrecipe from "../pages/AddRecipe";
 import MoviesSeries from "../pages/Cinema/MoviesSeries";
 import MovieSeriesDetail from "../pages/Cinema/MovieSeriesDetail";
 /*import Login from "../pages/Login";
@@ -28,6 +27,7 @@ export default function AppRouter() {
         <Route path="/recipes" element={<Recipes />} />
         {/*<Route path="/recipes/:recipeId" element={<RecipeDetail />} />
         <Route path="/add-recipe" element={<AddRecipe />} />*/}
+        <Route path="/recipes/:recipeId" element={<RecipeDetail />} />
         <Route path="/movies-and-series" element={<MoviesSeries />} />
         <Route path="/movies-and-series/:movieId" element={<MovieSeriesDetail />} />
 
