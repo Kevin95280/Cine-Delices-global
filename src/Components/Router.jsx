@@ -10,7 +10,7 @@ import Signup from "../pages/Account/Signup";
 /*import ForgotPassword from "../pages/ForgotPassword";
 import ResetPassword from "../pages/ResetPassword";*/
 import MyAccount from "../pages/Account/MyAccount";
-import MyRecipes from "../pages/MyRecipes";
+import MyRecipes from "../pages/Account/MyRecipes";
 import Contact from "../pages/Contact";
 import AboutUs from "../pages/AboutUs";
 import LegalNotice from "../pages/LegalNotice";
