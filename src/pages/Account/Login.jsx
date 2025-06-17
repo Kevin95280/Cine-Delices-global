@@ -3,32 +3,8 @@ import Header from "../../Components/Header";
 import NavBar from "../../Components/Header/NavBar";
 import LoginForm from "../../Components/AccountForm/LoginForm";
 import Footer from "../../Components/Footer";
-import { useState } from "react";
 
 export default function Login () {
-
-    /**
-     *  Variable d'état qui nous permettra de récupérer l'email de connexion de l'adhérent
-     *  Conforme à nos maquettes graphique mais possibilité de changer les noms lorsque la logique sera créé
-     *  Demande d'email ou username pour la connexion pour la suite
-     */
-    const [isEmail, setEmail] = useState('')
-    const [isPassword, setIsPassword] = useState('')
-
-    const HandleEmailChange = (e) => {
-        setEmail(e.target.value);
-    }
-
-    const HandlePasswordChange = (e) => {
-        setIsPassword(e.target.value);
-    }
-
-    const HandleSubmit = (e) => {
-        // Utilisation uniquement pour les tests mais A RETIRER une fois que la logique sera construite
-        e.preventDefault()
-        alert(`${isEmail} et ${isPassword}`)
-    }
-
     return (
         <>
             <Helmet>
