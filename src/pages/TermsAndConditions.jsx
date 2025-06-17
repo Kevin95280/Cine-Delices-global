@@ -1,5 +1,7 @@
 import { Helmet } from "react-helmet";
 import Header from "../Components/Header";
+import NavBar from "../Components/Header/NavBar";
+import SearchForm from "../Components/Header/SearchForm";
 import Footer from "../Components/Footer";
 
 export default function TermsAndConditions() {
@@ -15,7 +17,10 @@ export default function TermsAndConditions() {
       </Helmet>
 
       {/* contenu de nos pages de navigation principales */}
-      <Header />
+      <Header>
+        <NavBar />
+        <SearchForm />
+      </Header>
 
       {/* contenu de notre page CGU */}
       <main className="main">

@@ -2,6 +2,9 @@ import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import Cards from "../Components/Cards";
 import Card from "../Components/Cards/Card";
+import NavBar from "../Components/Header/NavBar";
+import SearchForm from "../Components/Header/SearchForm";
+import NavLink from "../Components/NavLink";
 
 
 export default function Home() {
@@ -9,7 +12,11 @@ return (
 
 <>
     {/* Header avec navigation */}
-    <Header />
+    <Header>
+        <NavBar />
+        <SearchForm />
+    </Header>
+    <NavLink />
     <main className="main">
         {/* Chemin src à compléter avec l'image du logo */}
         <img src="#" alt="logo cine-delices" />

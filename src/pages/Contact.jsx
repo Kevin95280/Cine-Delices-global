@@ -1,11 +1,16 @@
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
+import NavBar from "../Components/Header/NavBar";
+import SearchForm from "../Components/Header/SearchForm";
 
 export default function Contact() {
 return (
 <>
     {/* En tete de la page */}
-    <Header />
+    <Header>
+        <NavBar />
+        <SearchForm />
+    </Header>
     <main className="main">
         <h1>Envoyer un message</h1>
 
