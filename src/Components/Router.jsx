@@ -26,8 +26,7 @@ export default function AppRouter() {
         {/* Pages principales */}
         <Route path="/" element={<Home />} />
         <Route path="/recipes" element={<Recipes />} />
-        {/*
-        <Route path="/recipes/:recipeId" element={<RecipeDetail />} />
+        {/*<Route path="/recipes/:recipeId" element={<RecipeDetail />} />
         <Route path="/add-recipe" element={<AddRecipe />} />*/}
         <Route path="/movies-and-series" element={<MoviesSeries />} />
         <Route path="/movies-and-series/:movieId" element={<MovieSeriesDetail />} />
