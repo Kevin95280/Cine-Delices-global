@@ -126,7 +126,7 @@ export default function AddRecipe() {
             <label htmlFor="budget" className="form__label">
               Budget
               <select
-                className="form__input"
+                className="form__select"
                 type="text"
                 id="budget"
                 name="budget"
