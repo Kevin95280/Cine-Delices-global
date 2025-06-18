@@ -1,0 +1,34 @@
+@use '../vars.scss';
+
+.nav-link {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 2rem;
+
+    li {
+        padding: 1rem 1.5rem;
+        background-color:rgba(255, 255, 255, 0.150);
+        color: vars.$white;
+        font-weight: bold;
+        font-size: 16px;
+        border: none;
+        border-radius: 2rem;
+        text-align: center;
+        text-decoration: none;
+        transition: all 0.5s ease;
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.308);
+        }
+
+        display: inline-block;
+        color: vars.$text-secondary;
+        font-family: vars.$font-main;
+        font-weight: bold;
+        margin-right: 4rem;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
