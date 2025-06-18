@@ -101,7 +101,7 @@ export default function AddRecipe() {
                 value={type}
                 onChange={(e) => setType(e.target.value)}
               >
-                <option value="">Sélectionnez une option</option>
+                <option value="" disabled>Sélectionnez une option</option>
                 <option value="starter">Entrées</option>
                 <option value="main-course">Plats</option>
                 <option value="dessert">Desserts</option>
@@ -117,7 +117,7 @@ export default function AddRecipe() {
                 value={level}
                 onChange={(e) => setLevel(e.target.value)}
               >
-                <option value="">Sélectionnez une option</option>
+                <option value="" disabled>Sélectionnez une option</option>
                 <option value="easy">Facile</option>
                 <option value="medium">Moyen</option>
                 <option value="hard">Difficile</option>
@@ -133,7 +133,7 @@ export default function AddRecipe() {
                 value={budget}
                 onChange={(e) => setBudget(e.target.value)}
               >
-                <option value="">Sélectionnez une option</option>
+                <option value="" disabled>Sélectionnez une option</option>
                 <option value="cheap">Bon marché</option>
                 <option value="moderate">Budget moyen</option>
                 <option value="expensive">Assez cher</option>
