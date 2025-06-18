@@ -11,8 +11,9 @@ export default function SearchForm({ searchTerm, handleSubmit, handleChange }) {
         id="search"
         value={searchTerm}
         className="search__form__input"
+        placeholder="gigot d'agneau, blanquette de veau..."
       />
-      <button className="search__form__button">Envoyer</button>
+      <button className="search__form__button">Rechercher</button>
     </form>
   );
 }
