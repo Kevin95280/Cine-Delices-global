@@ -1,7 +1,13 @@
-import LoginForm from "../AccountForm/LoginForm";
-import SignupForm from "../AccountForm/SignupForm";
+// Test du rendu de nos composants
+import FilterForm from "../FilterForm";
+import QuickFinder from "../FilterForm/QuickFinder";
+
 import AppRouter from "../Router";
 
 export default function App() {
-  return <AppRouter />;
+    return (
+    <FilterForm title="Recherche Rapide" >
+      <QuickFinder />
+    </FilterForm>
+  );
 }
