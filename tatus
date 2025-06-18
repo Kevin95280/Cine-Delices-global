@@ -1,0 +1,1019 @@
+[33mcommit 1490dc05b0e36f459a53a6d02b046754dc0aa36e[m[33m ([m[1;36mHEAD -> [m[1;32mAddRecipes[m[33m, [m[1;31morigin/AddRecipes[m[33m)[m
+Author: youssefyou <youssef.ajdigue@gmail.com>
+Date:   Tue Jun 17 15:57:25 2025 +0200
+
+    syntax correction
+
+[33mcommit 410ad00d1a54db72c3199474432b7046ebd3a90b[m
+Merge: 9039f28 aca6983
+Author: youssefyou <youssef.ajdigue@gmail.com>
+Date:   Tue Jun 17 15:47:45 2025 +0200
+
+    Merge branch 'dev' into AddRecipes
+
+[33mcommit 9039f2886ee963aa730dd483af98c456c36467e6[m
+Author: youssefyou <youssef.ajdigue@gmail.com>
+Date:   Tue Jun 17 15:34:13 2025 +0200
+
+    add-recipe
+
+[33mcommit aca6983596a9d2b3152d930d4c904c8e45ab1676[m[33m ([m[1;31morigin/dev[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mdev[m[33m)[m
+Merge: f9c28f0 dae9e2c
+Author: Anthony-Hannoteaux <149007890+Anthony-Hannoteaux@users.noreply.github.com>
+Date:   Tue Jun 17 12:43:06 2025 +0200
+
+    Merge pull request #37 from O-clock-Behemoth/corrections
+    
+    Corrections + subcomponents adding
+
+[33mcommit dae9e2ccbde5a85c787b1f590306e1c42ff3bba0[m
+Author: Kevin95280 <coelhokev@ymail.com>
+Date:   Tue Jun 17 11:19:16 2025 +0200
+
+    subcomponents add + corrections V2
+
+[33mcommit e9e883ff443d3b548a69efca22f19045249e2912[m
+Merge: 0be0fad f9c28f0
+Author: Kevin95280 <coelhokev@ymail.com>
+Date:   Tue Jun 17 11:14:22 2025 +0200
+
+    Merge branch 'dev' into corrections
+
+[33mcommit f9c28f0ce4fdd5c83b0356520eaf9b6ce90cb56c[m
+Merge: 89f6af0 c394a2b
+Author: Kevin95280 <coelhokev@ymail.com>
+Date:   Tue Jun 17 11:11:14 2025 +0200
+
+    Merge pull request #34 from O-clock-Behemoth/Signup_Page
+    
+    Signup page
+
+[33mcommit c394a2bb01eabf56738a85a135f17feb73fa62d0[m
+Author: Anthony-Hannoteaux <tony.hannoteaux@gmail.com>
+Date:   Tue Jun 17 11:10:02 2025 +0200
+
+    fix conflicts and test OK
+
+[33mcommit 49f134809ef5601d2ae34a638f94d907b5a697fb[m
+Merge: a5cd4c1 89f6af0
+Author: Anthony-Hannoteaux <tony.hannoteaux@gmail.com>
+Date:   Tue Jun 17 11:07:42 2025 +0200
+
+    Merge branch 'dev' into Signup_Page
+
+[33mcommit 89f6af0573997cd57b4c206c32279715559bcdc7[m
+Merge: 1f1ad77 ac9ca41
+Author: Kevin95280 <coelhokev@ymail.com>
+Date:   Tue Jun 17 10:59:40 2025 +0200
+
+    Merge pull request #33 from O-clock-Behemoth/Login_Page
+    
+    Login page
+
+[33mcommit 0be0fada7bb174d67b45c9f925b39d2a530ca035[m
+Merge: 1ef9986 1f1ad77
+Author: Kevin95280 <coelhokev@ymail.com>
+Date:   Tue Jun 17 10:56:49 2025 +0200
+
+    Merge branch 'dev' into corrections
+
+[33mcommit 1ef9986316e74b5028c68fa7eab3688e9a4b04c5[m
+Author: Kevin95280 <coelhokev@ymail.com>
+Date:   Tue Jun 17 10:55:16 2025 +0200
+
+    subcomponent add + corrections
+
+[33mcommit ac9ca41c13f460ea4583d5ac985c41dfa6b4c162[m
+Author: Anthony-Hannoteaux <tony.hannoteaux@gmail.com>
+Date:   Tue Jun 17 09:59:37 2025 +0200
+
+    Add SearchForm component into Header component
+
+[33mcommit 3630e9e89cee332220e1110b457b2b55a0c59861[m
+Author: Anthony-Hannoteaux <tony.hannoteaux@gmail.com>
+Date:   Tue Jun 17 09:57:17 2025 +0200
+
+    fix conflicts and render test
+
+[33mcommit 4620308d623bba261aa7ccf5ce8b8325cc863ae9[m
+Merge: d50fd8e 1f1ad77
+Author: Anthony-Hannoteaux <tony.hannoteaux@gmail.com>
+Date:   Tue Jun 17 09:44:24 2025 +0200
+
+    Merge branch 'dev' into Login_Page
+
+[33mcommit 3d5bc4d5dcdea58f051b71045f103b5df4493288[m
+Author: youssefyou <youssef.ajdigue@gmail.com>
+Date:   Mon Jun 16 21:45:08 2025 +0200
+
+    static version
+
+[33mcommit 1f1ad774ca34eed5de90ce26752c19cd2c55877b[m[33m ([m[1;31morigin/dev_backup[m[33m)[m
+Merge: 69df7c8 bbdd377
+Author: Kim NGUYEN <nguyen0kim@hotmail.com>
+Date:   Mon Jun 16 18:59:09 2025 +0200
+
+    Merge pull request #36 from O-clock-Behemoth/AccountForm
+    
+    Account form remerged without squashing
+
+[33mcommit 69df7c8602760714413d8a29a52c3b5cfbc21f8f[m
+Merge: eea94c1 b9c92b4
+Author: Kim NGUYEN <nguyen0kim@hotmail.com>
+Date:   Mon Jun 16 18:57:36 2025 +0200
+
+    Merge pull request #35 from O-clock-Behemoth/revert-28-AccountForm
+    
+    Revert "Account form"
+
+[33mcommit b9c92b472d2d6986ea683bbb26f075936b3ab88f[m
+Author: Kim NGUYEN <nguyen0kim@hotmail.com>
+Date:   Mon Jun 16 18:56:18 2025 +0200
+
+    Revert "Account form (#28)"
+    
+    This reverts commit 8bd0fc601b913979c75242edd2a9e0cdbd91a625.
+
+[33mcommit eea94c108c7b9384cdae4bb8a52c6719d947524d[m
+Merge: bfb9c4c 63da2ed
+Author: Kim NGUYEN <nguyen0kim@hotmail.com>
+Date:   Mon Jun 16 18:25:36 2025 +0200
+
+    Merge pull request #32 from O-clock-Behemoth/RecipeDetail
+    
+    Recipe detail
+
+[33mcommit 63da2edd4a40349d8d5cdf5857f411ff21124d68[m[33m ([m[1;31morigin/RecipeDetail[m[33m, [m[1;32mRecipeDetail[m[33m)[m
+Author: youssefyou <youssef.ajdigue@gmail.com>
+Date:   Mon Jun 16 17:32:24 2025 +0200
+
+    SearchForm component added
+
+[33mcommit c1b9c19068718b2e947b687ae4a0d1fdb94640d0[m
+Author: youssefyou <youssef.ajdigue@gmail.com>
+Date:   Mon Jun 16 16:59:05 2025 +0200
+
+    AddRecipe start
+
+[33mcommit a36746c4661ad7c1b47d3c62bf5c362a164bedd9[m
+Author: youssefyou <youssef.ajdigue@gmail.com>
+Date:   Mon Jun 16 16:13:44 2025 +0200
+
+    NavBar subcomponent added
+
+[33mcommit 1f914c6c1566739bca32ce7064a3dd396f12934a[m
+Author: youssefyou <youssef.ajdigue@gmail.com>
+Date:   Mon Jun 16 15:54:47 2025 +0200
+
+    comments and proprety name modified
+
+[33mcommit 5a02a2d638c7e75d707117a0ec3b4e759345d306[m
+Author: youssefyou <youssef.ajdigue@gmail.com>
+Date:   Mon Jun 16 15:32:14 2025 +0200
+
+    npm install for bcrypt
+
+[33mcommit a5cd4c1970c3b8fb14aa520fb6cf6c615b1af876[m
+Author: Anthony-Hannoteaux <tony.hannoteaux@gmail.com>
+Date:   Mon Jun 16 15:31:22 2025 +0200
+
+    Add title lvl 1 and fix errors content text
+
+[33mcommit 6f64110a09ef179e9a07fa7e7b71343f2f1a73f4[m
+Author: Anthony-Hannoteaux <tony.hannoteaux@gmail.com>
+Date:   Mon Jun 16 15:26:21 2025 +0200
+
+    Initial Signup Page: add components to render
+
+[33mcommit d50fd8e2487ddea945cd49242957577485b72bd1[m
+Author: Anthony-Hannoteaux <tony.hannoteaux@gmail.com>
+Date:   Mon Jun 16 15:08:25 2025 +0200
+
+    Fix some content text + comment compare function in LoginForm Component + Add component to Login Page
+
+[33mcommit 26ed5c2dc8643b4228fa1c0e6461b3529e465ec9[m
+Merge: 67cf286 bfb9c4c
+Author: youssefyou <youssef.ajdigue@gmail.com>
+Date:   Mon Jun 16 14:56:05 2025 +0200
+
+    conflict resolved
+
+[33mcommit b097c4ee1779576e46a49cce71cfcb3e7efb4f83[m
+Merge: 2087351 bfb9c4c
+Author: Anthony-Hannoteaux <tony.hannoteaux@gmail.com>
+Date:   Mon Jun 16 14:49:13 2025 +0200
+
+    Merge branch 'dev' into Login_Page
+
+[33mcommit 67cf286e33bd2aee409fcc3af8f90e3b2a0560de[m
+Author: youssefyou <youssef.ajdigue@gmail.com>
+Date:   Mon Jun 16 14:44:40 2025 +0200
+
+    recipe detail
+
+[33mcommit bfb9c4c51cf881ac57f096ddce4e3a8d4e3befac[m
+Author: Kevin95280 <coelhokev@ymail.com>
+Date:   Mon Jun 16 14:32:25 2025 +0200
+
+    React-Router-Dom version switch 7.6.2 to 6.30.1
+
+[33mcommit 347dd44531ec5269be58f5bf197f758cd7830b60[m
+Merge: dcdb02f b900065
+Author: Anthony-Hannoteaux <149007890+Anthony-Hannoteaux@users.noreply.github.com>
+Date:   Mon Jun 16 14:15:41 2025 +0200
+
+    Merge pull request #30 from O-clock-Behemoth/MyRecipes
+    
+    MyRecipes page + router path modif
+
+[33mcommit b900065f18157c1650bdfa64c2873c456d04df6b[m
+Merge: 1f0cd06 dcdb02f
+Author: Kevin95280 <coelhokev@ymail.com>
+Date:   Mon Jun 16 14:15:15 2025 +0200
+
+    Merge branch 'dev' into MyRecipes
+
+[33mcommit dcdb02fad8e7739442d1fb9d06b9a739faac00fb[m
+Merge: 8bd0fc6 519e233
+Author: Kim NGUYEN <nguyen0kim@hotmail.com>
+Date:   Mon Jun 16 13:53:46 2025 +0200
+
+    Merge pull request #29 from O-clock-Behemoth/SearchForm_Component
+    
+    Search form component
+
+[33mcommit 519e23390b6e5025f761423904e30017a3dfad44[m
+Merge: e6c1046 8bd0fc6
+Author: Anthony-Hannoteaux <tony.hannoteaux@gmail.com>
+Date:   Mon Jun 16 12:44:20 2025 +0200
+
+    Merge branch 'dev' into SearchForm_Component
+
+[33mcommit 8bd0fc601b913979c75242edd2a9e0cdbd91a625[m
+Author: Kim NGUYEN <nguyen0kim@hotmail.com>
+Date:   Mon Jun 16 12:37:32 2025 +0200
+
+    Account form (#28)
+    
+    * AccountForm component
+    
+    * AccountForm component (for signup)
+    
+    * Corrections and comments added to SignupForm
+    
+    * SignupForm test ok
+    
+    * using bcrypt for authentication test
+    
+    * reidrection if logged
+    
+    * corrections
+    
+    * new corrections
+    
+    * finalization for static version
+    
+    * finalization for static version bis
+    
+    * LoginForm changed into async mode + try & catch added
+    
+    * LoginForm changed into async mode + try & catch added + salt rounds added
+    
+    * LoginF// comparaison des 2 mots de passe - renvoie un boolén, true si les mots de passe correspondent, sinon falseorm : try throw catch fixed
+    
+    * LoginForm : try throw catch fixed
+    
+    * App back to AppRouter after changed for AccountForm testing
+
+[33mcommit 725b9ea80de155913f30541adc573f4d0f93226d[m
+Author: Kevin95280 <coelhokev@ymail.com>
+Date:   Mon Jun 16 12:26:52 2025 +0200
+
+    Contact page + router path modif (#31)
+
+[33mcommit e6c1046d6d78bd19ee3d5ed57503f7cb176473cc[m
+Author: Anthony-Hannoteaux <tony.hannoteaux@gmail.com>
+Date:   Mon Jun 16 12:05:01 2025 +0200
+
+    Move SearchForm folder into Header: SearchForm => subcomponent of Header
+
+[33mcommit 95d0c3367ff59cf6393bd656b9f30669454b1ed2[m
+Author: Anthony-Hannoteaux <tony.hannoteaux@gmail.com>
+Date:   Mon Jun 16 11:57:43 2025 +0200
+
+    Fix conflicts with Router.jsx
+
+[33mcommit aad0c8ac20e566da4786dd16817f1f813800fd28[m
+Merge: 147d500 74a8ba7
+Author: Anthony-Hannoteaux <tony.hannoteaux@gmail.com>
+Date:   Mon Jun 16 11:51:44 2025 +0200
+
+    Merge branch 'dev' into SearchForm_Component
+
+[33mcommit 147d500aa5a774a1705db9f72e51e6f76e218fa8[m
+Author: Anthony-Hannoteaux <tony.hannoteaux@gmail.com>
+Date:   Mon Jun 16 11:50:41 2025 +0200
+
+    fix event for eventListener: event => e
+
+[33mcommit 74a8ba7e75598a766e18c35991d097a77131076d[m
+Author: Youssef <youssef.ajdigue@gmail.com>
+Date:   Mon Jun 16 11:46:26 2025 +0200
+
+    recipes (PR#26)
+    
+    * recipes
+    
+    * conflict path resolved
+    
+    * header and footer tags added / correction of function name
+    
+    * problem found in FilterForm component, put in comments for now
+
+[33mcommit 2087351711878ebec989cc7b1a8b99776f0828cf[m
+Author: Anthony-Hannoteaux <tony.hannoteaux@gmail.com>
+Date:   Mon Jun 16 11:33:21 2025 +0200
+
+    Set up logic for retrieving component state values
+
+[33mcommit 1f0cd06ae603b1724d913d49cc775c8b90bac195[m
+Author: Kevin95280 <coelhokev@ymail.com>
+Date:   Mon Jun 16 11:12:17 2025 +0200
+
+    MyRecipes page + router path modif
+
+[33mcommit bbdd377123f47f2e8bd6623832c8eedadffb0600[m
+Author: KimYenNGUYEN <nguyen0kim@hotmail.com>
+Date:   Mon Jun 16 10:45:23 2025 +0200
+
+    App back to AppRouter after changed for AccountForm testing
+
+[33mcommit d9376674d1d0de2ffc85e61d43c3e7924f1480de[m
+Author: Anthony-Hannoteaux <tony.hannoteaux@gmail.com>
+Date:   Mon Jun 16 10:43:09 2025 +0200
+
+    Initial Login.jsx and render test OK
+
+[33mcommit 4e56d450e75abdc31703d5e24860086658ac2bff[m
+Merge: 4373424 b8b2f7a
+Author: KimYenNGUYEN <nguyen0kim@hotmail.com>
+Date:   Mon Jun 16 10:41:01 2025 +0200
+
+    Merge branch 'AccountForm' of github.com:O-clock-Behemoth/projet-cine-delices-front into AccountForm
+
+[33mcommit 4373424b3398ca3612d94ea4e06217a8bad11edc[m
+Author: KimYenNGUYEN <nguyen0kim@hotmail.com>
+Date:   Mon Jun 16 10:37:26 2025 +0200
+
+    LoginForm : try throw catch fixed
+
+[33mcommit b8b2f7a269163183c6a9d303f62bb7d17d53a563[m
+Author: KimYenNGUYEN <nguyen0kim@hotmail.com>
+Date:   Mon Jun 16 10:37:26 2025 +0200
+
+    LoginF// comparaison des 2 mots de passe - renvoie un boolén, true si les mots de passe correspondent, sinon falseorm : try throw catch fixed
+
+[33mcommit 60a7ab43c444fcedea46b37ebe55d9d531932a28[m
+Merge: 7970aba 6e93770
+Author: Anthony-Hannoteaux <tony.hannoteaux@gmail.com>
+Date:   Mon Jun 16 10:18:03 2025 +0200
+
+    Merge branch 'dev' into SearchForm_Component
+
+[33mcommit fd9204dcd51f6badcd5b10a91ffda036d948f492[m
+Author: youssefyou <youssef.ajdigue@gmail.com>
+Date:   Sun Jun 15 22:09:00 2025 +0200
+
+    recipe detail
+
+[33mcommit 522503055d461addc0869252d641914294e43c88[m
+Merge: fb817ed 00ec8e5
+Author: KimYenNGUYEN <nguyen0kim@hotmail.com>
+Date:   Sun Jun 15 21:10:20 2025 +0200
+
+    Merge branch 'AccountForm' of github.com:O-clock-Behemoth/projet-cine-delices-front into AccountForm
+
+[33mcommit fb817eda2790c4def0204ea27d50952be170fbc9[m
+Author: KimYenNGUYEN <nguyen0kim@hotmail.com>
+Date:   Sun Jun 15 21:06:49 2025 +0200
+
+    LoginForm changed into async mode + try & catch added + salt rounds added
+
+[33mcommit 00ec8e532da08d2242d0fd425640ee25547ce992[m
+Author: KimYenNGUYEN <nguyen0kim@hotmail.com>
+Date:   Sun Jun 15 21:06:49 2025 +0200
+
+    LoginForm changed into async mode + try & catch added
+
+[33mcommit 58597e5242a44478ea73f45aae4e63b77943b3ee[m
+Author: KimYenNGUYEN <nguyen0kim@hotmail.com>
+Date:   Sat Jun 14 16:51:13 2025 +0200
+
+    finalization for static version bis
+
+[33mcommit 4b5aacdd1fa58940b93476d30d706fb6cc2fe931[m
+Author: KimYenNGUYEN <nguyen0kim@hotmail.com>
+Date:   Sat Jun 14 16:50:42 2025 +0200
+
+    finalization for static version
+
+[33mcommit 466f4058e84f82407b4dfceb1365d4c23e39f55d[m
+Author: KimYenNGUYEN <nguyen0kim@hotmail.com>
+Date:   Sat Jun 14 16:41:40 2025 +0200
+
+    new corrections
+
+[33mcommit f36169c8ec22b2db054c1a078dcb9b106de6b7c8[m
+Author: KimYenNGUYEN <nguyen0kim@hotmail.com>
+Date:   Sat Jun 14 15:29:40 2025 +0200
+
+    corrections
+
+[33mcommit e6749dc2045b0826e19950fe889759772fc9b81b[m
+Author: KimYenNGUYEN <nguyen0kim@hotmail.com>
+Date:   Sat Jun 14 14:58:19 2025 +0200
+
+    reidrection if logged
+
+[33mcommit 905764162ddd5eb80822e14c5791f7fc75d0d3f1[m
+Author: KimYenNGUYEN <nguyen0kim@hotmail.com>
+Date:   Fri Jun 13 23:13:10 2025 +0200
+
+    using bcrypt for authentication test
+
+[33mcommit 6cade815cdcdf4eeeb36ecab317652fe69555597[m
+Merge: 32fc177 6e93770
+Author: KimYenNGUYEN <nguyen0kim@hotmail.com>
+Date:   Fri Jun 13 17:38:14 2025 +0200
+
+    conflicts resolved
+
+[33mcommit 32fc177ebae8b379062094044b140258d08e905f[m
+Author: KimYenNGUYEN <nguyen0kim@hotmail.com>
+Date:   Fri Jun 13 17:29:16 2025 +0200
+
+    SignupForm test ok
+
+[33mcommit 6e93770f42e3937de859eb30a22e3cba0c482db8[m
+Merge: bd15cfe 91ddf61
+Author: Youssef <youssef.ajdigue@gmail.com>
+Date:   Fri Jun 13 17:21:46 2025 +0200
+
+    Merge pull request #27 from O-clock-Behemoth/MyAccount
+    
+    MyAccount page + Router paths modif
+
+[33mcommit f6b1bbb3a00d3e142c54f73de9412fd910484c62[m
+Author: KimYenNGUYEN <nguyen0kim@hotmail.com>
+Date:   Fri Jun 13 17:14:37 2025 +0200
+
+    Corrections and comments added to SignupForm
+
+[33mcommit 91ddf610b321294289b820a40304037930e1da95[m[33m ([m[1;31morigin/MyAccount[m[33m)[m
+Author: Kevin95280 <coelhokev@ymail.com>
+Date:   Fri Jun 13 17:13:43 2025 +0200
+
+    MyAccount page + Router paths modif
+
+[33mcommit 7970aba92c9829e49d0fe4172ddc8fb3cc15f3a9[m[33m ([m[1;31morigin/SearchForm_Component[m[33m)[m
+Author: Anthony-Hannoteaux <tony.hannoteaux@gmail.com>
+Date:   Fri Jun 13 16:26:57 2025 +0200
+
+    Fix spelling mistakes
+
+[33mcommit 54becca9b0d83d89e3e0f0789831ed829516edc9[m
+Merge: 5e0de74 bd15cfe
+Author: KimYenNGUYEN <nguyen0kim@hotmail.com>
+Date:   Fri Jun 13 16:21:53 2025 +0200
+
+    Merge branch 'dev' into AccountForm
+
+[33mcommit bd15cfe43dbbcca79dadf6b55f1033fedc898907[m
+Merge: db61d46 ad61360
+Author: Anthony-Hannoteaux <149007890+Anthony-Hannoteaux@users.noreply.github.com>
+Date:   Fri Jun 13 16:19:02 2025 +0200
+
+    Merge pull request #24 from O-clock-Behemoth/MovieSeries
+    
+    cinema catalog
+
+[33mcommit db61d46535cdf5a8856e83ffb1084c4eade9ae51[m
+Merge: 72efe03 4441376
+Author: Anthony-Hannoteaux <149007890+Anthony-Hannoteaux@users.noreply.github.com>
+Date:   Fri Jun 13 16:15:48 2025 +0200
+
+    Merge pull request #23 from O-clock-Behemoth/PrivacyPolicy
+    
+    privacy_policy page
+
+[33mcommit 44413760f65ce28ac70eef3747e94edc4bcee7c5[m[33m ([m[1;31morigin/PrivacyPolicy[m[33m, [m[1;32mPrivacyPolicy[m[33m)[m
+Merge: 9043b9a 72efe03
+Author: youssefyou <youssef.ajdigue@gmail.com>
+Date:   Fri Jun 13 16:14:13 2025 +0200
+
+    conflict resolved
+
+[33mcommit ad61360dfe27eb8f1c88bf54b427ab1813a29336[m[33m ([m[1;31morigin/MovieSeries[m[33m)[m
+Author: Kevin95280 <coelhokev@ymail.com>
+Date:   Fri Jun 13 16:13:01 2025 +0200
+
+    Movie Catalog add Card
+
+[33mcommit 9043b9af5d28a4657de3207723bd1a6fe9f21d8e[m
+Author: youssefyou <youssef.ajdigue@gmail.com>
+Date:   Fri Jun 13 15:49:05 2025 +0200
+
+    spelling correction
+
+[33mcommit 5e0de74382c981f215b93596c6d2eb09ac14f7ec[m
+Merge: c60179a 72efe03
+Author: KimYenNGUYEN <nguyen0kim@hotmail.com>
+Date:   Fri Jun 13 14:33:30 2025 +0200
+
+    Merge branch 'dev' into AccountForm
+    Merge dev branch into AccountForm
+
+[33mcommit 72efe03c7c804c48019ffa2f3ee2aebdb6eaf71b[m[33m ([m[1;31morigin/TermsAndConditions[m[33m, [m[1;32mTermsAndConditions[m[33m)[m
+Merge: 8b0dc94 87d31e5
+Author: Anthony-Hannoteaux <149007890+Anthony-Hannoteaux@users.noreply.github.com>
+Date:   Fri Jun 13 14:25:35 2025 +0200
+
+    Merge pull request #25 from O-clock-Behemoth/TermsAndConditions
+    
+    Terms and conditions
+
+[33mcommit ce5c2f4edce40296ad5cea7a9fdb294af55a4882[m
+Author: Kevin95280 <coelhokev@ymail.com>
+Date:   Fri Jun 13 12:40:35 2025 +0200
+
+    Movie - TV show detail
+
+[33mcommit b542c5fae8cf0073c6d41090df309a63a5342c02[m
+Author: youssefyou <youssef.ajdigue@gmail.com>
+Date:   Fri Jun 13 12:38:50 2025 +0200
+
+    header, footer and comments added
+
+[33mcommit 38ebae2d493401d60b3534c2afe2cd950139c33f[m
+Author: Anthony-Hannoteaux <tony.hannoteaux@gmail.com>
+Date:   Fri Jun 13 12:34:36 2025 +0200
+
+    Encapsulate search logic and form handlers: useSearch.jsx => Custom Hook
+
+[33mcommit 87d31e533a3c5a4cf35e85288d703a434f311728[m
+Author: youssefyou <youssef.ajdigue@gmail.com>
+Date:   Fri Jun 13 12:27:54 2025 +0200
+
+    header, footer and comments added
+
+[33mcommit c60179a5cb2f69b2e4d7f9dcabe2ddfda6e41794[m[33m ([m[1;31morigin/AccountForm[m[33m)[m
+Author: KimYenNGUYEN <nguyen0kim@hotmail.com>
+Date:   Fri Jun 13 12:23:27 2025 +0200
+
+    AccountForm component (for signup)
+
+[33mcommit 1ac24b78ac7bb104be76c673fd849f38f448a578[m
+Author: youssefyou <youssef.ajdigue@gmail.com>
+Date:   Fri Jun 13 12:17:11 2025 +0200
+
+    Terms and conditions
+
+[33mcommit acbc4e930d29ed6a1a337765dba51f0fac61be4e[m
+Author: Anthony-Hannoteaux <tony.hannoteaux@gmail.com>
+Date:   Fri Jun 13 12:13:27 2025 +0200
+
+    Test v2: SearchForm component renders with Card component using movie API data
+
+[33mcommit 8757cc61662c494481f8f45fe7fae09aa6ce9bcc[m
+Author: Anthony-Hannoteaux <tony.hannoteaux@gmail.com>
+Date:   Fri Jun 13 11:51:59 2025 +0200
+
+    Initial test for SearchForm component => input handling and submit behavior working
+
+[33mcommit d3bc0b46c7c0a4c486cfdf1d3b07765dc66a9f14[m
+Author: Kevin95280 <coelhokev@ymail.com>
+Date:   Fri Jun 13 11:50:12 2025 +0200
+
+    cinema catalog
+
+[33mcommit 6314dbffd9ee6b83a0bec579f352f96e1b5355be[m
+Author: youssefyou <youssef.ajdigue@gmail.com>
+Date:   Fri Jun 13 11:47:22 2025 +0200
+
+    privacy_policy page
+
+[33mcommit b23d65654fb873bc080e5007d84643dfd3901989[m
+Merge: 21c1b2c 8b0dc94
+Author: KimYenNGUYEN <nguyen0kim@hotmail.com>
+Date:   Fri Jun 13 10:40:34 2025 +0200
+
+    Merge branch 'dev' into AccountForm
+    updating branch with new changes from dev branch
+
+[33mcommit 8b0dc9439b79c609c14da3667e71543445bcea8a[m
+Merge: d9f9310 0979a7b
+Author: Youssef <youssef.ajdigue@gmail.com>
+Date:   Fri Jun 13 10:34:51 2025 +0200
+
+    Merge pull request #22 from O-clock-Behemoth/Header_Footer_modif
+    
+    Header footer modif
+
+[33mcommit 0979a7b490e2089f67cde6003af9cc0b24534fff[m[33m ([m[1;31morigin/Header_Footer_modif[m[33m)[m
+Author: Kevin95280 <coelhokev@ymail.com>
+Date:   Fri Jun 13 10:08:55 2025 +0200
+
+    header modif
+
+[33mcommit 6bef03820345b0e2e6781e04dfc1a1a18ecf7fbd[m
+Author: Kevin95280 <coelhokev@ymail.com>
+Date:   Fri Jun 13 10:03:57 2025 +0200
+
+    footer link modif
+
+[33mcommit d9f9310de27dd53f26091f5750b54569170ff073[m
+Merge: 2530c0b cd820f6
+Author: Youssef <youssef.ajdigue@gmail.com>
+Date:   Fri Jun 13 09:51:15 2025 +0200
+
+    Merge pull request #19 from O-clock-Behemoth/Home_page
+    
+    Home page
+
+[33mcommit 2530c0bc4c7c37135b0b3ce34377a078433d7f88[m
+Merge: 98e0b42 a407793
+Author: Kevin95280 <coelhokev@ymail.com>
+Date:   Fri Jun 13 09:51:10 2025 +0200
+
+    Merge pull request #21 from O-clock-Behemoth/LegalNotice
+    
+    page LegalNotice
+
+[33mcommit 98e0b42624ab81bac36b2e6c331ad807c8bcf0c1[m
+Merge: b904d78 8279fa1
+Author: Kevin95280 <coelhokev@ymail.com>
+Date:   Fri Jun 13 09:50:26 2025 +0200
+
+    Merge pull request #20 from O-clock-Behemoth/AboutUs
+    
+    page AboutUs
+
+[33mcommit cd820f66107eef7682dfaa879f9f412833ba2b15[m[33m ([m[1;31morigin/Home_page[m[33m)[m
+Author: Kevin95280 <coelhokev@ymail.com>
+Date:   Fri Jun 13 09:44:27 2025 +0200
+
+    Home modif main tag + router modif
+
+[33mcommit a407793ee5888d08aaf8906131e83a1650268456[m[33m ([m[1;31morigin/LegalNotice[m[33m)[m
+Author: youssefyou <youssef.ajdigue@gmail.com>
+Date:   Fri Jun 13 09:37:42 2025 +0200
+
+    main tag added
+
+[33mcommit 8279fa1dd36006ef23b3e53b87db71a24a05686f[m[33m ([m[1;31morigin/AboutUs[m[33m)[m
+Author: youssefyou <youssef.ajdigue@gmail.com>
+Date:   Fri Jun 13 09:30:40 2025 +0200
+
+    main tag added
+
+[33mcommit 27ab6d5c89781b1ab72b676a35767ef3d2cb42dd[m
+Author: Kevin95280 <coelhokev@ymail.com>
+Date:   Thu Jun 12 17:29:42 2025 +0200
+
+    Home modif main tag
+
+[33mcommit 06214f17a73ea97f91239f0e7a0311291673c00e[m
+Author: Kevin95280 <coelhokev@ymail.com>
+Date:   Thu Jun 12 17:26:28 2025 +0200
+
+    Home modif header + footer
+
+[33mcommit 815d8f360bbe63acc7c36691415e3e87345afad1[m
+Merge: f2f985a b904d78
+Author: Kevin95280 <coelhokev@ymail.com>
+Date:   Thu Jun 12 17:09:49 2025 +0200
+
+    Merge branch 'dev' into Home_page
+
+[33mcommit b904d786c6526602c966e818d6dbab3814cf155f[m
+Merge: 81009e8 d603fd5
+Author: Anthony-Hannoteaux <149007890+Anthony-Hannoteaux@users.noreply.github.com>
+Date:   Thu Jun 12 17:07:24 2025 +0200
+
+    Merge pull request #16 from O-clock-Behemoth/Router
+    
+    Router configuration
+
+[33mcommit d603fd51ceccca321bb8b33bd4dcb018fa9b8a56[m[33m ([m[1;31morigin/Router[m[33m)[m
+Author: Kevin95280 <coelhokev@ymail.com>
+Date:   Thu Jun 12 17:02:30 2025 +0200
+
+    Add AboutUs + LegalNotice
+
+[33mcommit ecbfb78090cadd10ddf35da13d05712213e62b80[m
+Merge: 21dbbac 81009e8
+Author: Kevin95280 <coelhokev@ymail.com>
+Date:   Thu Jun 12 17:00:18 2025 +0200
+
+    Merge branch 'dev' into Router
+
+[33mcommit 81009e828e05d6476ec5b68a8684247d93c69136[m
+Merge: aa25e24 e7152ee
+Author: Kevin95280 <coelhokev@ymail.com>
+Date:   Thu Jun 12 16:57:24 2025 +0200
+
+    Merge pull request #18 from O-clock-Behemoth/LegalNotice
+    
+    Legal notice
+
+[33mcommit e7152eeb6af04e151e2379849d421685f21b3c55[m
+Author: youssefyou <youssef.ajdigue@gmail.com>
+Date:   Thu Jun 12 16:53:38 2025 +0200
+
+    section tag added and section tags changed into article
+
+[33mcommit 6bbdbb3d237934b80b3d09efb5ed2e0471ffd5ef[m
+Merge: 14863c9 aa25e24
+Author: youssefyou <youssef.ajdigue@gmail.com>
+Date:   Thu Jun 12 16:36:48 2025 +0200
+
+    Merge branch 'dev' into LegalNotice
+
+[33mcommit aa25e2458e68b5fe93d9fff8f2f03fed25b7d713[m
+Merge: 22206a4 0335b2f
+Author: Kevin95280 <coelhokev@ymail.com>
+Date:   Thu Jun 12 16:33:46 2025 +0200
+
+    Merge pull request #17 from O-clock-Behemoth/AboutUs
+    
+    page AboutUs
+
+[33mcommit 0335b2f9777df59df340a0263435ea695abfe4f9[m
+Author: youssefyou <youssef.ajdigue@gmail.com>
+Date:   Thu Jun 12 16:30:37 2025 +0200
+
+    changed tags div into section and section into article
+
+[33mcommit 14863c9e0f709264237505087c697e10557e8e5d[m
+Author: youssefyou <youssef.ajdigue@gmail.com>
+Date:   Thu Jun 12 14:44:51 2025 +0200
+
+    Legal Noctice page
+
+[33mcommit 21dbbac68af6453f3d050f9b76e59eb73cb5673a[m
+Author: Kevin95280 <coelhokev@ymail.com>
+Date:   Thu Jun 12 14:28:48 2025 +0200
+
+    Router configuration
+
+[33mcommit f2f985a959e4f2bf1ee9b6abf70c9cf08d44f6b8[m
+Author: Kevin95280 <coelhokev@ymail.com>
+Date:   Thu Jun 12 14:10:27 2025 +0200
+
+    Home_page + add FilterForm
+
+[33mcommit 67458d7c690e6f85957d6861c4ce06c28ebaafaf[m
+Author: youssefyou <youssef.ajdigue@gmail.com>
+Date:   Thu Jun 12 12:54:08 2025 +0200
+
+    page AboutUs
+
+[33mcommit 22206a459c8de7b58b71076941afd493da31079d[m
+Merge: d46b5eb d246c0a
+Author: Kevin95280 <coelhokev@ymail.com>
+Date:   Thu Jun 12 09:41:02 2025 +0200
+
+    Merge pull request #14 from O-clock-Behemoth/Array_Component
+    
+    Array component
+
+[33mcommit d246c0a63fa3e821a21789818a0262634c4fca29[m
+Author: Anthony-Hannoteaux <tony.hannoteaux@gmail.com>
+Date:   Tue Jun 10 17:40:20 2025 +0200
+
+    Use Props for test V.1, waiting for specific pages and react-router-dom package for more
+
+[33mcommit 1fe7de384d71c05879d3c5db0c3fbf83a3ec668f[m
+Author: Anthony-Hannoteaux <tony.hannoteaux@gmail.com>
+Date:   Wed Jun 11 17:35:24 2025 +0200
+
+    Rename index.js => index.jsx
+
+[33mcommit 1dbd9b825809c8400d07ca5ec4dac9d8801ac75e[m
+Author: Anthony-Hannoteaux <tony.hannoteaux@gmail.com>
+Date:   Wed Jun 11 17:28:25 2025 +0200
+
+    Resolve conflict and rebase
+
+[33mcommit d46b5ebc3d5570b9d380d82e290b508e132f0357[m
+Merge: 133218d e4d69c3
+Author: Youssef <youssef.ajdigue@gmail.com>
+Date:   Wed Jun 11 17:25:52 2025 +0200
+
+    Merge pull request #12 from O-clock-Behemoth/Pages
+    
+    add jsx pages + router.jsx
+
+[33mcommit 133218d20c00b9655b0e7e515945e55096fb347a[m
+Merge: 8dadeba 11fe58d
+Author: Kevin95280 <coelhokev@ymail.com>
+Date:   Wed Jun 11 17:05:56 2025 +0200
+
+    Merge pull request #10 from O-clock-Behemoth/navbar_component
+    
+    Navbar component
+
+[33mcommit 11fe58d56a6d0d128c442cc57c0f4591e7808496[m
+Merge: 135e289 8dadeba
+Author: Youssef <youssef.ajdigue@gmail.com>
+Date:   Wed Jun 11 17:04:36 2025 +0200
+
+    Merge branch 'dev' into navbar_component
+
+[33mcommit 8dadeba3f049378986b8c3bb4d7788a896e97913[m
+Merge: 1fc43c0 b773f03
+Author: Kevin95280 <coelhokev@ymail.com>
+Date:   Wed Jun 11 16:55:15 2025 +0200
+
+    Merge pull request #13 from O-clock-Behemoth/header_component
+    
+    Header component
+
+[33mcommit b773f0303f3c58961b7d0a85a0d4f45568024356[m
+Merge: b8ec571 1fc43c0
+Author: Youssef <youssef.ajdigue@gmail.com>
+Date:   Wed Jun 11 16:53:55 2025 +0200
+
+    Merge branch 'dev' into header_component
+
+[33mcommit 1fc43c0d1328202e91380ed7e54ac5ae6a5240ac[m
+Merge: 9295d73 260806a
+Author: Kevin95280 <coelhokev@ymail.com>
+Date:   Wed Jun 11 16:28:09 2025 +0200
+
+    Merge pull request #9 from O-clock-Behemoth/footer_component
+    
+    Footer component
+
+[33mcommit b8ec571d8f19872729e27ef8a070821b1a13e640[m[33m ([m[1;31morigin/header_component[m[33m)[m
+Author: youssefyou <youssef.ajdigue@gmail.com>
+Date:   Wed Jun 11 16:18:19 2025 +0200
+
+    paramter children and comments added
+
+[33mcommit 9295d7389c882d42922da225ab46868f6658d3b1[m
+Merge: 2f0b111 5e04d3f
+Author: Kevin95280 <coelhokev@ymail.com>
+Date:   Wed Jun 11 16:06:45 2025 +0200
+
+    Merge pull request #7 from O-clock-Behemoth/Cards_and_Card_Components
+    
+    Cards and Card components created
+
+[33mcommit e4d69c379878b43d0db09f5fec3c9810d016fbdc[m[33m ([m[1;31morigin/Pages[m[33m)[m
+Author: Kevin95280 <coelhokev@ymail.com>
+Date:   Wed Jun 11 15:30:51 2025 +0200
+
+    add jsx pages + router.jsx
+
+[33mcommit 6e92dc20cc129ee4f0378d1f6c7746010ef3bdc6[m
+Author: youssefyou <youssef.ajdigue@gmail.com>
+Date:   Wed Jun 11 15:30:14 2025 +0200
+
+    comments added
+
+[33mcommit 260806a118b4b0d8b78b9b9147c13f97dc6de69b[m[33m ([m[1;31morigin/footer_component[m[33m)[m
+Author: youssefyou <youssef.ajdigue@gmail.com>
+Date:   Wed Jun 11 15:13:28 2025 +0200
+
+    footer tags and NavLink added
+
+[33mcommit 135e2891456ce29dcb5deeab251a7392bfceecd0[m[33m ([m[1;31morigin/navbar_component[m[33m)[m
+Author: youssefyou <youssef.ajdigue@gmail.com>
+Date:   Wed Jun 11 15:06:08 2025 +0200
+
+    comments added and modification <a> tags in NavLink
+
+[33mcommit 20994968f639d29eb75a2c5e0f37d6e28e791819[m
+Author: youssefyou <youssef.ajdigue@gmail.com>
+Date:   Wed Jun 11 15:02:21 2025 +0200
+
+    comments added and modification <a> tags in NavLink
+
+[33mcommit 2f0b11145b6e018c5322512bb1832a4f83ab8ecf[m
+Merge: 3e21983 51731dc
+Author: Anthony-Hannoteaux <149007890+Anthony-Hannoteaux@users.noreply.github.com>
+Date:   Wed Jun 11 12:46:11 2025 +0200
+
+    Merge pull request #5 from O-clock-Behemoth/Rate_component
+    
+    Rate_component PR
+
+[33mcommit 51731dc3977fc2e4af93a061ec5a3c2e555ec459[m
+Author: Kevin95280 <coelhokev@ymail.com>
+Date:   Wed Jun 11 12:18:51 2025 +0200
+
+    Rate_component
+
+[33mcommit 4bfbd8aa1fa40dcf5e57019cf2d297291acbfa84[m
+Author: youssefyou <youssef.ajdigue@gmail.com>
+Date:   Wed Jun 11 10:28:23 2025 +0200
+
+    header_component
+
+[33mcommit 5e04d3fcef5eff6c494e987216e6c22ad28a7593[m
+Author: Anthony-Hannoteaux <tony.hannoteaux@gmail.com>
+Date:   Wed Jun 11 09:22:00 2025 +0200
+
+    Cards and Card components created
+
+[33mcommit e70ca583998a887c21a77251f17caf3360a80b1b[m
+Author: youssefyou <youssef.ajdigue@gmail.com>
+Date:   Tue Jun 10 19:14:44 2025 +0200
+
+    navbar_component
+
+[33mcommit 3e219830ade01c99949d0b1c08859a53890e1511[m
+Author: youssefyou <youssef.ajdigue@gmail.com>
+Date:   Tue Jun 10 16:48:15 2025 +0200
+
+    footer component
+
+[33mcommit 21c1b2ce3771d205e07ebc0b6cbc326a565cb1f8[m[33m ([m[1;31morigin/accountform[m[33m)[m
+Author: KimYenNGUYEN <nguyen0kim@hotmail.com>
+Date:   Tue Jun 10 16:27:48 2025 +0200
+
+    AccountForm component
+
+[33mcommit 3997e19db83fd72c8e4b8d9f20ddda339f85aa8a[m
+Author: Anthony-Hannoteaux <tony.hannoteaux@gmail.com>
+Date:   Tue Jun 10 15:04:07 2025 +0200
+
+    Replace name Form folder by AccountForm
+
+[33mcommit 88f572ed3441f1b1566e5f4e5fb121102e37f68b[m
+Author: Anthony-Hannoteaux <tony.hannoteaux@gmail.com>
+Date:   Tue Jun 10 14:54:21 2025 +0200
+
+    Components folders created
+
+[33mcommit 4b66a82c6254231923696c887e6e10aba4114e14[m
+Merge: c26e919 e00f237
+Author: youssefyou <youssef.ajdigue@gmail.com>
+Date:   Tue Jun 10 12:27:39 2025 +0200
+
+    Merge branch 'dev' of github.com:O-clock-Behemoth/projet-cine-delices-front into dev
+
+[33mcommit e00f2379736d74a098e667179a8c09a04a24a735[m
+Merge: 3d386eb 327e7d9
+Author: Anthony-Hannoteaux <149007890+Anthony-Hannoteaux@users.noreply.github.com>
+Date:   Tue Jun 10 12:21:24 2025 +0200
+
+    Merge pull request #3 from O-clock-Behemoth/main
+    
+    Merge pull request #2 from O-clock-Behemoth/dev
+
+[33mcommit c26e919a70a7551228b4e939bda590b0e6e2ce43[m
+Author: youssefyou <youssef.ajdigue@gmail.com>
+Date:   Tue Jun 10 12:17:56 2025 +0200
+
+    alert name changed
+
+[33mcommit 327e7d9de05a9fe2591953953cada0eac43d5f1c[m[33m ([m[1;32mmain[m[33m)[m
+Merge: 8942dca 3d386eb
+Author: Kim NGUYEN <nguyen0kim@hotmail.com>
+Date:   Tue Jun 10 11:42:38 2025 +0200
+
+    Merge pull request #2 from O-clock-Behemoth/dev
+    
+    initialization
+
+[33mcommit 3d386eb02cf8581f33b96cd7034fcabfa04f68ab[m
+Author: KimYenNGUYEN <nguyen0kim@hotmail.com>
+Date:   Tue Jun 10 11:36:13 2025 +0200
+
+    index.html + index.js init
+
+[33mcommit c2b3690eb10ab64b4a0d63bc6f4fe6803082a48e[m
+Author: KimYenNGUYEN <nguyen0kim@hotmail.com>
+Date:   Tue Jun 10 11:18:28 2025 +0200
+
+    packages added
+
+[33mcommit 78a8023972ca717c6aaa5eb00f73267e17242e0c[m
+Author: KimYenNGUYEN <nguyen0kim@hotmail.com>
+Date:   Tue Jun 10 10:50:47 2025 +0200
+
+    Readme.md renamed in Présentation.md + dev branch added
+
+[33mcommit 8942dca4aadef7d82d905b6ddefff83b9eced600[m
+Author: Kevin95280 <coelhokev@ymail.com>
+Date:   Thu May 22 10:14:12 2025 +0200
+
+    Rename Présentation Générale to README.md
+
+[33mcommit 518ea55e769c4ee9ecaf83fff1f3a3836322f253[m
+Author: Anthony-Hannoteaux <149007890+Anthony-Hannoteaux@users.noreply.github.com>
+Date:   Thu May 22 10:13:08 2025 +0200
+
+    Create Présentation Générale

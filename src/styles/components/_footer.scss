@@ -1,0 +1,28 @@
+@use "../vars";
+
+.footer {
+  background: vars.$bg-dark;
+  font-family: vars.$font-secondary;
+  text-align: center;
+  font-size: 15px;
+  padding: 2rem 0rem;
+
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+    padding: 0rem;
+    margin: 0rem;
+  }
+
+  &__link {
+    color: vars.$text-light;
+
+    &:hover {
+      text-decoration: none;
+      color: vars.$text-secondary;
+    }
+  }
+}
