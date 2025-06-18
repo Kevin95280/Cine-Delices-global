@@ -3,8 +3,9 @@
 .footer {
   background: vars.$bg-dark;
   font-family: vars.$font-secondary;
-  padding: 2rem 0rem;
+  text-align: center;
   font-size: 15px;
+  padding: 2rem 0rem;
 
   &__list {
     list-style: none;
