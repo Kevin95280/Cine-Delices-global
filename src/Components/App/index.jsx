@@ -13,7 +13,15 @@ export default function App() {
     return (
     <FilterForm title="Recherche Rapide" >
       <QuickFinder handleSubmit={handleSubmit}>
+        {/* Test d'appel de plusieurs sous-composants Checkbox avec leurs propos associées */}
         <Checkbox
+        id={'entree'}
+        label={'Entrée'}
+        handleChange={handleChange}
+        />
+        <Checkbox
+        id={'plat'}
+        label={'Plat'}
         handleChange={handleChange}
         />
       </QuickFinder>
