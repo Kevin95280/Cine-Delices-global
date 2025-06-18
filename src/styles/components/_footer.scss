@@ -1,18 +1,28 @@
-@use '../vars';
+@use "../vars";
 
 .footer {
-    background: none;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 2rem 1rem;
+  background: vars.$bg-dark;
+  font-family: vars.$font-secondary;
+  padding: 2rem 0rem;
+  font-size: 15px;
 
-    &__list {
-        list-style: none;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 5rem;
-        padding: 0;
-        margin: 0;
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+    padding: 0rem;
+    margin: 0rem;
+  }
+
+  &__link {
+    color: vars.$text-light;
+    
+
+    &:hover {
+      text-decoration: none;
+      color: vars.$text-secondary;
     }
+  }
 }
