@@ -92,37 +92,52 @@ export default function AddRecipe() {
             {/* Informations générales */}
             <label htmlFor="type" className="form__label">
               Type de plat
-              <input
-                className="form__input"
+              <select
+                className="form__select"
                 type="text"
                 id="type"
                 name="type"
                 aria-required="true"
                 value={type}
                 onChange={(e) => setType(e.target.value)}
-              />
+              >
+                <option value="">Sélectionnez une option</option>
+                <option value="starter">Entrées</option>
+                <option value="main-course">Plats</option>
+                <option value="dessert">Desserts</option>
+              </select>
             </label>
             <label htmlFor="level" className="form__label">
               Niveau de difficulté
-              <input
-                className="form__input"
+              <select
+                className="form__select"
                 type="text"
                 id="level"
                 name="level"
                 value={level}
                 onChange={(e) => setLevel(e.target.value)}
-              />
+              >
+                <option value="">Sélectionnez une option</option>
+                <option value="easy">Facile</option>
+                <option value="medium">Moyen</option>
+                <option value="hard">Difficile</option>
+              </select>
             </label>
             <label htmlFor="budget" className="form__label">
               Budget
-              <input
+              <select
                 className="form__input"
                 type="text"
                 id="budget"
                 name="budget"
                 value={budget}
                 onChange={(e) => setBudget(e.target.value)}
-              />
+              >
+                <option value="">Sélectionnez une option</option>
+                <option value="cheap">Bon marché</option>
+                <option value="moderate">Budget moyen</option>
+                <option value="expensive">Assez cher</option>
+              </select>
             </label>
             <label htmlFor="servings" className="form__label">
               Nombre de personnes
