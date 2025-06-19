@@ -153,3 +153,8 @@ section {
 //   display: block;
 //   margin-bottom: 8px;
 // }
+
+.sr-only {
+  position: absolute;
+  visibility: hidden;
+}
