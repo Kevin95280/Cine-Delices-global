@@ -11,7 +11,9 @@ body {
   line-height: 1.5;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-weight: bold;
   color: vars.$white;
   margin-bottom: 0.8rem;
@@ -31,15 +33,15 @@ a {
 }
 
 .logo_home {
-    display: flex;
-    width: 6rem;
+  display: flex;
+  width: 6rem;
 }
 
 .logo_fullscreen {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15rem;
 }
 
 .logo_account {
@@ -49,60 +51,60 @@ a {
 
 
 .hero {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    color: vars.$text-light;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: vars.$text-light;
 }
 
 .hero h1 {
-    display: flex;
-    justify-content: center;
-    font-size: 48px;
-    margin-bottom: 2rem;
-    margin-top: -2rem;
+  display: flex;
+  justify-content: center;
+  font-size: 48px;
+  margin-bottom: 2rem;
+  margin-top: -2rem;
 }
 
 .container {
-    display: flex;
+  display: flex;
 }
 
 .card {
-    background-color: vars.$bg-section;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: vars.$bg-section;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.card__image{
-    background-color: vars.$bg-section;
-    padding: 2rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 100%;
+.card__image {
+  background-color: vars.$bg-section;
+  padding: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
 }
 
 .card__body {
-    font-size: 20px;
-    color: vars.$text-light;
-    margin-bottom: 1rem;
-    padding: 1rem;
+  font-size: 20px;
+  color: vars.$text-light;
+  margin-bottom: 1rem;
+  padding: 1rem;
 }
 
-
-
-
-
-
-
 button {
-  background-color: vars.$text-secondary;
-  color: vars.$white;
-  border: none;
-  padding: 0.8rem 1rem;
-  border-radius: 0.5rem;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  font-size: 16px;
   font-weight: bold;
+  font-family: vars.$font-main;
+  border: none;
+  border-radius: 12px;
+  text-align: center;
   cursor: pointer;
+  transition: background-color 0.5s ease;
+
+  background-color: vars.$white;
+  color: vars.$bg-dark;
 
   &:hover {
-    background-color: color.scale(vars.$text-secondary, $lightness: -50%);
+    background-color: color.scale(vars.$text-secondary, $lightness: 20%);
   }
 }
 

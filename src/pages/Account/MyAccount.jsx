@@ -26,12 +26,14 @@ return (
     <section className="user-info">
       {/* Affichage des infos avec le composant Array */}
       <Array data={user} />
-      <p><strong>Ma dernière publication :</strong> {user.lastPublicationDate}</p>
-      <p><strong>Note moyenne des publications:</strong> {user.averageRating}</p>
     </section>
+      <div className="user-stats">
+        <p><strong>Ma dernière publication :</strong> {user.lastPublicationDate}</p>
+        <p><strong>Note moyenne des publications:</strong> {user.averageRating}</p>
+      </div>
 
     {/* Actions sur le compte */}
-    <div className="actions">
+    <div className="user-actions">
       <button>Accéder à la liste de mes publications</button>
       <button>Modifier mes informations</button>
       <button>Désactiver mon compte</button>

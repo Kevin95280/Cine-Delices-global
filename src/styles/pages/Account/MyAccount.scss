@@ -1,45 +1,54 @@
-import Header from "../../Components/Header";
-import Footer from "../../Components/Footer";
-import Array from "../../Components/Array"; // Composant pour afficher les informations utilisateur
-import NavBar from "../../Components/Header/NavBar";
+@use "../../vars";
+@use "sass:color";
 
+.user-stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-export default function MyAccount() {
-// Exemple de données utilisateur (à remplacer par une API)
-const user = [
-{ label: "Nom", value: "Jean Dupont" },
-{ label: "Email", value: "jean.dupont@example.com" },
-{ label: "Date de création", value: "JJ/MM/AAAA" },
-{ label: "Nombre de publications", value: "XX" },
-];
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 500px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 
-return (
-<>
-  {/* En tete de la page */}
-  <Header>
-    <NavBar />
-  </Header>
-  <main className="main">
-    <h1>Profil Adhérent</h1>
+  p {
+    margin: 0.8rem 0;
+    font-family: vars.$font-main;
+    font-size: 16px;
+    color: vars.$text-light;
+    text-align: center;
 
-    {/* Informations utilisateur */}
-    <section className="user-info">
-      {/* Affichage des infos avec le composant Array */}
-      <Array data={user} />
-      <p><strong>Ma dernière publication :</strong> {user.lastPublicationDate}</p>
-      <p><strong>Note moyenne des publications:</strong> {user.averageRating}</p>
-    </section>
+    strong {
+      color: vars.$text-secondary;
+    }
+  }
+}
 
-    {/* Actions sur le compte */}
-    <div className="actions">
-      <button>Accéder à la liste de mes publications</button>
-      <button>Modifier mes informations</button>
-      <button>Désactiver mon compte</button>
-      <button>Supprimer mon compte</button>
-    </div>
-  </main>
-  {/* Footer avec liens utiles */}
-  <Footer />
-</>
-);
+.user-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  max-width: 480px;
+  margin: 2rem auto;
+
+  button {
+
+    &:first-child {
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    &:last-child {
+      background-color: vars.$black;
+      color: vars.$white;
+
+      &:hover {
+        background-color: color.scale(vars.$red, $lightness: 10%);
+        color: vars.$text-light;
+      }
+    }
+  }
 }
