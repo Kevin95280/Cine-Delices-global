@@ -41,8 +41,8 @@ export default function App() {
             },
             {
                 id: 2,
-                genre: "Action",
-                genre_slug: "action",
+                name: "Action",
+                slug: "action",
             }
         ]
     }
@@ -56,29 +56,66 @@ export default function App() {
      */
 
     // Nous filtrons nos catégories pour ne récupérer que les objets selon la condition suivante
-    const quickSearch = data.categories.filter(categorie =>
+    const quickSearch = data.categories.filter(category =>
         /**
          * Nous ne voulons récupéré que Entrée, Plat et Dessert
          * Si une correspondance entre la valeur de la propriété slug et de notre tableau de valeur existe
          * Alors renvoie true
          */
         // Return implicite car il n'y a qu'une instruction
-        ["entree", "plat", "dessert"].includes(categorie.slug)
+        ["entree", "plat", "dessert"].includes(category.slug)
     )
-    // On récupère bien nos objets qui inluent les slugs : entree, plat, dessert
-    console.log(quickSearch)
+
+    /**
+     * Pour notre formulaire de recherche avancée
+     * Nous souhaitons créer nos checkbox pour nos autres categories
+     * Excepté celle déjà présente dans la recherche rapide 
+     */
+    const advancedSearch = data.categories.filter(category => 
+        !["entree", "plat", "dessert"].includes(category.slug)
+    )
     return (
         <>
             <FilterForm title="Recherche Rapide" >
                 <Finder handleSubmit={handleSubmit}>
-                    {/* Test d'appel de plusieurs sous-composants Checkbox avec leurs propos associées */}
-
+                    {/* Test d'appel de plusieurs sous-composants Checkbox avec leurs props associées */}
+                    {
+                        quickSearch.map((category) => (
+                            <Checkbox
+                                key={category.slug}
+                                id={category.slug}
+                                label={category.name}
+                                handleChange={handleChange}
+                            />
+                        ))
+                    }
                 </Finder>
             </FilterForm>
             {/* Ici pour le filtre avancé */}
             <FilterForm title={"Recherche avancées"}>
                 <Finder handleSubmit={handleSubmit}>
-
+                    {/* Créations des checkbox des autres categories */}
+                    {
+                        advancedSearch.map(category => (
+                            <Checkbox
+                                key={category.slug}
+                                id={category.slug}
+                                label={category.name}
+                                handleChange={handleChange}
+                            />
+                        ))
+                    }
+                    {/* Création des checkbox des genres */}
+                    {
+                        data.genres.map(genre => (
+                            <Checkbox
+                                key={genre.slug}    
+                                id={genre.slug}
+                                label={genre.name}
+                                handleChange={handleChange}
+                            />
+                        ))
+                    }
                 </Finder>
             </FilterForm>
         </>
