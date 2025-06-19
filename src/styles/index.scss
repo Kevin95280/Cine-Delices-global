@@ -1,4 +1,6 @@
 @use 'global.scss';
 @use 'reset.scss';
 
-@use './components/searchform';
+@use './components/footer';
+@use 'components/navlink.scss';
+@use 'components/navbar.scss';

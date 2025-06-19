@@ -3,19 +3,17 @@ import { Link } from "react-router-dom";
 
 export default function NavBar() {
   return (
-    // Composant navbar pour la navigation "Recettes" et "Films & Séries"
+    // Composant navbar comprenant le logo et l'icône de compte utilisateur
     <nav className="nav-bar">
       <ul>
         <li>
           <Link to="/">
-            {/* Image du logo à compléter */}
             <img src="/assets/logo_home.png" alt="logo cine-delices" className="logo_home" />
           </Link>
         </li>
-        <li>
-          <Link to="/my-account">
-            {/* Image du logo de compte à compléter */}
-            <img src="#" alt="logo account" />
+        <li className="account-link">
+          <Link to="/my-account" className="logo_account_container">
+            <img src="/assets/user.png" alt="logo account" className="logo_account"/>
           </Link>
         </li>
       </ul>
