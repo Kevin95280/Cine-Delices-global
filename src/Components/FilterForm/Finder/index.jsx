@@ -1,4 +1,4 @@
-export default function QuickFinder({ handleSubmit, children }) {
+export default function Finder({ handleSubmit, children }) {
     return (
     <form method="POST" onSubmit={handleSubmit}>
         { children }
