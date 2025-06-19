@@ -1,12 +1,12 @@
 // Ajout des props pour la gestion des attribut et du label
-export default function Checkbox( { id, label, isChecked, handleChange }) {
+export default function Checkbox( { id, label, handleChange }) {
     return (
         <div>
             <input
                 type="checkbox"
                 id={id}
                 name={id}
-                checked={isChecked}
+                // checked={isChecked}
                 onChange={handleChange}
             />
             <label htmlFor={id}>{label}</label>
