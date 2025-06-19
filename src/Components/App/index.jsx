@@ -68,8 +68,8 @@ export default function App() {
     const uniqueCategories = new Set();
 
     /**
-     * On filtre nos recette pour n'y récupérer que les objets sous conditions
-     * Nous le stockerons dans un nouveau tableau appelé categoriesFiltered
+     * On filtre nos recettes pour n'y récupérer qu'un exemplaire de recette par categorie
+     * Nous les stockerons dans un nouveau tableau appelé categoriesFiltered
      */
     const categoriesFiltered = data.recipes.filter(recipe => {
         // Condition : Si la valeur de la propriété recipe.category_slug est présente dans notre objet uniqueCategories
@@ -83,17 +83,24 @@ export default function App() {
             return true;
         }
     })
-    // Stock de nos valeurs unique de nos category_slug
-    console.log(uniqueCategories)
-    // Recette filtré sans doublons de categories
-    console.log(categoriesFiltered)
-    
     return (
         <FilterForm title="Recherche Rapide" >
             <QuickFinder handleSubmit={handleSubmit}>
                 {/* Test d'appel de plusieurs sous-composants Checkbox avec leurs propos associées */}
                 {
-                    
+                    /**
+                     * Ici, pour nos test, nous créons nos checkbox à partir de recettes fictives filtrées
+                     * Mais dans l'idée, les filtres se feront directement sur l'entité Category de notre BDD
+                     * Et l'affichage se ferra par correspondance des valeurs et sous conditions
+                    */ 
+                    categoriesFiltered.map(recipe => (
+                        <Checkbox
+                            key={recipe.id}
+                            id={recipe.category_slug}
+                            label={recipe.category}
+                            handleChange={handleChange}
+                        />
+                    ))
                 }
             </QuickFinder>
         </FilterForm>
