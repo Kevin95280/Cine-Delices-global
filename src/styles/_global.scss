@@ -28,10 +28,6 @@ h2 {
 a {
   color: vars.$text-secondary;
   text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
 }
 
 .logo_home {
@@ -44,21 +40,6 @@ a {
     justify-content: center;
     align-items: center;
     width: 15rem;
-}
-
-.nav-bar ul {
-  display: flex;
-  align-items: center;
-  padding: 0;
-  list-style: none;
-}
-
-.nav-bar li {
-  margin-right: 1rem;
-}
-
-.nav-bar .account-link {
-  margin-left: auto;
 }
 
 .logo_account {
