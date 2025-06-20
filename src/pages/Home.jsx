@@ -8,44 +8,44 @@ import NavLink from "../Components/NavLink";
 
 
 export default function Home() {
-return (
+    return (
 
-<>
-    {/* Header avec navigation */}
-    <Header>
-        <NavBar />
-        <SearchForm />
-    </Header>
-    <NavLink />
-    <main className="main">
-        {/* Chemin src à compléter avec l'image du logo */}
-        <div className="hero">
-            <img src="/assets/logo_pleine_page.png" alt="logo cine-delices" className="logo_fullscreen" />
-            <h1 className="catchphrase">Le goût du cinéma, dans votre assiette.</h1>
-        </div>
-        {/* Section des Top Recettes */}
-        <section className="top-recipes">
-            <h2>Top recettes</h2>
-            <Cards>
-                {/* Exemple de carte pour les tests */}
-                <Card title="Recette Test" authorName="Auteur Test" />
-                <Card title="Recette Test" authorName="Auteur Test" />
-                {/* Cartes supplémentaires... */}
-            </Cards>
-        </section>
-        {/* Section des Recettes récentes */}
-        <section className="recent-recipes">
-            <h2>Recettes récentes</h2>
-            <Cards>
-                {/* Exemple de carte pour les tests */}
-                <Card title="Recette Test" authorName="Auteur Test" />
-                <Card title="Recette Test" authorName="Auteur Test" />
-                {/* Cartes supplémentaires... */}
-            </Cards>
-        </section>
-    </main>
-    {/* Footer avec liens utiles */}
-    <Footer />
-</>
-);
+        <>
+            {/* Header avec navigation */}
+            <Header>
+                <NavBar />
+                <SearchForm />
+            </Header>
+            <NavLink />
+            <main className="main">
+                {/* Chemin src à compléter avec l'image du logo */}
+                <div className="hero">
+                    <img src="/assets/logo_pleine_page.png" alt="logo cine-delices" className="logo_fullscreen" />
+                    <h1 className="catchphrase">Le goût du cinéma, dans votre assiette.</h1>
+                </div>
+                {/* Section des Top Recettes */}
+                <section className="section">
+                    <Cards title={"Top recettes"}>
+                        {/* Exemple de carte pour les tests */}
+                        <Card title="Recette Test" authorName="Auteur Test" image="../../assets/image-test.jpg" />
+                        <Card title="Recette Test" authorName="Auteur Test" image="../../assets/image-test.jpg" />
+                        <Card title="Recette Test" authorName="Auteur Test" image="../../assets/image-test.jpg" />
+                        {/* Cartes supplémentaires... */}
+                    </Cards>
+                </section>
+                {/* Section des Recettes récentes */}
+                <section className="section">
+                    <Cards title={"Recettes récentes"}>
+                        {/* Exemple de carte pour les tests */}
+                        <Card title="Recette Test" authorName="Auteur Test" image="../../assets/image-test.jpg" />
+                        <Card title="Recette Test" authorName="Auteur Test" image="../../assets/image-test.jpg" />
+                        <Card title="Recette Test" authorName="Auteur Test" image="../../assets/image-test.jpg" />
+                        {/* Cartes supplémentaires... */}
+                    </Cards>
+                </section>
+            </main>
+            {/* Footer avec liens utiles */}
+            <Footer />
+        </>
+    );
 }

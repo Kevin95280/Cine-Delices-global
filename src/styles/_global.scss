@@ -10,9 +10,7 @@ body {
   line-height: 1.5;
 }
 
-h1,
-h2,
-h3 {
+h1, h2 {
   font-weight: bold;
   color: vars.$white;
   margin-bottom: 0.8rem;
@@ -43,7 +41,6 @@ a {
   width: 60%;
 }
 
-
 .hero {
   display: flex;
   flex-wrap: wrap;
@@ -61,25 +58,6 @@ a {
 
 .container {
   display: flex;
-}
-
-.card {
-  background-color: vars.$bg-section;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.card__image {
-  background-color: vars.$bg-section;
-  padding: 2rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 100%;
-}
-
-.card__body {
-  font-size: 20px;
-  color: vars.$text-light;
-  margin-bottom: 1rem;
-  padding: 1rem;
 }
 
 button {
@@ -106,50 +84,31 @@ button {
   display: flex;
 }
 
-.card {
-  background-color: vars.$bg-section;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.card__image {
-  background-color: vars.$bg-section;
-  padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 100%;
-}
-
-.card__body {
-  font-size: 20px;
-  color: vars.$text-light;
-  margin-bottom: 10px;
-  padding: 20px;
-}
-
-// button {
-//   background-color: vars.$text-secondary;
-//   color: vars.$white;
-//   border: none;
-//   padding: 10px 16px;
-//   border-radius: 6px;
-//   font-weight: bold;
-//   cursor: pointer;
+button {
+  background-color: vars.$text-secondary;
+  color: vars.$white;
+  border: none;
+  padding: 0.8rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
 
 //   &:hover {
 //     background-color: darken(vars.$text-secondary, 10%);
 //   }
-// }
+}
 
 //Layout générique
 main {
   padding: 2rem;
 }
 
-section {
-  margin-bottom: 4rem;
-  background-color: vars.$bg-section;
-  padding: 2rem;
-  border-radius: 1rem;
-}
+// section {
+//   margin-bottom: 4rem;
+//   // background-color: vars.$bg-section;
+//   padding: 2rem;
+//   border-radius: 1rem;
+// }
 
 // input,
 // textarea {
