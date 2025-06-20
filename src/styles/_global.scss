@@ -60,25 +60,6 @@ a {
   display: flex;
 }
 
-.card {
-  background-color: vars.$bg-section;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.card__image {
-  background-color: vars.$bg-section;
-  padding: 2rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 100%;
-}
-
-.card__body {
-  font-size: 20px;
-  color: vars.$text-light;
-  margin-bottom: 1rem;
-  padding: 1rem;
-}
-
 button {
   width: 100%;
   padding: 1rem 1.5rem;
