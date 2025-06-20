@@ -1,0 +1,65 @@
+@use '../../styles/vars';
+
+.array-container {
+    padding: 2rem;
+
+    h2 {
+        text-align: center;
+        font-size: 24px;
+        color: vars.$white;
+        margin-bottom: 2rem;
+        font-family: vars.$font-main;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0 1rem;
+        min-width: 600px;
+
+        thead th {
+            color: vars.$white;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 700;
+            padding: 1rem 1.5rem;
+            font-family: vars.$font-main;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        tbody th,
+        tbody td {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.06);
+            color: vars.$text-secondary;
+            padding: 1rem 1.5rem;
+            font-family: vars.$font-main;
+            font-size: 15px;
+            
+
+            &:first-child {
+                border-radius: 8px 0 0 8px;
+                border-left: 6px solid vars.$primary;
+            }
+
+             &:last-child {
+                border-radius: 0 8px 8px 0;
+            }
+        }
+
+        tbody tr {
+            border-radius: 8px;
+            overflow: hidden;
+            transition: background 0.3s ease;
+
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.15);
+            }
+        }
+    }
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    max-width: 100%;
+}
