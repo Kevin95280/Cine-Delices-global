@@ -1,19 +1,26 @@
 import "./style.scss";
+import { Link } from "react-router-dom";
 
 export default function Card({ title, authorName, image }) {
     return (
         <div className="card">
             <div className="card__header">
                 {/* Image statique pour les tests d'affichage */}
-                <a className="card" href="#">
-                <img src={image} alt={`Photo et lien vers la recette ${ title }`} className="card__image"/>
-                </a>
+                <Link to="#">
+                    <div className="card__figure">
+                        <img src={image} alt={`Photo et lien vers la recette ${title}`} className="card__image" />
+                    </div>
+                </Link>
+
             </div>
             <div className="card__body">
-                <a className="card__body__link" href="#" aria-label={`Voir la page détails de la recette ${ title }`}>
-                    <h4 className="card__title">{ title }</h4>
-                </a>
-                <span className="author">{ authorName }</span>
+                <Link to="#" className="card__body__link" aria-label={`Voir la page détails de la recette ${title}`}>
+                    <h4 className="card__title">{title}</h4>
+                </Link>
+                <span> - </span>
+                <Link to="#" className="card__author" aria-label={`Afficher toutes les recettes de ${authorName}`}>
+                {authorName}
+                </Link>
             </div>
         </div>
     )
