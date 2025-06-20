@@ -28,8 +28,8 @@ return (
       <Array data={user} />
     </section>
       <div className="user-stats">
-        <p><strong>Ma dernière publication :</strong> {user.lastPublicationDate}</p>
-        <p><strong>Note moyenne des publications:</strong> {user.averageRating}</p>
+        <p>Ma dernière publication : {user.lastPublicationDate}</p>
+        <p>Note moyenne des publications: {user.averageRating}</p>
       </div>
 
     {/* Actions sur le compte */}

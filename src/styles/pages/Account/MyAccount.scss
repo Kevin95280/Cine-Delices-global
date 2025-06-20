@@ -18,12 +18,8 @@
     margin: 0.8rem 0;
     font-family: vars.$font-main;
     font-size: 16px;
-    color: vars.$text-light;
+    color: vars.$text-secondary;
     text-align: center;
-
-    strong {
-      color: vars.$text-secondary;
-    }
   }
 }
 
