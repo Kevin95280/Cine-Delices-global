@@ -2,6 +2,7 @@ import Header from "../../Components/Header";
 import Footer from "../../Components/Footer";
 import Array from "../../Components/Array"; // Composant pour afficher les informations utilisateur
 import NavBar from "../../Components/Header/NavBar";
+import { Link } from "react-router-dom";
 
 
 export default function MyAccount() {
@@ -34,7 +35,7 @@ return (
 
     {/* Actions sur le compte */}
     <div className="user-actions">
-      <button>Accéder à la liste de mes publications</button>
+      <button><Link to="/my-recipes">Accéder à la liste de mes publications</Link></button>
       <button>Modifier mes informations</button>
       <button>Désactiver mon compte</button>
       <button>Supprimer mon compte</button>
