@@ -15,7 +15,7 @@
   "author": "",
   "type": "module",
   "scripts": {
-    "start": "npm run copy-public && npx parcel src/index.html",
+    "start": "npm run copy-public && npx parcel src/index.html --no-cache",
     "copy-public": "cp -r public/* dist/"
   },
   "dependencies": {

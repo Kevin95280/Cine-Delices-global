@@ -24,7 +24,7 @@ export default function Home() {
                     <h1 className="catchphrase">Le goût du cinéma, dans votre assiette.</h1>
                 </div>
                 {/* Section des Top Recettes */}
-                <section className="top-recipes">
+                <section className="section">
                     <Cards title={"Top recettes"}>
                         {/* Exemple de carte pour les tests */}
                         <Card title="Recette Test" authorName="Auteur Test" image="../../assets/image-test.jpg" />
@@ -34,7 +34,7 @@ export default function Home() {
                     </Cards>
                 </section>
                 {/* Section des Recettes récentes */}
-                <section className="recent-recipes">
+                <section className="section">
                     <Cards title={"Recettes récentes"}>
                         {/* Exemple de carte pour les tests */}
                         <Card title="Recette Test" authorName="Auteur Test" image="../../assets/image-test.jpg" />
