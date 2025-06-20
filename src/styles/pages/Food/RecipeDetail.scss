@@ -17,6 +17,7 @@
     font-weight: bold;
     font-family: vars.$font-main;
     margin: 1rem 0rem;
+    text-align: center;
   }
 
   &__subtitle {
@@ -28,7 +29,7 @@
 
   &__image {
     width: 100%;
-    max-width: 400px;
+    // max-width: 600px;
     margin-bottom: 1rem;
     border-radius: 1rem;
     box-shadow: 2px 2px 2px 2px vars.$bg-dark;
