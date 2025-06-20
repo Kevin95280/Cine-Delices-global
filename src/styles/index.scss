@@ -1,7 +1,7 @@
 @use 'global.scss';
 @use 'reset.scss';
 
-@use 'components/footer';
-@use 'components/navlink.scss';
-@use 'components/navbar.scss';
-@use 'components/array.scss';
+@use '../Components/Footer/footer';
+@use '../Components/NavLink/navlink';
+@use '../Components/Header/NavBar/navbar';
+@use '../Components/Array/array';
