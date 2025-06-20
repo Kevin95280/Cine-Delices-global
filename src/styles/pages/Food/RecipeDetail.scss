@@ -1,0 +1,53 @@
+@use "../../vars";
+
+.recipe {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  gap: 2rem;
+  color: white;
+  background-color: vars.$bg-light;
+  padding: 1rem;
+  margin: 2rem auto;
+  line-height: 1.3em;
+
+  &__title {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: vars.$font-main;
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  &__subtitle {
+    font-size: 16px;
+    font-weight: 600;
+    font-family: vars.$font-main;
+    margin: 1rem 0rem;
+  }
+
+  &__image {
+    width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 2rem auto;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 2px 2px vars.$bg-dark;
+  }
+
+  &__infos__list,
+  &__ingredients__list,
+  &__steps__list {
+    line-height: 2em;
+  }
+
+  &__step {
+    list-style-type: decimal;
+    margin-left: 1rem;
+    padding-left: 0.3rem;
+  }
+
+  &__anecdote__text {
+    margin-bottom: 2rem;
+  }
+}

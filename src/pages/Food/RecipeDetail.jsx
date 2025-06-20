@@ -12,7 +12,8 @@ export default function Recipes() {
   const recipe = {
     id: 1,
     title: "Escalope de dinde à la feta et tomates cerise",
-    image: "escalope-de-dinde-à-la-feta.jpg",
+    // image: "escalope-de-dinde-à-la-feta.jpg",
+    image: "https://assets.afcdn.com/recipe/20130719/63844_w1024h768c1cx1000cy1504.jpg",
     description: `Un plat à la fois léger, savoureux et plein de soleil ! Les
               escalopes de dinde, tendres et dorées sont accompagnées de tomates
               cerises juteuses rôties au four et de morceaux de feta fondants.
@@ -125,8 +126,8 @@ export default function Recipes() {
             <ol className="recipe__steps__list">
               {/* parcourt du tableau steps afin de récupérer tout le contenu de mon tableau d'objet*/}
               {recipe.steps.map((index) => (
-                // utilisation d'une clé unique pour pouvoir faire appel à chaque les ingrédients
-                <li className="recipe__ingredient" key={index}>
+                // utilisation d'une clé unique pour pouvoir faire appel à chaque ingrédients
+                <li className="recipe__step" key={index}>
                   {/* appel à la valeur de la clé unique pour afficher toutes les étapes de préparation */}
                   {index}
                 </li>
