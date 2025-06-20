@@ -5,4 +5,8 @@
 @use '../Components/NavLink/navlink';
 @use '../Components/Header/NavBar/navbar';
 @use '../Components/Array/array';
+
+@use 'pages/Account/MyAccount';
+@use 'pages/Account/MyRecipes.scss';
+
 @use '../styles/pages/Food/RecipeDetail.scss';

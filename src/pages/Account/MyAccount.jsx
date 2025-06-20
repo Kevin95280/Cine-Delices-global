@@ -2,6 +2,7 @@ import Header from "../../Components/Header";
 import Footer from "../../Components/Footer";
 import Array from "../../Components/Array"; // Composant pour afficher les informations utilisateur
 import NavBar from "../../Components/Header/NavBar";
+import { Link } from "react-router-dom";
 
 
 export default function MyAccount() {
@@ -28,13 +29,13 @@ return (
       <Array data={user} />
     </section>
       <div className="user-stats">
-        <p><strong>Ma dernière publication :</strong> {user.lastPublicationDate}</p>
-        <p><strong>Note moyenne des publications:</strong> {user.averageRating}</p>
+        <p>Ma dernière publication : {user.lastPublicationDate}</p>
+        <p>Note moyenne des publications: {user.averageRating}</p>
       </div>
 
     {/* Actions sur le compte */}
     <div className="user-actions">
-      <button>Accéder à la liste de mes publications</button>
+      <button><Link to="/my-recipes">Accéder à la liste de mes publications</Link></button>
       <button>Modifier mes informations</button>
       <button>Désactiver mon compte</button>
       <button>Supprimer mon compte</button>
