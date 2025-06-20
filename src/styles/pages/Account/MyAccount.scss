@@ -1,0 +1,70 @@
+@use "../../vars";
+@use "sass:color";
+
+.user__stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 500px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+
+  p {
+    margin: 0.8rem 0;
+    font-family: vars.$font-main;
+    font-size: 16px;
+    color: vars.$text-secondary;
+    text-align: center;
+  }
+}
+
+.user__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  max-width: 480px;
+  margin: 2rem auto;
+
+  button {
+
+    &:last-child {
+      background-color: vars.$black;
+      color: vars.$white;
+
+      &:hover {
+        background-color: color.scale(vars.$red, $lightness: 10%);
+        color: vars.$text-light;
+      }
+    }
+  }
+}
+
+.user__button {
+  max-width: 480px;
+  padding: 1rem 1.5rem;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: vars.$font-main;
+  border: none;
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+
+  background-color: vars.$white;
+  color: vars.$bg-dark;
+
+  &:first-child {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  &:hover {
+    background-color: color.scale(vars.$text-secondary, $lightness: 20%);
+  }
+}
