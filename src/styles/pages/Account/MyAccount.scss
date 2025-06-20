@@ -1,7 +1,7 @@
 @use "../../vars";
 @use "sass:color";
 
-.user-stats {
+.user__stats {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,7 +23,7 @@
   }
 }
 
-.user-actions {
+.user__actions {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
@@ -31,11 +31,6 @@
   margin: 2rem auto;
 
   button {
-
-    &:first-child {
-      margin-top: 1rem;
-      margin-bottom: 2rem;
-    }
 
     &:last-child {
       background-color: vars.$black;
@@ -46,5 +41,30 @@
         color: vars.$text-light;
       }
     }
+  }
+}
+
+.user__button {
+  max-width: 480px;
+  padding: 1rem 1.5rem;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: vars.$font-main;
+  border: none;
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+
+  background-color: vars.$white;
+  color: vars.$bg-dark;
+
+  &:first-child {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  &:hover {
+    background-color: color.scale(vars.$text-secondary, $lightness: 20%);
   }
 }
