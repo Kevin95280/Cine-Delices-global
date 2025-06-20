@@ -1,0 +1,41 @@
+@use "../vars";
+
+.search__form {
+  display: flex;
+  width: 100%;
+  max-width: 750px;
+  justify-content: center;
+  gap: 0.3rem;
+  margin: 0 auto;
+  padding: 1.5rem;
+
+  &__input {
+    flex: 0.9;
+    padding: 0.8rem 1rem;
+    border: none;
+    border-radius: 1.3rem;
+    font-size: 16px;
+    background-color: white;
+    color: vars.$bg-dark;
+    font-family: vars.$font-main;
+  }
+
+  &__button {
+    color: black;
+    font-weight: bold;
+    font-family: vars.$font-main;
+    background-color: white;
+    border: none;
+    border-radius: 1.3rem;
+    font-weight: 700;
+    padding: 0.8rem;
+    // transition: all 0.4s ease-out;
+
+    &:hover {
+      // transform: scale(1.02);
+      // background-color: vars.$bg-light;
+      color: vars.$bg-light;
+      font-weight: bold;
+    }
+  }
+}
