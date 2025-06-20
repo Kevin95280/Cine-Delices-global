@@ -24,19 +24,19 @@ return (
     <h1>Profil Adhérent</h1>
 
     {/* Informations utilisateur */}
-    <section className="user-info">
+    <section className="user__info">
       {/* Affichage des infos avec le composant Array */}
       <Array data={user} />
     </section>
-      <div className="user-stats">
+      <div className="user__stats">
         <p>Ma dernière publication : {user.lastPublicationDate}</p>
         <p>Note moyenne des publications: {user.averageRating}</p>
       </div>
 
     {/* Actions sur le compte */}
-    <div className="user-actions">
-      <button><Link to="/my-recipes">Accéder à la liste de mes publications</Link></button>
-      <button>Modifier mes informations</button>
+    <div className="user__actions">
+      <Link to="/my-recipes" className="user__button">Accéder à la liste de mes publications</Link>
+      <Link to="#" className="user__button">Modifier mes informations</Link>
       <button>Désactiver mon compte</button>
       <button>Supprimer mon compte</button>
     </div>
