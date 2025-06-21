@@ -95,6 +95,24 @@ export default function TermsAndConditions() {
               inapproprié.
             </p>
           </article>
+
+          <article
+            className="terms__and__conditions__item"
+            aria-labelledby="responsability"
+          >
+            <h2
+              id="responsability"
+              className="terms__and__conditions__subtitle"
+            >
+              Responsabilité
+            </h2>
+            <p className="terms__and__conditions__text">
+              Ciné-Délices n'est pas responsable des contenus publiés par ses
+              membres. L'équipe se réserve le droit de supprimer tout contenu
+              inapproprié.
+            </p>
+          </article>
+          
         </section>
       </main>
 
