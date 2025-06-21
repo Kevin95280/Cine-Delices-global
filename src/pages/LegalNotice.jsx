@@ -36,21 +36,28 @@ export default function LegalNotice() {
               Informations légales
             </h2>
             <div className="legal__info">
-              <p className="legal__label">Nom du site : Ciné-Délices</p>
-            </div>
-            <div className="legal__info">
               <p className="legal__label">
-                Éditeur : O'Flix (projet fictif dans un cadre pédagogique)
+                <span className="legal__highlight">Nom du site</span> :
+                Ciné-Délices
               </p>
             </div>
             <div className="legal__info">
               <p className="legal__label">
-                Responsable de la publication : Kevin Coelho (Scrum Master)
+                <span className="legal__highlight">Éditeur</span> : O'Flix
+                (projet fictif dans un cadre pédagogique)
               </p>
             </div>
             <div className="legal__info">
               <p className="legal__label">
-                Contact :
+                <span className="legal__highlight">
+                  Responsable de la publication
+                </span>{" "}
+                : Kevin Coelho (Scrum Master)
+              </p>
+            </div>
+            <div className="legal__info">
+              <p className="legal__label">
+                <span className="legal__highlight">Contact</span> :
                 <a
                   className="legal__link"
                   href="mailto:contact@cine-delices.fr"
@@ -60,11 +67,15 @@ export default function LegalNotice() {
               </p>
             </div>
             <div className="legal__info">
-              <p className="legal__label">Hébergeur : Projet étudiant</p>
+              <p className="legal__label">
+                <span className="legal__highlight">Hébergeur</span> : Projet
+                étudiant
+              </p>
             </div>
             <div className="legal__info">
               <p className="legal__label">
-                Statut : Projet étudiant - sans but commercial
+                <span className="legal__highlight">Statut</span> : Projet
+                étudiant - sans but commercial
               </p>
             </div>
           </article>
