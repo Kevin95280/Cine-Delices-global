@@ -29,7 +29,7 @@ export default function AboutUs() {
             <h1 id="about-cine-delices" className="about__title">
               À propos de Ciné-Délices
             </h1>
-            <img className="about__logo" src="#" alt="logo du site" />
+            <img className="about__logo" src="logo_pleine_page.png" alt="logo du site" />
           </article>
 
           <article
@@ -42,7 +42,7 @@ export default function AboutUs() {
             <p className="about__text">
               Ciné Délices, c'est la rencontre savoureuse entre la cuisine et le
               cinéma. Nous avons conçu et développé un site web de recettes de
-              cuisine inspirées du cinéma et des séries télévisées, dans le but
+              cuisine inspirée du cinéma et des séries télévisées, dans le but
               de proposer une expérience culinaire immersive, originale et
               ludique. Chaque recette puise son inspiration dans une œuvre, une
               scène culte ou un univers fictionnel. Qu'il s'agisse de reproduire
@@ -69,7 +69,7 @@ export default function AboutUs() {
           </article>
 
           <article className="about__section" aria-labelledby="for-whom">
-            <h2 id="for-whom">Pour qui ?</h2>
+            <h2 id="for-whom" className="about__subtitle">Pour qui ?</h2>
             <p className="about__text">
               Ce site s'adresse à tous les amoureux de saveurs et de fictions :
             </p>
