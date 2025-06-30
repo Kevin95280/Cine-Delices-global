@@ -1,0 +1,42 @@
+@use "../vars";
+
+.privacy__policy {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  color: white;
+  font-family: vars.$font-main;
+  padding: 2rem;
+  margin: 2rem auto;
+  line-height: 1.6;
+  counter-reset: subtitle;
+
+  &__title {
+    font-size: 26px;
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  &__subtitle {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+
+    &::before {
+      counter-increment: subtitle;
+      content: counter(subtitle) ".";
+      margin-right: 0.5rem;
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+  }
+
+  &__list {
+    list-style-type: initial;
+    padding-left: 1rem;
+  }
+}
