@@ -7,30 +7,46 @@ export default function SignupForm() {
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
 
+    // Variable d'état qui gérera le message d'erreur à afficher
+    const [message, setMessage] = useState('');
+
     // fonction de soumission du formulaire
     const handleSubmit = async (e) => {
-        e.preventDefault()
-        if (password === confirmPassword) {
-            /**
-             * On créé un objet avec les valeurs récupérées de nos variables d'état
-             * C'est cet objet que nous passerons dans le corps de notre requêtes
-             */
-            const payload = {
-                username,
-                email,
-                password
+        e.preventDefault();
+        try {
+            // On vérifie la correspondance de nos mots de passe
+            if (password === confirmPassword) {
+                /**
+                 * On créé un objet avec les valeurs récupérées de nos variables d'état
+                 * C'est cet objet que nous passerons dans le corps de notre requêtes
+                 */
+                const payload = {
+                    username,
+                    email,
+                    password
+                }
+                // On réalise notre requête sur la route associée côté back
+                await fetch("http://localhost:3000/api/users/", {
+                    // Méthode
+                    method: "POST",
+                    // Header de la requête
+                    headers: {
+                        "Content-type": "application/json",
+                        "charset": "utf-8"
+                    },
+                    // Body de la requête
+                    body: JSON.stringify(payload)
+                })
+            } else {
+                throw new Error("Les deux mots de passes ne correspondent pas.")
             }
-            await fetch("http://localhost:3000/api/users/", {
-                method: "POST",
-                headers: {
-                    "Content-type": "application/json",
-                    "charset": "utf-8"
-                },
-                body: JSON.stringify(payload)})
-        } else {
-            console.error("Vérifiez la conformité de votre mot de passe.")
+            // On réinitialise le message si un est déjà affiché
+            setMessage('')
+        } catch (error) {
+            setMessage(error.message)
         }
     };
+
     return (
         <form
             className="account__form account__form__login"
@@ -38,6 +54,8 @@ export default function SignupForm() {
             // handler d'action à l'événement
             onSubmit={handleSubmit}
         >
+            {/* Si message est true, alors on l'affiche */}
+            {message && <p>{message}</p>}
             {/* Ajout d'un fieldset, pour mieux structurer sémantiquement le formulaire */}
             <fieldset>
                 {/* Ajout d'une légende, qui sera "caché" visuellement, mais accessible via une lisseuse d'écran*/}
