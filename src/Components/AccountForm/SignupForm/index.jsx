@@ -8,15 +8,27 @@ export default function SignupForm() {
     const [confirmPassword, setConfirmPassword] = useState("");
 
     // fonction de soumission du formulaire
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // condition pour la création du compte
+    const handleSubmit = async (e) => {
+        e.preventDefault()
         if (password === confirmPassword) {
-            alert("Nouveau compte créé !");
-        }
-        // si celle-ci renvoie false
-        else {
-            alert("Vos mots de passe ne sont pas identiques");
+            /**
+             * On créé un objet avec les valeurs récupérées de nos variables d'état
+             * C'est cet objet que nous passerons dans le corps de notre requêtes
+             */
+            const payload = {
+                username,
+                email,
+                password
+            }
+            await fetch("http://localhost:3000/api/users/", {
+                method: "POST",
+                headers: {
+                    "Content-type": "application/json",
+                    "charset": "utf-8"
+                },
+                body: JSON.stringify(payload)})
+        } else {
+            console.error("Vérifiez la conformité de votre mot de passe.")
         }
     };
     return (
