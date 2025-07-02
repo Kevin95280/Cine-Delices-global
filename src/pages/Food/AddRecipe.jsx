@@ -9,8 +9,8 @@ export default function AddRecipe() {
   // déclarations des états pour chaque champ du formulaire (valeur et fonction)
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [type, setType] = useState("");
-  const [level, setLevel] = useState("");
+  const [category, setCategory] = useState("");
+  const [difficulty, setDifficulty] = useState("");
   const [budget, setBudget] = useState("");
   const [servings, setServings] = useState("");
   const [preparationTime, setPreparationTime] = useState("");
@@ -21,12 +21,48 @@ export default function AddRecipe() {
   const [picture, setPicture] = useState("");
 
   // soumission de notre formulaire
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     // empêche le rechargement de la page
     e.preventDefault();
-    // test pour s'assurer qu'on récupère bien nos variables d'état au submit
-    alert(`Submitted ${title} ${description}`);
+
+    const recipeData = {
+    title,
+    description,
+    category,
+    difficulty,
+    budget,
+    servings: parseInt(servings, 10),
+    preparation_time: parseInt(preparationTime, 10),
+    cook_time: parseInt(cookingTime, 10),
+    ingredient,
+    step,
+    story,
+    picture,
+    user_id,
+    movie_id,
   };
+
+    try {
+    const response = await fetch("http://localhost:3000/api/recipes", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(recipeData)
+    });
+
+    if (!response.ok) {
+      throw new Error("Erreur lors de l’ajout de la recette");
+    }
+
+    const result = await response.json();
+    console.log("Recette ajoutée :", result);
+    alert("Recette enregistrée avec succès !");
+  } catch (error) {
+    console.error("Erreur :", error);
+    alert("Échec de la soumission");
+  }
+};
 
   // test boutton
   const AddIngredient = () => {
@@ -90,16 +126,16 @@ export default function AddRecipe() {
               />
             </label>
             {/* Informations générales */}
-            <label htmlFor="type" className="form__label">
+            <label htmlFor="category" className="form__label">
               Type de plat
               <select
                 className="form__select"
                 type="text"
-                id="type"
-                name="type"
+                id="category"
+                name="category"
                 aria-required="true"
-                value={type}
-                onChange={(e) => setType(e.target.value)}
+                value={category}
+                onChange={(e) => setCategory(e.target.value)}
               >
                 <option value="" disabled>Sélectionnez une option</option>
                 <option value="starter">Entrées</option>
@@ -107,15 +143,15 @@ export default function AddRecipe() {
                 <option value="dessert">Desserts</option>
               </select>
             </label>
-            <label htmlFor="level" className="form__label">
+            <label htmlFor="difficulty" className="form__label">
               Niveau de difficulté
               <select
                 className="form__select"
                 type="text"
-                id="level"
-                name="level"
-                value={level}
-                onChange={(e) => setLevel(e.target.value)}
+                id="difficulty"
+                name="difficulty"
+                value={difficulty}
+                onChange={(e) => setDifficulty(e.target.value)}
               >
                 <option value="" disabled>Sélectionnez une option</option>
                 <option value="easy">Facile</option>
@@ -151,25 +187,25 @@ export default function AddRecipe() {
                 onChange={(e) => setServings(e.target.value)}
               />
             </label>
-            <label htmlFor="preparation-time" className="form__label">
+            <label htmlFor="preparation_time" className="form__label">
               Temps de préparation
               <input
                 className="form__input"
                 type="text"
-                id="preparation-time"
-                name="preparation-time"
+                id="preparation_time"
+                name="preparation_time"
                 aria-required="true"
                 value={preparationTime}
                 onChange={(e) => setPreparationTime(e.target.value)}
               />
             </label>
-            <label htmlFor="cooking-time" className="form__label">
+            <label htmlFor="cooking_time" className="form__label">
               Temps de cuisson
               <input
                 className="form__input"
                 type="text"
-                id="cooking-time"
-                name="cooking-time"
+                id="cooking_time"
+                name="cooking_time"
                 aria-required="true"
                 value={cookingTime}
                 onChange={(e) => setCookingTime(e.target.value)}
