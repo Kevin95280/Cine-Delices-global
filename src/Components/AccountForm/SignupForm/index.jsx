@@ -26,7 +26,7 @@ export default function SignupForm() {
                     password
                 }
                 // On réalise notre requête sur la route associée côté back
-                await fetch("http://localhost:3000/api/users/", {
+                const response = await fetch("http://localhost:3000/api/users/", {
                     // Méthode
                     method: "POST",
                     // Header de la requête
@@ -37,6 +37,22 @@ export default function SignupForm() {
                     // Body de la requête
                     body: JSON.stringify(payload)
                 })
+                /**
+                 * Nous souhaitons récupérer en cas d'erreur le message associé
+                 * Par exemple si un email est déjà utilisé pour la création d'un compte
+                 * Impossibilité de créer un nouvel enregistrement donc un nouveau compte
+                 * 
+                 * Utilisation de la propriété en lecture seule ``.ok``
+                 * @link https://developer.mozilla.org/fr/docs/Web/API/Response/ok
+                 * Si le status code n'est pas compris entre 200 et 299
+                 * Alors renvoie false
+                 */
+                if (!response.ok) {
+                    // On récupère notre réponse json
+                    const error = await response.json()
+                    // On jette l'erreur associée
+                    throw new Error(error)
+                }
             } else {
                 throw new Error("Les deux mots de passes ne correspondent pas.")
             }
