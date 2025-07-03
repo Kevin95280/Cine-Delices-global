@@ -100,34 +100,46 @@ export default function AddRecipe() {
             method="POST"
             // fonction executée pour soummettre le formulaire lorsque l'utilisateur clique sur le bouton envoyer ou appuie sur la touche Entrée
             onSubmit={handleSubmit}
+            aria-label="Formulaire de publication de recette"
           >
-            <label htmlFor="title" className="form__label">
-              Titre de la recette
-              <input
-                className="form__input"
-                type="text"
-                id="title"
-                name="title"
-                aria-required="true"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-              />
-            </label>
-            <label htmlFor="description" className="form__label">
-              Description
-              <textarea
-                className="form__textarea"
-                id="description"
-                name="description"
-                // valeur de notre input
-                value={description}
-                // mise à jour de l'état à chaque changement
-                onChange={(e) => setDescription(e.target.value)}
-              />
-            </label>
-            {/* Informations générales */}
-            <label htmlFor="category" className="form__label">
-              Type de plat
+            {/* Titre */}
+            <fieldset className="form__group" aria-labelledby="legend-titre">
+              <legend id="legend-titre">Titre de la recette</legend>
+              <label htmlFor="title" className="form__label">
+                <span className="sr-only">Titre</span>
+                <input
+                  className="form__input"
+                  type="text"
+                  id="title"
+                  name="title"
+                  aria-required="true"
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
+                />
+              </label>
+            </fieldset>
+
+             {/* Description */}
+            <fieldset className="form__group" aria-labelledby="legend-description">
+              <legend id="legend-description">Description</legend>
+              <label htmlFor="description" className="form__label">
+                <textarea
+                  className="form__textarea"
+                  id="description"
+                  name="description"
+                  aria-required="true"
+                  // valeur de notre input
+                  value={description}
+                  // mise à jour de l'état à chaque changement
+                  onChange={(e) => setDescription(e.target.value)}
+                />
+              </label>
+            </fieldset>
+
+            {/* Catégories */}
+            <fieldset className="form__group" aria-labelledby="legend-category">
+              <legend id="legend-category">Catégorie</legend>
+              <label htmlFor="category" className="form__label">
               <select
                 className="form__select"
                 type="text"
@@ -143,13 +155,16 @@ export default function AddRecipe() {
                 <option value="dessert">Desserts</option>
               </select>
             </label>
-            <label htmlFor="difficulty" className="form__label">
-              Niveau de difficulté
+            </fieldset>
+
+            {/* Difficulté, budget, portions */}
+            <fieldset className="form__group triple-col">
+              <div>
+            <label htmlFor="difficulty" className="form__label">Difficulté</label>
               <select
-                className="form__select"
-                type="text"
                 id="difficulty"
                 name="difficulty"
+                aria-required="true"
                 value={difficulty}
                 onChange={(e) => setDifficulty(e.target.value)}
               >
@@ -158,14 +173,11 @@ export default function AddRecipe() {
                 <option value="medium">Moyen</option>
                 <option value="hard">Difficile</option>
               </select>
-            </label>
-            <label htmlFor="budget" className="form__label">
-              Budget
+            <label htmlFor="budget" className="form__label">Budget</label>
               <select
-                className="form__select"
-                type="text"
                 id="budget"
                 name="budget"
+                aria-required="true"
                 value={budget}
                 onChange={(e) => setBudget(e.target.value)}
               >
@@ -174,36 +186,42 @@ export default function AddRecipe() {
                 <option value="moderate">Budget moyen</option>
                 <option value="expensive">Assez cher</option>
               </select>
-            </label>
-            <label htmlFor="servings" className="form__label">
-              Nombre de personnes
+            <label htmlFor="servings" className="form__label">Nombre de parts</label>
               <input
-                className="form__input"
-                type="text"
                 id="servings"
                 name="servings"
+                type="number"
+                min={1}
                 aria-required="true"
                 value={servings}
                 onChange={(e) => setServings(e.target.value)}
               />
-            </label>
+              </div>
+              </fieldset>
+
+            {/* Temps de préparation */}
+            <fieldset className="form__group" aria-labelledby="legend-preparation_time">
+              <legend id="legend-preparation_time">Temps de préparation</legend>
             <label htmlFor="preparation_time" className="form__label">
-              Temps de préparation
               <input
                 className="form__input"
-                type="text"
                 id="preparation_time"
                 name="preparation_time"
+                type="number"
                 aria-required="true"
                 value={preparationTime}
                 onChange={(e) => setPreparationTime(e.target.value)}
               />
-            </label>
+              </label>
+              </fieldset>
+
+            {/* Temps de cuisson */}
+              <fieldset className="form__group" aria-labelledby="legend-cooking_time">
+              <legend id="legend-cooking_time">Temps de cuisson</legend>
             <label htmlFor="cooking_time" className="form__label">
-              Temps de cuisson
               <input
                 className="form__input"
-                type="text"
+                type="number"
                 id="cooking_time"
                 name="cooking_time"
                 aria-required="true"
@@ -211,6 +229,8 @@ export default function AddRecipe() {
                 onChange={(e) => setCookingTime(e.target.value)}
               />
             </label>
+            </fieldset>
+
             {/* Ingrédients */}
             <label htmlFor="ingredient-1" className="form__label">
               Ingrédient
