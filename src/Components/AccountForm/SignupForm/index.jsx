@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
+// Import de la fonction useNavigation de react-router pour permettre la redirection
+import { useNavigate } from "react-router-dom";
 
 export default function SignupForm() {
     // définition des variables d'état avec pour état initial des chaînes de caractères vides
@@ -6,6 +8,12 @@ export default function SignupForm() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
+
+    /**
+     * On fait appel à notre fonction useNavigate pour permettre la redirection
+     * @link https://api.reactrouter.com/v7/functions/react_router.useNavigate.html
+     */
+    const navigate = useNavigate();
 
     // Variable d'état qui gérera le message d'erreur à afficher
     const [message, setMessage] = useState('');
@@ -52,6 +60,8 @@ export default function SignupForm() {
                     const error = await response.json()
                     // On jette l'erreur associée
                     throw new Error(error)
+                } else {
+                    navigate("/login")
                 }
             } else {
                 throw new Error("Les deux mots de passes ne correspondent pas.")
