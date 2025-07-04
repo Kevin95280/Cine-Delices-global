@@ -12,9 +12,9 @@ const [description, setDescription] = useState("");
 const [category, setCategory] = useState("");
 const [difficulty, setDifficulty] = useState("");
 const [budget, setBudget] = useState("");
-const [servings, setServings] = useState("1");
-const [preparationTime, setPreparationTime] = useState("");
-const [cookingTime, setCookingTime] = useState("");
+const [servings, setServings] = useState(0);
+const [preparationTime, setPreparationTime] = useState(0);
+const [cookingTime, setCookingTime] = useState(0);
 const [ingredients, setIngredients] = useState([""]);
 const [steps, setSteps] = useState([""]);
 const [story, setStory] = useState("");
@@ -57,7 +57,8 @@ useEffect(() => {
   const fetchSuggestions = async () => {
     try {
       const response = await fetch(`http://localhost:3000/api/movies?search=${encodeURIComponent(movieSearch)}`);
-      
+      console.log(response);
+
       if (!response.ok) {
   throw new Error(`Erreur HTTP ${response.status}`);
 }
@@ -94,6 +95,8 @@ user_id: userId,
 movie_id: parseInt(movieId, 10),
 picture,
 };
+
+console.log("📦 Données envoyées :", recipeData);
 
 try {
 const response = await fetch("http://localhost:3000/api/recipes", {
@@ -159,7 +162,8 @@ return (
           <legend id="legend-titre">Titre de la recette</legend>
           <label htmlFor="title" className="form__label">
             <span className="sr-only">Titre</span>
-            <input 
+            <input
+            value={title}
             className="form__input" 
             type="text" id="title" 
             name="title" 
@@ -174,6 +178,7 @@ return (
           <legend id="legend-description">Description</legend>
           <label htmlFor="description" className="form__label">
             <textarea
+            value={description}
             className="form__textarea" 
             id="description" 
             name="description" 
@@ -189,6 +194,7 @@ return (
               <legend id="legend-category">Catégorie</legend>
               <label htmlFor="category" className="form__label">
               <select
+                value={category}
                 className="form__select"
                 type="text"
                 id="category"
@@ -209,6 +215,7 @@ return (
               <div>
                 <label htmlFor="difficulty" className="form__label">Difficulté</label>
                   <select
+                    value={difficulty}
                     id="difficulty"
                     name="difficulty"
                     aria-required="true"
@@ -224,6 +231,7 @@ return (
                 <div>
                   <label htmlFor="budget" className="form__label">Budget</label>
                     <select
+                      value={budget}
                       id="budget"
                       name="budget"
                       aria-required="true"
@@ -240,11 +248,11 @@ return (
                 <div>
                   <label htmlFor="servings" className="form__label">Nombre de parts</label>
                     <input
+                      value={servings}
                       className="form__input"
                       id="servings"
                       name="servings"
                       type="number"
-                      min={1}
                       aria-required="true"
                       onChange={(e) => setServings(e.target.value)}
                     />
@@ -256,6 +264,7 @@ return (
               <legend id="legend-preparation_time">Temps de préparation</legend>
               <label htmlFor="preparation_time" className="form__label">
               <input
+                value={preparationTime}
                 className="form__input"
                 id="preparation_time"
                 name="preparation_time"
@@ -271,6 +280,7 @@ return (
               <legend id="legend-cooking_time">Temps de cuisson</legend>
               <label htmlFor="cooking_time" className="form__label">
               <input
+                  value={cookingTime}
                   className="form__input"
                   type="number"
                   id="cooking_time"
@@ -314,10 +324,10 @@ return (
               {steps.map((value, index) => (
                 <label key={index} className="form__label" htmlFor={`step-${index}`}>
                   <span className="visually-hidden">Étape {index + 1}</span>
-                  <textarea
+                  <input
                     id={`step-${index}`}
                     name={`step-${index}`}
-                    className="form__textarea"
+                    className="form__input"
                     value={value}
                     onChange={(e) => handleStepChange(index, e.target.value)}
                     aria-label={`Étape ${index + 1}`}
@@ -339,6 +349,7 @@ return (
               <legend id="legend-story">Anecdote</legend>
               <label htmlFor="story" className="form__label">
                 <textarea
+                  value={story}
                   className="form__textarea"
                   id="story"
                   name="story"
@@ -429,7 +440,12 @@ return (
             </fieldset>
 
             <div className="form__actions">
-              <button type="submit" className="form__button" aria-label="Soumettre la recette">
+              <button 
+              type="submit" 
+              className="form__button" 
+              aria-label="Soumettre la recette"
+              disabled={!title || !description || !category || !difficulty || !budget || !servings || !preparationTime || !cookingTime || !ingredients || !steps || !story || !userId || !movieId }
+              >
                 Envoyer
               </button>
             </div>
