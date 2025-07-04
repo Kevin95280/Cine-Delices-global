@@ -26,9 +26,14 @@ const [movieSearch, setMovieSearch] = useState("");
 const [movieSuggestions, setMovieSuggestions] = useState([]);
 const [showMovieList, setShowMovieList] = useState(false);
 
+// Gestion des modifications dynamiques afin de permettre a l'utilisateur d'ajouter plusieurs ingrédients/ étapes
+// Chaque modification de champ met à jour le tableau en clonant l’ancien
 const handleIngredientChange = (index, value) => {
+  // Copie du tableau actuel
   const updated = [...ingredients];
+  // On modifie l'ingrédient à l'index donné
   updated[index] = value;
+  // on remplace l'ancien tableau par le nouveau
   setIngredients(updated);
 };
 
@@ -38,10 +43,14 @@ const handleStepChange = (index, value) => {
   setSteps(updated);
 };
 
+// Ajout d'un champ vide supplémentaire pour saisir un nouvel ingrédient
+// On copie à nouveau le tableau "ingrédients" car en React on ne modifie jamais un state directement. On crée une copie, on la modifie, puis on la replace.
+// Cela permet à React de détecter le changement et de re-render proprement.
 const addIngredient = () => {
   setIngredients([...ingredients, ""]);
 };
 
+// Ajout d'un champ vide supplémentaire pour saisir une nouvelle étape
 const addStep = () => {
   setSteps([...steps, ""]);
 };
@@ -49,11 +58,13 @@ const addStep = () => {
 
 // Chargement suggestions dès que l'utilisateur tape (à partir de 2 lettres)
 useEffect(() => {
+  // Si la saisie est trop courte (moins de 2 lettres)...
   if (movieSearch.length < 2) {
+    // ... on efface les suggestions pour ne pas faire de requête inutile.
     setMovieSuggestions([]);
     return;
   }
-
+  // Si la saisie est suffisante, on appelle fetchSuggestions() pour aller chercher les films correspondants
   const fetchSuggestions = async () => {
     try {
       const response = await fetch(`http://localhost:3000/api/movies?search=${encodeURIComponent(movieSearch)}`);
@@ -62,14 +73,16 @@ useEffect(() => {
       if (!response.ok) {
   throw new Error(`Erreur HTTP ${response.status}`);
 }
-      
+      // Lorsque les conditions sont validés, on stocke dans "data" notre réponse JSON
       const data = await response.json();
+      // On met à jour l'état de MovieSuggestions avec les résultats récupérés ce qui entraine un re-render du composant.
       setMovieSuggestions(data);
     } catch (err) {
       console.error("Erreur suggestions films :", err);
     }
   };
 
+  // Ce useEffect est réactif : il s’exécute à chaque changement de movieSearch
   fetchSuggestions();
 }, [movieSearch]);
 
@@ -79,55 +92,58 @@ const handleSubmit = async (e) => {
 // empêche le rechargement de la page
 e.preventDefault();
 
-const recipeData = {
-title,
-description,
-category,
-difficulty,
-budget,
-servings: parseInt(servings, 10),
-preparation_time: parseInt(preparationTime, 10),
-cook_time: parseInt(cookingTime, 10),
-ingredients,
-steps,
-story,
-user_id: userId,
-movie_id: parseInt(movieId, 10),
-picture,
-};
+  // On initialise un objet FormData pour construire une requête permettant d'envoyer à la fois des fichiers et des champs texte.
+  const formData = new FormData();
 
-console.log("📦 Données envoyées :", recipeData);
+  // Champs texte simples
+  formData.append("title", title.trim());
+  formData.append("description", description.trim());
+  formData.append("category", category);
+  formData.append("difficulty", difficulty);
+  formData.append("budget", budget);
+  formData.append("servings", servings);
+  formData.append("preparation_time", preparationTime);
+  formData.append("cook_time", cookingTime);
+  formData.append("story", story.trim());
 
-try {
-const response = await fetch("http://localhost:3000/api/recipes", {
-method: "POST",
-headers: {
-"Content-Type": "application/json"
-},
-body: JSON.stringify(recipeData)
-});
+  // Fichier image
+  if (picture) {
+    formData.append("picture", picture);
+  }
 
-if (!response.ok) {
-throw new Error("Erreur lors de l’ajout de la recette");
-}
+  // Données complexes (tableaux → à parser côté back)
+  // On les filtre pour ne garder que les éléments non vides ("") et éviter d’envoyer des valeurs vides au backend.
+  // On les transforme ensuite en texte JSON
+  formData.append("ingredients", JSON.stringify(ingredients.filter(i => i.trim() !== "")));
+  formData.append("steps", JSON.stringify(steps.filter(s => s.trim() !== "")));
 
-const result = await response.json();
-console.log("Recette ajoutée :", result);
-alert("Recette enregistrée avec succès !");
-} catch (error) {
-console.error("Erreur :", error);
-alert("Échec de la soumission");
-}
-};
+  // Association de la recette à un utilisateur et à un film
+  formData.append("user_id", userId);
+  formData.append("movie_id", movieId);
 
+  try {
+    // Envoi de la requete au serveur Express
+    const response = await fetch("http://localhost:3000/api/recipes", {
+      method: "POST",
+      // le FormData est envoyé directement comme body de la requete
+      body: formData
+    });
 
-// test boutton
-const AddIngredient = () => {
-alert("Ingrédient ajouté");
-};
+    // Réponse convertie en objet JSON utilisable
+    const result = await response.json();
 
-const AddStep = () => {
-alert("Etape ajoutée");
+    //Gestion succès/ échec
+    if (!response.ok) {
+      console.error("Erreur backend :", result);
+      throw new Error(result.error || "Erreur lors de l’ajout de la recette");
+    }
+
+    console.log("Recette ajoutée :", result);
+    alert("Recette enregistrée avec succès !");
+  } catch (error) {
+    console.error("Erreur submit :", error);
+    alert("Échec de la soumission");
+  }
 };
 
 return (
@@ -158,9 +174,15 @@ return (
         <h1 className="form__title">Formulaire de publication recette :</h1>
 
         {/* Titre */}
+        {/*fieldset regroupe plusieurs éléments liés à un même champ*/}
         <fieldset className="form__group" aria-labelledby="legend-titre">
+          {/*Le legend est le titre visuel (et accessible) du groupe de champs.
+          Il est référencé par l’attribut aria-labelledby du fieldset.*/}
           <legend id="legend-titre">Titre de la recette</legend>
+          {/*Le label est lié au champ via htmlFor="title" (associé à id="title")
+          Il permet de cliquer sur le label pour focusser le champ automatiquement.*/}
           <label htmlFor="title" className="form__label">
+            {/*Elément visible uniquement pour les lecteurs d'écran*/}
             <span className="sr-only">Titre</span>
             <input
             value={title}
@@ -395,8 +417,11 @@ return (
                   aria-autocomplete="list"
                 />
 
+                {/* On affiche une <ul> uniquement si showMovieList est vrai (donc visible à ce moment) et qu’il y a des suggestions à afficher */}
                 {showMovieList && movieSuggestions.length > 0 && (
                   <ul className="autocomplete__list" role="listbox">
+                    {/* Chaque élément de la liste est cliquable, appelle setMovieSearch(...) pour remplir le champ texte, appelle setMovieId(...) pour stocker l’ID sélectionné dans l’état */}
+                    {/* (setShowMovieList(false) ferme la liste une fois que l'élément de la liste est cliqué */}
                     {movieSuggestions.map((movie) => (
                       <li
                         key={movie.id}
@@ -440,6 +465,7 @@ return (
             </fieldset>
 
             <div className="form__actions">
+              {/* L'attribut "disabled" permet de bloquer l'action du bouton envoyer dans le cas ou un (ou plusieurs) champ(s) spécifié(s) en parametres serai(en)t vide(s) */}
               <button 
               type="submit" 
               className="form__button" 
