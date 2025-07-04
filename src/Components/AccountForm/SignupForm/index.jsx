@@ -59,7 +59,7 @@ export default function SignupForm() {
                     // On récupère notre réponse json
                     const error = await response.json()
                     // On jette l'erreur associée
-                    throw new Error(error)
+                    throw new Error(error.message)
                 } else {
                     navigate("/login")
                 }
