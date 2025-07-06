@@ -1,61 +1,78 @@
-@use "../vars";
+@use "../../vars";
 
-.account__form {
-  width: 400px;
-  max-width: 100%;
-  margin: 4rem auto;
-  padding: 4rem;
-  font-family: vars.$font-main;
-  font-size: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  border: 1px solid white;
-  border-radius: 1.5rem;
-  box-shadow: 4px 4px 4px 4px vars.$bg-dark;
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(8px);
+.main__form {
+	display: flex;
+	justify-content: center;
 
-  &__label {
-    display: flex;
-    flex-direction: column;
-    gap: 0.1rem;
-    color: white;
-  }
+	.account__form__wrapper {
+		background-color: rgba(0, 0, 0, 0.1);
+		width: 80%;
+		padding: 1.5rem;
+		border-radius: 10px;
 
-  &__input {
-    box-sizing: border-box;
-    padding: 1rem;
-    font-family: vars.$font-main;
-    font-size: 14px;
-    color: black;
-    background-color: white;
-    border: none;
-    border-radius: 1.3rem;
-    box-shadow: 4px 4px 4px 4px vars.$bg-dark;
-    outline: none;
+		h1 {
+			text-align: center;
+			margin-bottom: 2rem;
+		}
 
-    &::placeholder {
-      color: rgb(158, 158, 158);
-    }
-  }
+		// Message en cas d'erreur
+		.error__indication {
+			margin: 1rem 0;
+			color: red;
+			font-size: 1.2rem;
+			font-style: italic;
+			text-align: center;
+		}
 
-  &__button {
-    margin-top: 2rem;
-    padding: 1rem;
-    font-size: 15px;
-    align-self: center;
-    border: none;
-    border-radius: 1.5rem;
-    width: 200px;
-    color: vars.$bg-light;
-    box-shadow: 4px 4px 4px 4px vars.$bg-dark;
-    background-color: white;
+		// Conteneur label/input
+		.account__form__group {
+			position: relative;
+			margin: 1rem 0;
 
-    &:hover {
-      background-color: rgb(245, 245, 245);
-      transform: scale(1.01);
-    }
-  }
+			// Positionnement du label
+			.account__form__label {
+				position: absolute;
+				top: 38%;
+				left: 1rem;
+				color: vars.$text-secondary;
+				transition: all .4s ease-in-out;
+			}
+
+			.account__form__input {
+				box-sizing: border-box;
+				border: 2px solid vars.$border-color-input;
+				border-radius: 30px;
+				width: 100%;
+				margin: 1rem 0;
+				padding: 1.4rem;
+				color: vars.$text-light;
+				background-color: rgba(255, 255, 255, .1);
+			}
+
+			// Classe permettant la transition du label en dehors de l'input
+			.is-active {
+				top: 0;
+				color: vars.$text-light;
+				transform: translateY(-65%) translateX(5%);
+			}
+		}
+
+		// Boutton de formulaire
+		.account__form__button {
+			position: relative;
+			margin-top: 4rem;
+			padding: 1.4rem 0;
+			border: 2px solid vars.$border-color-input;
+			border-radius: 40px;
+			background-color: vars.$button-primary-color;
+			transition: .3s;
+
+			&:hover,
+			&:focus
+			{
+				background-color: vars.$button-secondary-color;
+				outline: none;
+			}
+		}
+	}
 }
