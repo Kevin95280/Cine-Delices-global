@@ -1,11 +1,13 @@
-@use 'reset.scss';
-@use 'global.scss';
+@use './reset.scss';
+@use './global.scss';
+@use './mixins.scss';
 
 
 @use '../Components/Footer/footer';
 @use '../Components/NavLink/navlink';
 @use '../Components/Header/NavBar/navbar';
 @use '../Components/Array/array';
+@use './components/header';
 
 @use 'pages/Account/MyAccount';
 @use 'pages/Account/MyRecipes.scss';

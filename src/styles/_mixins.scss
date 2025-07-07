@@ -1,0 +1,22 @@
+// 1rem = 16px 
+
+// 480px
+@mixin small {
+    @media screen and (min-width: 30rem) {
+        @content;
+    }
+}
+
+// 768px
+@mixin medium {
+    @media screen and (min-width: 48rem) {
+        @content;
+    }
+}
+
+// 1024px
+@mixin large {
+    @media screen and (min-width: 64rem) {
+        @content;
+    }
+}
