@@ -1,4 +1,5 @@
 @use "../vars";
+@use '../mixins' as *;
 
 .search__form {
   display: flex;
@@ -36,6 +37,36 @@
       // background-color: vars.$bg-light;
       color: vars.$bg-light;
       font-weight: bold;
+    }
+  }
+}
+
+@include medium {
+  .search__form {
+    flex-direction: row;
+    align-items: center;
+
+    &__input {
+      font-size: 1rem;
+    }
+
+    &__button {
+      padding: 0.8rem 1.2rem;
+    }
+  }
+}
+
+@include large {
+  .search__form {
+    max-width: 900px;
+    padding: 2rem;
+
+    &__input {
+      font-size: 1.1rem;
+    }
+
+    &__button {
+      font-size: 1.1rem;
     }
   }
 }
