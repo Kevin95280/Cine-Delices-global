@@ -67,16 +67,18 @@ header {
 
         &__input {
             flex: 1;
+            font-size: 1rem;
         }
 
         &__button {
             width: auto;
             margin-left: 1rem;
+            font-size: 1rem;
         }
     }
 
     .logo_home {
-        width: 4rem;
+        width: 3rem;
     }
 
     .logo_account {

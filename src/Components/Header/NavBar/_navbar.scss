@@ -1,22 +1,44 @@
 @use '../../../styles/vars';
+@use '../../../styles/mixins' as *;
 
-.nav-bar ul {
-    display: flex;
-    align-items: center;
-    padding: 0;
-    list-style: none;
+.nav-bar {
+    ul {
+        display: flex;
+        align-items: center;
+        padding: 0;
+        list-style: none;
+    }
 
-
-    &__li {
+    li {
         margin-right: 1rem;
     }
-}
 
-.account-link {
-    margin-left: auto;
-}
+    @include medium {
+        ul {
+            justify-content: space-between;
+        }
 
-.logo_account {
-  width: 4rem;
-  display: block;
+        .logo_home {
+            width: 4rem;
+        }
+
+        .logo_account {
+            width: 5rem;
+        }
+    }
+
+    @include large {
+        ul {
+            padding: 2 2rem;
+        }
+    }
+
+    .account-link {
+        margin-left: auto;
+    }
+
+    .logo_account {
+        width: 4rem;
+        display: block;
+    }
 }
