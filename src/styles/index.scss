@@ -7,7 +7,9 @@
 @use '../Components/NavLink/navlink';
 @use '../Components/Header/NavBar/navbar';
 @use '../Components/Array/array';
+
 @use './components/header';
+@use './components/searchform';
 
 @use 'pages/Account/MyAccount';
 @use 'pages/Account/MyRecipes.scss';
@@ -17,3 +19,4 @@
 @use '../styles/pages/PrivacyPolicy.scss';
 @use '../styles/pages/LegalNotice.scss';
 @use '../styles/pages/AboutUs.scss';
+@use '../styles/pages/Home.scss';
