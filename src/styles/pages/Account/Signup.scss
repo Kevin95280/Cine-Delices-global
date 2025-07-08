@@ -1,4 +1,4 @@
-@use "../vars";
+@use "../../vars";
 
 .account__form {
   width: 400px;
@@ -17,45 +17,40 @@
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(8px);
 
+  &__group {
+    margin-bottom: 1.5rem;
+  }
+
+  &__legend {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
   &__label {
-    display: flex;
-    flex-direction: column;
-    gap: 0.1rem;
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+  }
+  
+  &__button {
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+    margin-top: 2rem;
+    padding: 0.75rem 1.5rem;
+    background: #989899;
+    border: none;
     color: white;
+    font-weight: bold;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    transition: background 0.2s;
   }
 
   &__input {
-    box-sizing: border-box;
-    padding: 1rem;
-    font-family: vars.$font-main;
-    font-size: 14px;
-    color: black;
-    background-color: white;
-    border: none;
-    border-radius: 1.3rem;
-    box-shadow: 4px 4px 4px 4px vars.$bg-dark;
-    outline: none;
-
-    &::placeholder {
-      color: rgb(158, 158, 158);
-    }
-  }
-
-  &__button {
-    margin-top: 2rem;
-    padding: 1rem;
-    font-size: 15px;
-    align-self: center;
-    border: none;
-    border-radius: 1.5rem;
-    width: 200px;
-    color: vars.$bg-light;
-    box-shadow: 4px 4px 4px 4px vars.$bg-dark;
-    background-color: white;
-
-    &:hover {
-      background-color: rgb(245, 245, 245);
-      transform: scale(1.01);
-    }
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
   }
 }

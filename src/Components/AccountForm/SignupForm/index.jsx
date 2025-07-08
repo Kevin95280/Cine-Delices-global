@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function SignupForm() {
   // définition des variables d'état avec pour état initial des chaînes de caractères vides
@@ -7,17 +8,46 @@ export default function SignupForm() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
+  const navigate = useNavigate();
+
   // fonction de soumission du formulaire
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // condition pour la création du compte
-    if (password === confirmPassword) {
-      alert("Nouveau compte créé !");
+    if (password !== confirmPassword) {
+    alert("Vos mots de passe ne sont pas identiques");
+    return;
+  }
+
+  try {
+    const response = await fetch("http://localhost:3000/api/users", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        username,
+        email,
+        password
+      })
+    });
+
+    const result = await response.json();
+
+    if (!response.ok) {
+      console.error("Erreur backend :", result);
+      alert(result.error || "Une erreur est survenue lors de l'inscription.");
+      return;
     }
-    // si celle-ci renvoie false
-    else {
-      alert("Vos mots de passe ne sont pas identiques");
-    }
+
+    alert("Nouveau compte créé !");
+    navigate("/login");
+
+  } catch (error) {
+    console.error("Erreur fetch :", error);
+    alert("Erreur réseau ou serveur.");
+  }
+
   };
   return (
     <form
