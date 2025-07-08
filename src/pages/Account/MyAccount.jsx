@@ -21,12 +21,10 @@ return (
     <NavBar />
   </Header>
   <main className="main">
-    <h1>Profil Adhérent</h1>
-
     {/* Informations utilisateur */}
     <section className="user__info">
       {/* Affichage des infos avec le composant Array */}
-      <Array data={user} />
+      <Array data={user} title={"Profil Utilisateur"}/>
     </section>
       <div className="user__stats">
         <p>Ma dernière publication : {user.lastPublicationDate}</p>
