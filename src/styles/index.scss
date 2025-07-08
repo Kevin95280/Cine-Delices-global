@@ -10,6 +10,8 @@
 
 @use './components/header';
 @use './components/searchform';
+@use './components/cards';
+@use './components/card';
 
 @use 'pages/Account/MyAccount';
 @use 'pages/Account/MyRecipes.scss';
