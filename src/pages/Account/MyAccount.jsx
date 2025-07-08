@@ -3,16 +3,45 @@ import Footer from "../../Components/Footer";
 import Array from "../../Components/Array"; // Composant pour afficher les informations utilisateur
 import NavBar from "../../Components/Header/NavBar";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 
 export default function MyAccount() {
-// Exemple de données utilisateur (à remplacer par une API)
-const user = [
-{ label: "Nom", value: "Jean Dupont" },
-{ label: "Email", value: "jean.dupont@example.com" },
-{ label: "Date de création", value: "JJ/MM/AAAA" },
-{ label: "Nombre de publications", value: "XX" },
-];
+  const [userData, setUserData] = useState(null);
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      const token = localStorage.getItem("token");
+      try {
+        const response = await fetch("http://localhost:3000/api/users/me", {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        });
+
+        const result = await response.json();
+        if (!response.ok) {
+          throw new Error(result.error || "Erreur lors du chargement du profil");
+        }
+
+        setUserData(result);
+      } catch (error) {
+        console.error("Erreur chargement profil :", error);
+      }
+    };
+
+    fetchUser();
+  }, []);
+
+  const userArray = userData
+    ? [
+        { label: "Nom", value: `${userData.username}` },
+        { label: "Email", value: userData.email },
+        { label: "Date de création du profil", value: new Date(userData.created_at).toLocaleDateString() },
+        { label: "Nombre de publications", value: userData.publication_count }
+      ]
+    : [];
+
 
 return (
 <>
@@ -24,11 +53,11 @@ return (
     {/* Informations utilisateur */}
     <section className="user__info">
       {/* Affichage des infos avec le composant Array */}
-      <Array data={user} title={"Profil Utilisateur"}/>
+      <Array data={userArray} title={"Profil Utilisateur"} />
     </section>
       <div className="user__stats">
-        <p>Ma dernière publication : {user.lastPublicationDate}</p>
-        <p>Note moyenne des publications: {user.averageRating}</p>
+        <p>Ma dernière publication : {/*user.lastPublicationDate*/}</p>
+        <p>Note moyenne des publications: {/*user.averageRating*/}</p>
       </div>
 
     {/* Actions sur le compte */}
