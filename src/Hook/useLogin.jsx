@@ -32,6 +32,9 @@ export default function useLogin() {
                 throw new Error(error.message)
                 // utilisation de useNavigate dans le router pour la redirection
             } else {
+                const data = await response.json()
+                const token = data.token
+                console.log(token)
                 navigate('/')
             }
             setMessage('')
