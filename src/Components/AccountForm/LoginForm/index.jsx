@@ -1,16 +1,8 @@
 import "../style.scss"
 import useLogin from "../../../Hook/useLogin";
-// Import du contexte pour vérification et test de récupération
-import { AuthContext } from "../../../Authentification";
-import { useContext } from "react";
 
 export default function LoginForm() {
 	const { email, setEmail, password, setPassword, message, handleSubmit } = useLogin();
-
-	const { token, isAuthenticated } = useContext(AuthContext)
-
-	console.log(token)
-	console.log("Est identifié : ", isAuthenticated)
 
 	return (
 		<form

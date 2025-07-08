@@ -5,7 +5,7 @@ import { createRoot } from "react-dom/client";
 import App from "./Components/App";
 
 // Import de notre contexte
-import { AuthProvider } from "./Authentification";
+import { AuthProvider } from "./Authentication";
 
 // Nous ciblons notre élément racine
 const rootContainer = createRoot(document.getElementById('root'));

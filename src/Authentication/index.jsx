@@ -40,9 +40,23 @@ export function AuthProvider({ children }) {
      * @link https://fr.react.dev/reference/react/useEffect#examples-dependencies
      */
     }, [])
-    // Le contexte fonctionne comme un composant
+
+    /**
+     * Mise à jour des variables d'états à la connexion
+     * @param {string} newToken - Token d'authentification 
+     */
+    const login = (newToken) => {
+        setToken(newToken)
+        setIsAuthenticated(true)
+        localStorage.setItem("token", newToken)
+        console.log(newToken)
+    }
+
+    /**
+     * Le contexte fonctionne comme un composant React
+     */
     return (
-        <AuthContext.Provider value={{ token, isAuthenticated }}>
+        <AuthContext.Provider value={{ token, isAuthenticated, login }}>
             { children }
         </AuthContext.Provider>
     )
