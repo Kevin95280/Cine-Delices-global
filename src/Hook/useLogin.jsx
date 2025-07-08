@@ -32,9 +32,11 @@ export default function useLogin() {
                 throw new Error(error.message)
                 // utilisation de useNavigate dans le router pour la redirection
             } else {
+                // Récupération du token, qui se trouve dans le corps de notre requêtes
                 const data = await response.json()
                 const token = data.token
-                console.log(token)
+                // On le stock dans le localStorage
+                localStorage.setItem("token", token)
                 navigate('/')
             }
             setMessage('')
