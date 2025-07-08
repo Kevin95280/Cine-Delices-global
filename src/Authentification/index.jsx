@@ -40,7 +40,7 @@ export function AuthProvider({ children }) {
      * @link https://fr.react.dev/reference/react/useEffect#examples-dependencies
      */
     }, [])
-
+    // Le contexte fonctionne comme un composant
     return (
         <AuthContext.Provider value={{ token, isAuthenticated }}>
             { children }
