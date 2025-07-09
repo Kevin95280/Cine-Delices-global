@@ -1,5 +1,5 @@
-@use "../vars";
-@use '../mixins' as *;
+@use "../../../styles/vars";
+@use '../../../styles/mixins' as *;
 
 .search__form {
   display: flex;
