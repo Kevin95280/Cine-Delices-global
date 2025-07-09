@@ -1,9 +1,7 @@
 import "../style.scss"
-
 import useLogin from "../../../Hook/useLogin";
 
 export default function LoginForm() {
-
 	const { email, setEmail, password, setPassword, message, handleSubmit } = useLogin();
 
 	return (

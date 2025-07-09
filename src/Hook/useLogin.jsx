@@ -1,5 +1,7 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { useNavigate } from "react-router-dom";
+
+import { AuthContext } from "../Authentication";
 
 export default function useLogin() {
     // définition des variables d'état
@@ -8,6 +10,8 @@ export default function useLogin() {
     const [message, setMessage] = useState("");
 
     const navigate = useNavigate()
+
+    const { login } = useContext(AuthContext)
 
     // handle pour la soumission du formulaire
     const handleSubmit = async (e) => {
@@ -32,6 +36,11 @@ export default function useLogin() {
                 throw new Error(error.message)
                 // utilisation de useNavigate dans le router pour la redirection
             } else {
+                // Récupération du token, qui se trouve dans le corps de notre requêtes
+                const data = await response.json()
+                const token = data.token
+                // On le stock dans le localStorage
+                login(token)
                 navigate('/')
             }
             setMessage('')
