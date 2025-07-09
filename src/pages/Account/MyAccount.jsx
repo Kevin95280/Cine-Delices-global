@@ -58,6 +58,7 @@ return (
       <div className="user__stats">
         <p>Ma dernière publication : {/*user.lastPublicationDate*/}</p>
         <p>Note moyenne des publications: {/*user.averageRating*/}</p>
+        <p><a href="/add-recipe">Ajouter une recette</a></p>
       </div>
 
     {/* Actions sur le compte */}
