@@ -19,7 +19,6 @@ const [ingredients, setIngredients] = useState([""]);
 const [steps, setSteps] = useState([""]);
 const [story, setStory] = useState("");
 const [picture, setPicture] = useState(null);
-const [userId, setUserId] = useState(1);
 const [movieId, setMovieId] = useState(null);
 // Recherche côté utilisateur (autocomplétion)
 const [movieSearch, setMovieSearch] = useState("");
@@ -68,7 +67,6 @@ useEffect(() => {
   const fetchSuggestions = async () => {
     try {
       const response = await fetch(`http://localhost:3000/api/movies?search=${encodeURIComponent(movieSearch)}`);
-      console.log(response);
 
       if (!response.ok) {
   throw new Error(`Erreur HTTP ${response.status}`);
@@ -117,14 +115,18 @@ e.preventDefault();
   formData.append("ingredients", JSON.stringify(ingredients.filter(i => i.trim() !== "")));
   formData.append("steps", JSON.stringify(steps.filter(s => s.trim() !== "")));
 
-  // Association de la recette à un utilisateur et à un film
-  formData.append("user_id", userId);
+  // Association de la recette à un film
   formData.append("movie_id", movieId);
 
   try {
+    // On récupère le token d'authentification de l'utilisateur depuis le localStorage
+    const token = localStorage.getItem("token");
     // Envoi de la requete au serveur Express
     const response = await fetch("http://localhost:3000/api/recipes", {
       method: "POST",
+      headers: {
+        Authorization: `Bearer ${token}`
+      },
       // le FormData est envoyé directement comme body de la requete
       body: formData
     });
@@ -172,6 +174,7 @@ return (
             onSubmit={handleSubmit}
             aria-label="Formulaire de publication de recette">
             <h1 className="form__title">Formulaire de publication recette :</h1>
+            <p>Les champs marqués d'un * sont obligatoires</p>
 
             {/* Titre */}
             {/*fieldset regroupe plusieurs éléments liés à un même champ*/}
@@ -181,7 +184,7 @@ return (
               {/*Le label est lié au champ via htmlFor="title" (associé à id="title")
               Il permet de cliquer sur le label pour focusser le champ automatiquement.*/}
               <label htmlFor="title" className="form__label">
-                <span>Titre de la recette</span>
+                <span>Titre de la recette *</span>
               </label>
               <input
                 value={title}
@@ -198,7 +201,7 @@ return (
             <fieldset className="form__group">
                 <legend className="sr-only">Description</legend>
                 <label htmlFor="description" className="form__label">
-                  <span>Description</span>
+                  <span>Description *</span>
                 </label>
               <textarea
                 value={description}
@@ -215,7 +218,7 @@ return (
             <fieldset className="form__group">
               <legend className="sr-only">Catégorie</legend>
               <label htmlFor="category" className="form__label">
-                <span>Catégorie</span>
+                <span>Catégorie *</span>
               </label>
               <select
                 value={category}
@@ -239,7 +242,7 @@ return (
 
               <div>
                 <label htmlFor="difficulty" className="form__label">
-                  <span>Difficulté</span>
+                  <span>Difficulté *</span>
                 </label>
                 <select
                   value={difficulty}
@@ -257,7 +260,7 @@ return (
 
               <div>
                 <label htmlFor="budget" className="form__label">
-                  <span>Budget</span>
+                  <span>Budget *</span>
                 </label>
                 <select
                   value={budget}
@@ -275,7 +278,7 @@ return (
 
               <div>
                 <label htmlFor="servings" className="form__label">
-                  <span>Nombre de parts</span>
+                  <span>Nombre de parts *</span>
                 </label>
                   <input
                     value={servings}
@@ -293,7 +296,7 @@ return (
             <fieldset className="form__group">
               <legend className="sr-only">Temps de préparation</legend>
               <label htmlFor="preparation_time" className="form__label">
-                <span>Temps de préparation (en minutes)</span>
+                <span>Temps de préparation (en minutes) *</span>
               </label>
               <input
                 value={preparationTime}
@@ -310,7 +313,7 @@ return (
               <fieldset className="form__group">
                 <legend className="sr-only">Temps de cuisson</legend>
                 <label htmlFor="cooking_time" className="form__label">
-                  <span>Temps de cuisson (en minutes)</span>
+                  <span>Temps de cuisson (en minutes) *</span>
                 </label>
               <input
                   value={cookingTime}
@@ -329,7 +332,7 @@ return (
               {ingredients.map((value, index) => (
                 <div key={index}>
                   <label htmlFor={`ingredient-${index}`} className="form__label">
-                    <span>Ingrédient {index + 1}</span>
+                    <span>Ingrédient {index + 1} *</span>
                   </label>
                   <input
                     type="text"
@@ -358,7 +361,7 @@ return (
               {steps.map((value, index) => (
                 <div key={index}>
                   <label htmlFor={`step-${index}`} className="form__label">
-                    <span>Étape {index + 1}</span>
+                    <span>Étape {index + 1} *</span>
                   </label>
                   <input
                     id={`step-${index}`}
@@ -395,29 +398,11 @@ return (
                 />
             </fieldset>
 
-            {/* Id de l'utilisateur */}
-            <fieldset className="form__group">
-              <legend className="sr-only">Auteur</legend>
-              <label htmlFor="user-id" className="form__label">
-                <span>Identifiant utilisateur</span>
-              </label>
-              <input
-                type="number"
-                id="user-id"
-                name="user-id"
-                className="form__input"
-                value={userId}
-                onChange={(e) => setUserId(parseInt(e.target.value, 10))}
-                aria-required="true"
-                min={1}
-              />
-            </fieldset>
-
             {/* Film associé à votre recette */}
             <fieldset className="form__group">
               <legend className="sr-only">Film associé à la recette</legend>
               <label htmlFor="movie" className="form__label">
-                <span>Film associé à la recette</span>
+                <span>Film associé à la recette *</span>
               </label>
               <input
                 className="form__input"
@@ -485,7 +470,7 @@ return (
               type="submit" 
               className="form__button" 
               aria-label="Soumettre la recette"
-              disabled={!title || !description || !category || !difficulty || !budget || !servings || !preparationTime || !cookingTime || !ingredients || !steps || !story || !userId || !movieId }
+              disabled={!title || !description || !category || !difficulty || !budget || !servings || !preparationTime || !cookingTime || !ingredients || !steps || !movieId }
               >
                 Envoyer
               </button>
