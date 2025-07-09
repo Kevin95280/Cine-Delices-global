@@ -15,6 +15,17 @@
 			margin-bottom: 2rem;
 		}
 
+		/**
+		* Messages importants pour la bonne complétion du formulaire
+		* Comme l'obligation de remplir certains champs
+		*/
+		.account__form__info {
+			margin: 0 0 1.5rem 1rem;
+			font-size: .8rem;
+			font-style: italic;
+			color: vars.$text-light;
+		}
+
 		// Message en cas d'erreur
 		.error__indication {
 			margin: 1rem 0;

@@ -5,7 +5,7 @@ import SearchForm from "../../Components/Header/SearchForm";
 import LoginForm from "../../Components/AccountForm/LoginForm";
 import Footer from "../../Components/Footer";
 
-export default function Login () {
+export default function Login() {
     return (
         <>
             <Helmet>
@@ -16,9 +16,11 @@ export default function Login () {
                 <NavBar />
                 <SearchForm />
             </Header>
-            <main className="main">
-                <h1>Se connecter</h1>
-                <LoginForm />
+            <main className="main__form">
+                <div className="account__form__wrapper">
+                    <h1>Se connecter</h1>
+                    <LoginForm />
+                </div>
             </main>
             <Footer />
         </>
