@@ -49,7 +49,6 @@ export function AuthProvider({ children }) {
         setToken(newToken)
         setIsAuthenticated(true)
         localStorage.setItem("token", newToken)
-        console.log(newToken)
     }
 
     /**
