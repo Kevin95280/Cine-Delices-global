@@ -37,8 +37,8 @@ export default function MyAccount() {
     ? [
         { label: "Nom", value: `${userData.username}` },
         { label: "Email", value: userData.email },
-        { label: "Date de création du profil", value: new Date(userData.created_at).toLocaleDateString() },
-        { label: "Nombre de publications", value: userData.publication_count }
+        { label: "Date de création du profil", value: userData.created_at ? new Date(userData.created_at).toLocaleDateString(): "Date inconnue" },
+        { label: "Nombre de publications", value: typeof userData.publication_count === "number" ? userData.publication_count : "—" }
       ]
     : [];
 
