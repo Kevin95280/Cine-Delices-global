@@ -75,6 +75,8 @@ label {
 
 .user__button {
   max-width: 480px;
+  background-color: vars.$white;
+  color: vars.$bg-dark;
   padding: 1rem 1.5rem;
   font-size: 16px;
   font-weight: bold;
@@ -84,9 +86,27 @@ label {
   text-align: center;
   cursor: pointer;
   transition: background-color 0.5s ease;
+  animation: liftFade 1.5s ease forwards;
 
-  background-color: vars.$white;
-  color: vars.$bg-dark;
+  &__grey {
+      width: 100%;
+  background-color: vars.$text-secondary;
+  color: vars.$white;
+  padding: 1rem 1.5rem;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: vars.$font-main;
+  border: none;
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+  animation: liftFade 1.5s ease forwards;
+
+  &:hover {
+    background-color: color.scale(vars.$text-secondary, $lightness: -50%);
+  }
+  }
 
   &:first-child {
     margin-top: 1rem;

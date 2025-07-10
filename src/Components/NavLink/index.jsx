@@ -3,16 +3,18 @@ import { NavLink } from "react-router-dom";
 
 export default function NavLink() {
   return (
-    // Composant navbar pour la navigation "Recettes" et "Films & Séries"
+    // Composant navlink pour la navigation "Recettes" et "Films & Séries"
     <nav className="nav-link">
-      <ul>
-        <li>
-          <NavLink to="/recipes">Recettes</NavLink>
-        </li>
-        <li>
-          <NavLink to="/movies-and-series">Films & Séries</NavLink>
-        </li>
-      </ul>
+              <li className="nav-item glass-effect">
+                <NavLink to="/recipes">
+                  <span className="glass-text">Recettes</span>
+                </NavLink>
+              </li>
+              <li className="nav-item glass-effect">
+                <NavLink to="/movies-and-series">
+                  <span className="glass-text">Films & Séries</span>
+                </NavLink>
+              </li>
     </nav>
   );
 }

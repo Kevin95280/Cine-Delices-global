@@ -3,32 +3,30 @@
 .nav-link {
     display: flex;
     justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.nav-item {
+    background: linear-gradient(to bottom, #2c2f36, #1a1c20);
+    color: #e0e0e0;
     padding: 1rem 2rem;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 10px;
+    text-decoration: none;
+    list-style-type: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    letter-spacing: 0.5px;
+    transition: all 0.5s ease;
 
-    li {
-        padding: 1rem 1.5rem;
-        background-color:rgba(255, 255, 255, 0.150);
-        color: vars.$white;
-        font-weight: bold;
-        font-size: 16px;
-        border: none;
-        border-radius: 2rem;
-        text-align: center;
-        text-decoration: none;
-        transition: all 0.5s ease;
-
-        &:hover {
-            background-color: rgba(255, 255, 255, 0.308);
-        }
-
-        display: inline-block;
-        color: vars.$text-secondary;
-        font-family: vars.$font-main;
-        font-weight: bold;
-        margin-right: 4rem;
-
-        &:last-child {
-            margin-right: 0;
-        }
+    &:hover {
+        background: linear-gradient(to bottom, #394049, #1e2128);
+        transform: scale(1.05);
+        box-shadow: 0 6px 14px vars.$bg-light;
+        border: 1px solid vars.$bg-light;
+        color: #fff;
     }
 }

@@ -56,17 +56,17 @@ return (
       <Array data={userArray} title={"Profil Utilisateur"} />
     </section>
       <div className="user__stats">
-        <p>Ma dernière publication : {/*user.lastPublicationDate*/}</p>
+        <p>Ma dernière publication : { userData?.last_publication_date ? new Date(userData.last_publication_date).toLocaleDateString("fr-FR") : "Aucune recette publiée" }</p>
         <p>Note moyenne des publications: {/*user.averageRating*/}</p>
-        <p><a href="/add-recipe">Ajouter une recette</a></p>
       </div>
 
     {/* Actions sur le compte */}
     <div className="user__actions">
+      <Link to="/add-recipe" className="add-recipe-banner glass-effect">Créer une nouvelle recette</Link>
       <Link to="/my-recipes" className="user__button">Accéder à la liste de mes publications</Link>
       <Link to="#" className="user__button">Modifier mes informations</Link>
-      <button>Désactiver mon compte</button>
-      <button>Supprimer mon compte</button>
+      <button className="user__button__grey">Désactiver mon compte</button>
+      <button className="user__button">Supprimer mon compte</button>
     </div>
   </main>
   {/* Footer avec liens utiles */}
