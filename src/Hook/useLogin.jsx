@@ -41,7 +41,8 @@ export default function useLogin() {
                 const token = data.token
                 // On le stock dans le localStorage
                 login(token)
-                navigate('/')
+                alert("Connexion réussie !");
+                navigate('/my-account')
             }
             setMessage('')
         } catch (error) {

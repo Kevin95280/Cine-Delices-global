@@ -1,51 +1,58 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import useSignup from "../../../Hook/useSignup";
 
 export default function SignupForm() {
   // définition des variables d'état avec pour état initial des chaînes de caractères vides
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const navigate = useNavigate();
+const { username, setUsername, email, setEmail, password, setPassword, confirmPassword, setConfirmPassword, message, handleSubmit } = useSignup()
 
-  // fonction de soumission du formulaire
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    // condition pour la création du compte
-    if (password !== confirmPassword) {
-    alert("Vos mots de passe ne sont pas identiques");
-    return;
-  }
+    /**
+     * Initialisation de variable d'état
+     * Gestion via un booléen
+     * true au focus de l'input / false défocus
+     */
+    const [focusState, setFocusState] = useState({
+        username: false,
+        email: false,
+        password: false,
+        confirmPassword: false
+    })
 
-  try {
-    const response = await fetch("http://localhost:3000/api/users", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        username,
-        email,
-        password
-      })
-    });
-
-    const result = await response.json();
-
-    if (!response.ok) {
-      console.error("Erreur backend :", result);
-      alert(result.error || "Une erreur est survenue lors de l'inscription.");
-      return;
+    /**
+     * Handler permettant la gestion des variable d'état au focus d'un champs
+     * @param {string} field - Chaîne de caractère représentant la clé de notre objet stocké dans notre variable d'état
+     */
+    const handleFocus = (field) => {
+        /**
+         * ``prev`` représente notre objet stocké dans notre variable d'état
+         * Donc nous récupèrons l'objet, ses clés et valeurs associées
+         */
+        setFocusState((prev) => ({
+            /**
+             * Utilisation du spread operator pour récupèrer cette objet
+             * Et mettre à jour une première fois notre variable d'état
+             * Nous indiquerons ensuite qu'il faudra asigner la valeur ``true``
+             * A la clé [field] de notre objet 
+             */
+            ...prev, [field]: true
+        }))
     }
 
-    alert("Nouveau compte créé !");
-    navigate("/login");
+    // Même chose que pour le handler précédent mais cette fois ci pour gérer la perte de focus
+    const handleBlur = (field) => {
+        setFocusState((prev) => ({
+            ...prev, [field]: false
+        }))
+    }
 
-  } catch (error) {
-    console.error("Erreur fetch :", error);
-    alert("Erreur réseau ou serveur.");
-  }
+    /**
+     * On récupère séparément la valeur de chaque clé de notre objet stocké dans notre variable d'état
+     * Elle nous servirons pour gérer la condition pour ajouter une classe au focus ou la retirer
+     */
+    const isUsernameActive = focusState.username;
+    const isEmailActive = focusState.email;
+    const isPasswordActive = focusState.password;
+    const isConfirmedPasswordActive = focusState.confirmPassword;
 
     return (
         <form
@@ -150,4 +157,4 @@ export default function SignupForm() {
             </fieldset>
         </form>
     );
-}}
+}

@@ -2,10 +2,7 @@ import { useState } from "react";
 import useLogin from "../../../Hook/useLogin";
 
 export default function LoginForm() {
-  // définition des variables d'état
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const navigate = useNavigate();
+	const { email, setEmail, password, setPassword, message, handleSubmit } = useLogin();
 
 		const [focusState, setFocusState] = useState({
 			email: false,
