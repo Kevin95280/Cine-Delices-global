@@ -10,8 +10,7 @@
 @use 'pages/Account/MyAccount.scss';
 @use 'pages/Account/MyRecipes.scss';
 
-@use '../styles/pages/Account/Login.scss';
-@use '../styles/pages/Account/Signup.scss';
+@use '../styles/pages/Account/AccountForm.scss';
 
 @use '../styles/pages/Food/AddRecipe.scss';
 @use '../styles/pages/Food/RecipeDetail.scss';
@@ -20,4 +19,3 @@
 @use '../styles/pages/PrivacyPolicy.scss';
 @use '../styles/pages/LegalNotice.scss';
 @use '../styles/pages/AboutUs.scss';
-@use '../styles/pages/Account/AccountForm.scss'
