@@ -5,8 +5,6 @@ import NavBar from "../../Components/Header/NavBar"
 import SearchForm from "../../Components/Header/SearchForm"
 import SignupForm from "../../Components/AccountForm/SignupForm";
 import Footer from "../../Components/Footer";
-// Import de la feuille de style associée aux formulaires
-import "../../styles/pages/Account/Login.scss"
 
 export default function Signup() {
     return (

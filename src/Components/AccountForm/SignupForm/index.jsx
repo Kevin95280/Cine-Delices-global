@@ -60,7 +60,7 @@ export default function SignupForm() {
 
     return (
         <form
-            className="account__form account__form__login"
+            className="account__form"
             method="POST"
             // handler d'action à l'événement
             onSubmit={handleSubmit}
