@@ -1,21 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../../Authentication";
 
 export default function LoginForm() {
   // définition des variables d'état
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const { login, isAuthenticated, userData } = useAuth();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
+      // Vérification des champs email et mot de passe
       const response = await fetch("http://localhost:3000/api/auth/login", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password })
       });
 
@@ -25,18 +26,23 @@ export default function LoginForm() {
         alert(result.message || "Erreur lors de la connexion");
         return;
       }
-
-      // Stocke le token pour les futures requêtes authentifiées
-      localStorage.setItem("token", result.token);
-
       alert("Connexion réussie !");
-      navigate("/my-account");
+      // Appelle la fonction de login du contexte d'authentification
+      await login(result.token);
 
     } catch (error) {
       console.error("Erreur login :", error);
       alert("Une erreur est survenue");
     }
   };
+
+  useEffect(() => {
+  // Redirection vers la page "Mon compte" si l'utilisateur est authentifié et que les données utilisateur sont disponibles
+  if (isAuthenticated && userData) {
+    navigate("/my-account");
+  }
+  // Les dépendances de useEffect sont isAuthenticated et userData
+}, [isAuthenticated, userData]);
 
   return (
     <form
