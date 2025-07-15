@@ -8,7 +8,6 @@ import NavLink from "../Components/NavLink";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../Authentication";
 
-
 export default function Home() {
   const { isAuthenticated } = useAuth();
   const navigate = useNavigate();
