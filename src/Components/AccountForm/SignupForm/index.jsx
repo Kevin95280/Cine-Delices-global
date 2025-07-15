@@ -1,14 +1,10 @@
-// Import de notre hook personnalisé
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import useSignup from "../../../Hook/useSignup";
 
 export default function SignupForm() {
-    /**
-     * On récupère nos variables d'état, et nos handler de notre hook personnalisée
-     * CF. src/Hook/useSignup.jsx
-     */
-    const { username, setUsername, email, setEmail, password, setPassword, confirmPassword, setConfirmPassword, message, handleSubmit } = useSignup()
-
+  // définition des variables d'état avec pour état initial des chaînes de caractères vides
+const { username, setUsername, email, setEmail, password, setPassword, confirmPassword, setConfirmPassword, message, handleSubmit } = useSignup()
 
     /**
      * Initialisation de variable d'état
