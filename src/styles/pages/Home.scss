@@ -1,0 +1,63 @@
+@use '../vars';
+@use '../mixins.scss' as *;
+
+.main {
+    padding: 1rem;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+
+    .logo_fullscreen {
+        width: 80%;
+        max-width: 300px;
+    }
+
+    .catchphrase {
+        font-size: 1.5rem;
+        color: vars.$white;
+        font-family: vars.$font-main;
+        margin-bottom: 3rem;
+    }
+
+
+    @include medium {
+        flex-direction: column;
+
+        .logo_fullscreen {
+            max-width: 400px;
+        }
+
+        .catchphrase {
+            font-size: 1.7rem;
+        }
+    }
+
+    @include large {
+        flex-direction: column;
+
+        .logo_fullscreen {
+            max-width: 450px;
+        }
+
+        .catchphrase {
+            font-size: 2rem;
+        }
+    }
+}
+
+.section {
+    margin-bottom: 3rem;
+    padding: 0 1rem;
+
+    @include medium {
+        padding: 0 2rem;
+    }
+
+    @include large {
+        padding: 0 4rem;
+    }
+}

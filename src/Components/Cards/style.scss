@@ -1,21 +1,35 @@
 @use "../../styles/vars";
+@use '../../styles/mixins' as *;
 
 .carousel__wrapper {
     width: 90%;
     margin: 1rem auto;
-        
-        .carousel__title {
-            margin-bottom: 1rem;
-            font-family: vars.$font-main;
-            font-size: 1.4rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            color: vars.$white;
-        }
 
+    .carousel__title {
+        margin-bottom: 1rem;
+        font-family: vars.$font-main;
+        font-size: 1.4rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: vars.$white;
+    }
+
+    .card__wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+        gap: 2rem;
+    }
+
+    @include medium {
         .card__wrapper {
-            display: flex;
-            width: 100%;
+            grid-template-columns: repeat(2, 1fr);
         }
-}
+    }
 
+    @include large {
+        .card__wrapper {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
