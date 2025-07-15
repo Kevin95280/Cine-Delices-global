@@ -6,20 +6,24 @@ import SearchForm from "../../Components/Header/SearchForm"
 import SignupForm from "../../Components/AccountForm/SignupForm";
 import Footer from "../../Components/Footer";
 
-export default function Signup () {
+export default function Signup() {
     return (
-    <>
-        <Helmet>
-            <title>Inscription - Ciné-Délices</title>
-            <meta name="description" content="Création d'un compte utilisateur - Ciné-Délices" />
-        </Helmet>
-        <Header>
-            <NavBar />
-            <SearchForm />
-        </Header>
-        <h1>Créer votre compte </h1>
-        <SignupForm />
-        <Footer />
-    </>
+        <>
+            <Helmet>
+                <title>Inscription - Ciné-Délices</title>
+                <meta name="description" content="Création d'un compte utilisateur - Ciné-Délices" />
+            </Helmet>
+            <Header>
+                <NavBar />
+                <SearchForm />
+            </Header>
+            <main className="main__form">
+                <div className="account__form__wrapper">
+                    <h1>Créer votre compte </h1>
+                    <SignupForm />
+                </div>
+            </main>
+            <Footer />
+        </>
     )
 }

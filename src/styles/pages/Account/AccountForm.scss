@@ -1,0 +1,89 @@
+@use "../../vars";
+
+.main__form {
+	display: flex;
+	justify-content: center;
+
+	.account__form__wrapper {
+		background-color: rgba(0, 0, 0, 0.1);
+		width: 80%;
+		padding: 1.5rem;
+		border-radius: 10px;
+
+		h1 {
+			text-align: center;
+			margin-bottom: 2rem;
+		}
+
+		/**
+		* Messages importants pour la bonne complétion du formulaire
+		* Comme l'obligation de remplir certains champs
+		*/
+		.account__form__info {
+			margin: 0 0 1.5rem 1rem;
+			font-size: .8rem;
+			font-style: italic;
+			color: vars.$text-light;
+		}
+
+		// Message en cas d'erreur
+		.error__indication {
+			margin: 1rem 0;
+			color: red;
+			font-size: 1.2rem;
+			font-style: italic;
+			text-align: center;
+		}
+
+		// Conteneur label/input
+		.account__form__group {
+			position: relative;
+			margin: 1rem 0;
+
+			// Positionnement du label
+			.account__form__label {
+				position: absolute;
+				top: 38%;
+				left: 1rem;
+				color: vars.$text-secondary;
+				transition: all .4s ease-in-out;
+			}
+
+			.account__form__input {
+				box-sizing: border-box;
+				border: 2px solid vars.$border-color-input;
+				border-radius: 30px;
+				width: 100%;
+				margin: 1rem 0;
+				padding: 1.4rem;
+				color: vars.$text-light;
+				background-color: rgba(255, 255, 255, .1);
+			}
+
+			// Classe permettant la transition du label en dehors de l'input
+			.is-active {
+				top: 0;
+				color: vars.$text-light;
+				transform: translateY(-65%) translateX(5%);
+			}
+		}
+
+		// Boutton de formulaire
+		.account__form__button {
+			position: relative;
+			margin-top: 4rem;
+			padding: 1.4rem 0;
+			border: 2px solid vars.$border-color-input;
+			border-radius: 40px;
+			background-color: vars.$button-primary-color;
+			transition: .3s;
+
+			&:hover,
+			&:focus
+			{
+				background-color: vars.$button-secondary-color;
+				outline: none;
+			}
+		}
+	}
+}

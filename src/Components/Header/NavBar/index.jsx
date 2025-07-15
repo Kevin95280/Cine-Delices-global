@@ -12,7 +12,7 @@ export default function NavBar() {
           </Link>
         </li>
         <li className="account-link">
-          <Link to="/my-account" className="logo_account_container">
+          <Link to="/signup" className="logo_account_container">
             <img src="/assets/user.png" alt="logo account" className="logo_account"/>
           </Link>
         </li>

@@ -10,7 +10,13 @@ body {
   line-height: 1.5;
 }
 
-h1, h2 {
+//Layout générique
+main {
+  padding: 2rem;
+}
+
+h1,
+h2 {
   font-weight: bold;
   color: vars.$white;
   margin-bottom: 0.8rem;
@@ -62,6 +68,8 @@ a {
 
 button {
   width: 100%;
+  background-color: vars.$text-secondary;
+  color: vars.$white;
   padding: 1rem 1.5rem;
   font-size: 16px;
   font-weight: bold;
@@ -72,67 +80,97 @@ button {
   cursor: pointer;
   transition: background-color 0.5s ease;
 
-  background-color: vars.$white;
-  color: vars.$bg-dark;
-
   &:hover {
-    background-color: color.scale(vars.$text-secondary, $lightness: 20%);
+    background-color: color.scale(vars.$text-secondary, $lightness: -50%);
   }
 }
-
-.container {
-  display: flex;
-}
-
-button {
-  background-color: vars.$text-secondary;
-  color: vars.$white;
-  border: none;
-  padding: 0.8rem 1rem;
-  border-radius: 0.5rem;
-  font-weight: bold;
-  cursor: pointer;
-
-//   &:hover {
-//     background-color: darken(vars.$text-secondary, 10%);
-//   }
-}
-
-//Layout générique
-main {
-  padding: 2rem;
-}
-
-// section {
-//   margin-bottom: 4rem;
-//   // background-color: vars.$bg-section;
-//   padding: 2rem;
-//   border-radius: 1rem;
-// }
-
-// input,
-// textarea {
-//   width: 100%;
-//   padding: 10px;
-//   border: 1px solid #444;
-//   background-color: #2c2c2c;
-//   color: vars.$text-light;
-//   border-radius: 4px;
-//   margin-top: 4px;
-//   margin-bottom: 16px;
-
-//   &::placeholder {
-//     color: vars.$text-secondary;
-//   }
-// }
-
-// label {
-//   font-weight: 600;
-//   display: block;
-//   margin-bottom: 8px;
-// }
 
 .sr-only {
   position: absolute;
   visibility: hidden;
+}
+
+@keyframes liftFade {
+  from {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.add-recipe-banner {
+  animation: liftFade 1.5s ease forwards;
+  background: vars.$background;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.glass-effect {
+  /*
+  Position relative 
+  Statique par défaut
+  Pour pouvoir placer les sous-éléments en fonction du premier élément ayant une position différente de statique
+  */
+  position: relative;
+  width: 100%;
+  // Gestion du dépassement des sous-éléments
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 8px 8px 30px 0px rgba(0, 0, 0, 0.5);
+  // Transition pour le scale
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(.99);
+  }
+
+  // Position initial de notre effet (effet de "brillance" au survole)
+  &::before {
+    content: "";
+    /*
+          Permet de sortir notre effet du flux naturel du document
+          Gestion de son positionnement par rapport au conteneur de l'effet
+      */
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #0000001a;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    // On positionne l'élément complétement à gauche
+    left: -100%;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, transparent, #ffffff66, transparent);
+    transition: 0.5s;
+  }
+
+  // Au survole, il se déplacera vers la droite
+  &:hover::after {
+    left: 100%;
+  }
+
+  .glass-text {
+    display: inline-block;
+    transform: translateX(0);
+    transition: transform 1.5s ease;
+  }
+
+  &:hover .glass-text {
+    transform: translateX(200px);
+  }
+
 }

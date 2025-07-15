@@ -5,6 +5,7 @@ import Cards from "../Components/Cards";
 import Card from "../Components/Cards/Card";
 import SearchForm from "../Components/Header/SearchForm";
 import NavLink from "../Components/NavLink";
+import { Link } from "react-router-dom";
 
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
             <main className="main">
                 {/* Chemin src à compléter avec l'image du logo */}
                 <div className="hero">
+                <Link to="/add-recipe" className="add-recipe-banner glass-effect">Créer une nouvelle recette</Link>
                     <img src="/assets/logo_pleine_page.png" alt="logo cine-delices" className="logo_fullscreen" />
                     <h1 className="catchphrase">Le goût du cinéma, dans votre assiette.</h1>
                 </div>
