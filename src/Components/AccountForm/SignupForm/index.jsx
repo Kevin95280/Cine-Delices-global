@@ -54,7 +54,10 @@ const { username, setUsername, email, setEmail, password, setPassword, confirmPa
     const isPasswordActive = focusState.password;
     const isConfirmedPasswordActive = focusState.confirmPassword;
 
+    
     const [searchParams] = useSearchParams();
+    // On vérifie si le paramètre de l'URL "edit" est égal à "true"
+    // Cela nous permet de savoir si nous sommes en mode édition ou en mode création de compte
     const isEditMode = searchParams.get("edit") === "true";
 
     return (
