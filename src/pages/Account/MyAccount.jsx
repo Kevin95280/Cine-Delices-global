@@ -2,46 +2,39 @@ import Header from "../../Components/Header";
 import Footer from "../../Components/Footer";
 import Array from "../../Components/Array"; // Composant pour afficher les informations utilisateur
 import NavBar from "../../Components/Header/NavBar";
-import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { Link, Navigate } from "react-router-dom";
+import { useAuth } from "../../Authentication";
 
 
 export default function MyAccount() {
-  const [userData, setUserData] = useState(null);
+  
+  const { userData, isLoadingUser } = useAuth();
 
-  useEffect(() => {
-    const fetchUser = async () => {
-      const token = localStorage.getItem("token");
-      try {
-        const response = await fetch("http://localhost:3000/api/users/me", {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        });
+  if (isLoadingUser) {
+    return (
+      <>
+        <Header>
+          <NavBar />
+        </Header>
+        <main className="main">
+          <p>Chargement des infos utilisateur...</p>
+        </main>
+        <Footer />
+      </>
+    );
+  }
 
-        const result = await response.json();
-        if (!response.ok) {
-          throw new Error(result.error || "Erreur lors du chargement du profil");
-        }
+  if (!userData) {
+    // Si l'utilisateur n'est pas connecté, rediriger vers la page d'accueil
+    return <Navigate to="/" replace />;
+    }
 
-        setUserData(result);
-      } catch (error) {
-        console.error("Erreur chargement profil :", error);
-      }
-    };
-
-    fetchUser();
-  }, []);
-
-  const userArray = userData
-    ? [
-        { label: "Nom", value: `${userData.username}` },
+  const userArray = [
+        { label: "Nom", value: userData.username },
         { label: "Email", value: userData.email },
         { label: "Date de création du profil", value: userData.created_at ? new Date(userData.created_at).toLocaleDateString(): "Date inconnue" },
         { label: "Nombre de publications", value: typeof userData.publication_count === "number" ? userData.publication_count : "—" }
-      ]
-    : [];
-
+      ];
 
 return (
 <>
@@ -56,7 +49,7 @@ return (
       <Array data={userArray} title={"Profil Utilisateur"} />
     </section>
       <div className="user__stats">
-        <p>Ma dernière publication : { userData?.last_publication_date ? new Date(userData.last_publication_date).toLocaleDateString("fr-FR") : "Aucune recette publiée" }</p>
+        <p>Ma dernière publication : { userData.last_publication_date ? new Date(userData.last_publication_date).toLocaleDateString("fr-FR") : "Aucune recette publiée" }</p>
         <p>Note moyenne des publications: {/*user.averageRating*/}</p>
       </div>
 

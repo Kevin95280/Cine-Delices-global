@@ -1,5 +1,5 @@
 @use '../../../styles/vars';
-@use '../../../styles/mixins' as *;
+@use '../../../styles/mixins'as *;
 
 .nav-bar {
     ul {
@@ -18,27 +18,83 @@
             justify-content: space-between;
         }
 
-        .logo_home {
-            width: 4rem;
+        @include large {
+            ul {
+                padding: 2 2rem;
+            }
+        }
+
+        .account-link {
+            margin-left: auto;
         }
 
         .logo_account {
-            width: 5rem;
+            width: 4rem;
+            display: block;
         }
     }
 
-    @include large {
-        ul {
-            padding: 2 2rem;
-        }
-    }
-
-    .account-link {
-        margin-left: auto;
+    .logo_home {
+        display: flex;
+        width: 6rem;
     }
 
     .logo_account {
         width: 4rem;
         display: block;
+    }
+
+    .logo_account_container {
+        position: relative;
+        cursor: pointer;
+    }
+
+    .account-dropdown {
+        position: absolute;
+        top: 35px;
+        right: 120%;
+        transform: translateY(-50%);
+        background: #2c2f36;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        list-style: none;
+        padding: 0.5rem 0;
+        z-index: 99;
+
+        li {
+            padding: 0.8rem 1.5rem;
+            color: #e0e0e0;
+            cursor: pointer;
+            transition: background 0.2s ease;
+
+            &:hover {
+                background: rgba(255, 255, 255, 0.05);
+            }
+        }
+    }
+
+    .user-info {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        color: #e0e0e0;
+        font-weight: 500;
+        margin-left: 2rem;
+
+        .logout-btn {
+            background: transparent;
+            border: 1px solid #ff5f5f;
+            color: #ff5f5f;
+            padding: 0.4rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+
+            &:hover {
+                background: #ff5f5f;
+                color: #fff;
+            }
+        }
     }
 }

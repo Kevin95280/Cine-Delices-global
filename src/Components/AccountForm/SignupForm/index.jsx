@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import useSignup from "../../../Hook/useSignup";
 
 export default function SignupForm() {
