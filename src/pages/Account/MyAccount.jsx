@@ -57,7 +57,7 @@ return (
     <div className="user__actions">
       <Link to="/add-recipe" className="add-recipe-banner glass-effect">Créer une nouvelle recette</Link>
       <Link to="/my-recipes" className="user__button">Accéder à la liste de mes publications</Link>
-      <Link to="#" className="user__button">Modifier mes informations</Link>
+      <Link to="/signup?edit=true" className="user__button">Modifier mes informations</Link>
       <button className="user__button__grey">Désactiver mon compte</button>
       <button className="user__button">Supprimer mon compte</button>
     </div>
