@@ -1,4 +1,5 @@
 @use "../../styles/vars";
+@use '../../styles/mixins' as *;
 
 .footer {
   background: vars.$bg-dark;
@@ -13,7 +14,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 2.5rem;
+    gap: 1.5rem;
     padding: 0rem;
     margin: 0rem;
   }
@@ -24,6 +25,26 @@
     &:hover {
       text-decoration: none;
       color: vars.$text-secondary;
+    }
+  }
+
+  @include medium {
+    font-size: 1rem;
+
+    &__list {
+      gap: 2rem;
+    }
+  }
+
+  &__link {
+    font-size: 1.05rem;
+  }
+
+  @include large {
+    padding: 3rem 2rem;
+
+    &__list {
+      gap: 3rem;
     }
   }
 }

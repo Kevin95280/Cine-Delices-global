@@ -1,0 +1,110 @@
+@use '../../styles/vars';
+@use '../../styles/mixins' as *;
+
+header {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    margin: 1rem 3rem;
+}
+
+.nav-bar {
+    width: 100%;
+
+    ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .logo_home {
+        width: 5rem;
+        height: auto;
+    }
+
+    .logo_account_container {
+        display: flex;
+        align-items: center;
+
+        .logo_account {
+            width: 3rem;
+            height: auto;
+        }
+    }
+}
+
+.search__form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+    margin-top: 1rem;
+
+    &__input {
+        padding: 1rem;
+        font-size: 0.7rem;
+        border: 1px solid white;
+        border-radius: 0.5rem;
+    }
+
+    &__button {
+        padding: 1rem;
+        font-size: 0.8rem;
+    }
+}
+
+@include medium {
+    header {
+        padding-inline: 4rem;
+    }
+
+    .search__form {
+        flex-direction: row;
+        align-items: center;
+
+        &__input {
+            flex: 1;
+            font-size: 1rem;
+        }
+
+        &__button {
+            width: auto;
+            margin-left: 1rem;
+            font-size: 1rem;
+        }
+    }
+
+    .logo_home {
+        width: 3rem;
+    }
+
+    .logo_account {
+        width: 3rem;
+    }
+}
+
+@include large {
+    header {
+        padding-inline: 3rem;
+    }
+
+    .logo_home {
+        width: 5rem;
+    }
+
+    .logo_account {
+        width: 3.5rem;
+    }
+
+    .search__form__input {
+        font-size: 1.1rem;
+    }
+
+    .search__form__button {
+        font-size: 1.1rem;
+    }
+}

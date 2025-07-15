@@ -1,7 +1,9 @@
 @use '../../styles/vars';
+@use '../../styles/mixins' as *;
 
 .nav-link {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
     margin: 2rem 0;
@@ -22,11 +24,55 @@
     letter-spacing: 0.5px;
     transition: all 0.5s ease;
 
-    &:hover {
-        background: linear-gradient(to bottom, #394049, #1e2128);
-        transform: scale(1.05);
-        box-shadow: 0 6px 14px vars.$bg-light;
-        border: 1px solid vars.$bg-light;
-        color: #fff;
+    li {
+        display: inline-block;
+        margin-right: 4rem;
+        min-width: 100px;
+        height: auto;
+        padding: 0.6rem 1.5rem;
+        background-color: rgba(255, 255, 255, 0.150);
+        color: vars.$text-secondary;
+        font-family: vars.$font-main;
+        font-weight: bold;
+        font-size: 0.8rem;
+        border: none;
+        border-radius: 2rem;
+        text-align: center;
+        text-decoration: none;
+        transition: all 0.5s ease;
+
+        &:hover {
+            background: linear-gradient(to bottom, #394049, #1e2128);
+            transform: scale(1.05);
+            box-shadow: 0 6px 14px vars.$bg-light;
+            border: 1px solid vars.$bg-light;
+            color: #fff;
+
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.308);
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
+        @include medium {
+            li {
+                min-width: 120px;
+                height: auto;
+                padding: 0.8rem 1.7rem;
+                font-size: 1.1rem;
+            }
+        }
+
+        @include large {
+            li {
+                min-width: 140px;
+                height: auto;
+                padding: 1rem 1.8rem;
+                font-size: 1.15rem;
+            }
+        }
     }
 }
