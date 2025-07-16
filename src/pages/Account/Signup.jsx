@@ -19,7 +19,6 @@ export default function Signup() {
             </Header>
             <main className="main__form">
                 <div className="account__form__wrapper">
-                    <h1>Créer votre compte </h1>
                     <SignupForm />
                 </div>
             </main>

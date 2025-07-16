@@ -2,13 +2,14 @@ import Header from "../../Components/Header";
 import Footer from "../../Components/Footer";
 import Array from "../../Components/Array"; // Composant pour afficher les informations utilisateur
 import NavBar from "../../Components/Header/NavBar";
-import { Link, Navigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useAuth } from "../../Authentication";
 
 
 export default function MyAccount() {
   
-  const { userData, isLoadingUser } = useAuth();
+  const { userData, isLoadingUser, logout } = useAuth();
+  const navigate = useNavigate();
 
   if (isLoadingUser) {
     return (
@@ -36,6 +37,66 @@ export default function MyAccount() {
         { label: "Nombre de publications", value: typeof userData.publication_count === "number" ? userData.publication_count : "—" }
       ];
 
+    const handleDeactivateAccount = async () => {
+    const confirmed = window.confirm(
+      "Êtes-vous sûr de vouloir désactiver votre compte ?\nVous pourrez le réactiver en contactant l'administrateur."
+    );
+
+    if (!confirmed) return;
+
+    try {
+      const response = await fetch(`http://localhost:3000/api/users/${userData.id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`
+        },
+        body: JSON.stringify({ is_active: false })
+      });
+
+      if (!response.ok) throw new Error("Échec de la désactivation");
+
+      alert("Votre compte a été désactivé");
+      // Déconnexion de l'utilisateur
+      logout();
+      // Redirection vers la page d'accueil
+      navigate("/");
+    } catch (error) {
+      console.error("Erreur désactivation :", error.message);
+      alert("Une erreur est survenue lors de la désactivation");
+    }
+  };
+
+
+  const handleDeleteAccount = async () => {
+  const confirmed = window.confirm(
+    "Êtes-vous sûr de vouloir supprimer votre compte ?\n⚠️ Cette action est irréversible et entrainera la suppression de toutes vos publications."
+  );
+
+  if (!confirmed) return;
+
+  try {
+    const response = await fetch(`http://localhost:3000/api/users/${userData.id}`, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`
+      }
+    });
+
+    if (!response.ok) throw new Error("Erreur lors de la suppression");
+
+    alert("Votre compte a bien été supprimé");
+    // Déconnexion de l'utilisateur
+    logout();
+    // Redirection vers la page d'accueil
+    navigate("/");
+
+  } catch (error) {
+    console.error("Suppression échouée :", error.message);
+    alert("Une erreur est survenue pendant la suppression du compte");
+  }
+};
+
 return (
 <>
   {/* En tete de la page */}
@@ -57,9 +118,9 @@ return (
     <div className="user__actions">
       <Link to="/add-recipe" className="add-recipe-banner glass-effect">Créer une nouvelle recette</Link>
       <Link to="/my-recipes" className="user__button">Accéder à la liste de mes publications</Link>
-      <Link to="#" className="user__button">Modifier mes informations</Link>
-      <button className="user__button__grey">Désactiver mon compte</button>
-      <button className="user__button">Supprimer mon compte</button>
+      <Link to="/signup?edit=true" className="user__button">Modifier mes informations</Link>
+      <button className="user__button__grey" onClick={handleDeactivateAccount}>Désactiver mon compte</button>
+      <button className="user__button" onClick={handleDeleteAccount}>Supprimer mon compte</button>
     </div>
   </main>
   {/* Footer avec liens utiles */}

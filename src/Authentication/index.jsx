@@ -87,6 +87,17 @@ export function AuthProvider({ children }) {
 
             if (!response.ok) throw new Error("Erreur récupération utilisateur");
             const data = await response.json();
+            console.log("Données utilisateur reçues :", data);
+
+
+            if (!data.is_active) {
+                alert("Votre compte est désactivé. Veuillez contacter un administrateur.");
+                localStorage.removeItem("token");
+                setToken(null);
+                setUserData(null);
+                setIsAuthenticated(false);
+                return; // Empêche la suite de la connexion
+}
             setUsername(data.username); // Pour une mise à jour immédiate, sinon on devrait rafraichir la page pour avoir l'affichage du pseudo et le bouton de déconnexion
             setUserData(data); // On stocke les données utilisateur
         } catch (error) {

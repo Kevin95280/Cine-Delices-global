@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import useSignup from "../../../Hook/useSignup";
 
 export default function SignupForm() {
@@ -53,6 +54,12 @@ const { username, setUsername, email, setEmail, password, setPassword, confirmPa
     const isPasswordActive = focusState.password;
     const isConfirmedPasswordActive = focusState.confirmPassword;
 
+
+    const [searchParams] = useSearchParams();
+    // On vérifie si le paramètre de l'URL "edit" est égal à "true"
+    // Cela nous permet de savoir si nous sommes en mode édition ou en mode création de compte
+    const isEditMode = searchParams.get("edit") === "true";
+
     return (
         <form
             className="account__form"
@@ -65,7 +72,10 @@ const { username, setUsername, email, setEmail, password, setPassword, confirmPa
             {/* Ajout d'un fieldset, pour mieux structurer sémantiquement le formulaire */}
             <fieldset>
                 {/* Ajout d'une légende, qui sera "caché" visuellement, mais accessible via une lisseuse d'écran*/}
-                <legend className="sr-only">Formulaire d'inscription :</legend>
+                <h1>{isEditMode ? "Modifier votre compte" : "Créer votre compte"}</h1>
+                <legend className="sr-only">
+                    {isEditMode ? "Formulaire de mise à jour du compte :" : "Formulaire de création de compte :"}
+                </legend>
                 <div className="account__form__group">
                     {/* 
                     Concernant la gestion des classes CSS :
@@ -151,7 +161,7 @@ const { username, setUsername, email, setEmail, password, setPassword, confirmPa
                     />
                 </div>
                 <button type="submit" className="account__form__button">
-                    S'inscrire
+                    {isEditMode ? "Mettre à jour" : "S'inscrire"}
                 </button>
             </fieldset>
         </form>
