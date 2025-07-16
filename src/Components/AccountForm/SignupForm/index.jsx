@@ -54,7 +54,7 @@ const { username, setUsername, email, setEmail, password, setPassword, confirmPa
     const isPasswordActive = focusState.password;
     const isConfirmedPasswordActive = focusState.confirmPassword;
 
-    
+
     const [searchParams] = useSearchParams();
     // On vérifie si le paramètre de l'URL "edit" est égal à "true"
     // Cela nous permet de savoir si nous sommes en mode édition ou en mode création de compte
@@ -73,7 +73,9 @@ const { username, setUsername, email, setEmail, password, setPassword, confirmPa
             <fieldset>
                 {/* Ajout d'une légende, qui sera "caché" visuellement, mais accessible via une lisseuse d'écran*/}
                 <h1>{isEditMode ? "Modifier votre compte" : "Créer votre compte"}</h1>
-                <legend className="sr-only">Formulaire d'inscription :</legend>
+                <legend className="sr-only">
+                    {isEditMode ? "Formulaire de mise à jour du compte :" : "Formulaire de création de compte :"}
+                </legend>
                 <div className="account__form__group">
                     {/* 
                     Concernant la gestion des classes CSS :
