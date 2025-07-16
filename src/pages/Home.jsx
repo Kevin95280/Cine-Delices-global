@@ -77,7 +77,7 @@ useEffect(() => {
                             key={recipe.id}
                             title={recipe.title}
                             authorName={recipe.author_username}
-                            image={recipe.picture || "/assets/image-par-defaut.jpg"}
+                            image={recipe.picture_url || "/assets/image-test.jpg"}
                             />
                         ))}
                     </Cards>
@@ -90,7 +90,7 @@ useEffect(() => {
                             key={recipe.id}
                             title={recipe.title}
                             authorName={recipe.author_username}
-                            image={recipe.picture || "/assets/image-par-defaut.jpg"}
+                            image={recipe.picture_url || "/assets/image-test.jpg"}
                             />
                         ))}
                     </Cards>
