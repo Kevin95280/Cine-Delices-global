@@ -1,3 +1,7 @@
+// Import des styles pour react-slick
+import "slick-carousel/slick/slick.css";  
+import "slick-carousel/slick/slick-theme.css";
+
 // Création de notre composant rooter
 import { createRoot } from "react-dom/client";
 

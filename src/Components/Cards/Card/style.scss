@@ -3,6 +3,15 @@
 
 .card {
     // margin: 0 1rem 1.5rem;
+    width: 200px;
+    //max-width: 360px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    margin: 0 6px;
 
     &__header {
         margin-bottom: 1rem;
@@ -62,8 +71,10 @@
     }
 
     &__image {
-        width: 100%;
-        border-radius: 15px;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 0.5rem;
     }
 
     &__body {
@@ -100,3 +111,13 @@
 .card:last-child {
     margin: 0;
 }
+
+.card_title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+

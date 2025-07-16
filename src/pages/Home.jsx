@@ -1,8 +1,7 @@
 import Header from "../Components/Header";
 import NavBar from "../Components/Header/NavBar";
 import Footer from "../Components/Footer";
-import Cards from "../Components/Cards";
-import Card from "../Components/Cards/Card";
+import RecipeCarousel from "../Components/RecipeCarousel";
 import SearchForm from "../Components/Header/SearchForm";
 import NavLink from "../Components/NavLink";
 import { useNavigate } from "react-router-dom";
@@ -33,13 +32,13 @@ useEffect(() => {
 
       // Top recettes : triées par note (du plus élevé au plus bas)
       const sortedByRating = [...data].sort((a, b) => b.rating - a.rating);
-      setTopRecipes(sortedByRating.slice(0, 3)); // top 3
+      setTopRecipes(sortedByRating.slice(0, 10)); // top 10
 
       // Recettes récentes : triées par date de création
       const sortedByDate = [...data].sort(
         (a, b) => new Date(b.created_at) - new Date(a.created_at)
       );
-      setRecentRecipes(sortedByDate.slice(0, 3)); // les 3 plus récentes
+      setRecentRecipes(sortedByDate.slice(0, 10)); // les 10 plus récentes
 
       setRecipes(data);
     } catch (error) {
@@ -69,31 +68,14 @@ useEffect(() => {
                     <img src="/assets/logo_pleine_page.png" alt="logo cine-delices" className="logo_fullscreen" />
                     <h1 className="catchphrase">Le goût du cinéma, dans votre assiette.</h1>
                 </div>
-                {/* Section des Top Recettes */}
+                {/* Carousel Top Recettes */}
                 <section className="section">
-                    <Cards title={"Top recettes"}>
-                        {topRecipes.map((recipe) => (
-                            <Card
-                            key={recipe.id}
-                            title={recipe.title}
-                            authorName={recipe.author_username}
-                            image={recipe.picture_url || "/assets/image-test.jpg"}
-                            />
-                        ))}
-                    </Cards>
+                    <RecipeCarousel title="Top recettes" recipes={topRecipes} />
                 </section>
-                {/* Section des Recettes récentes */}
+
+                {/* Carousel Recettes récentes */}
                 <section className="section">
-                    <Cards title={"Recettes récentes"}>
-                        {recentRecipes.map((recipe) => (
-                            <Card
-                            key={recipe.id}
-                            title={recipe.title}
-                            authorName={recipe.author_username}
-                            image={recipe.picture_url || "/assets/image-test.jpg"}
-                            />
-                        ))}
-                    </Cards>
+                    <RecipeCarousel title="Recettes récentes" recipes={recentRecipes} />
                 </section>
             </main>
             {/* Footer avec liens utiles */}

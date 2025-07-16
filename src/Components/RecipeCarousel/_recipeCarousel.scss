@@ -1,0 +1,17 @@
+@use '../../styles/vars';
+@use '../../styles/mixins' as *;
+
+.carousel-title {
+  margin: 1rem 0;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: vars.$bg-light;
+}
+
+.carousel-section .slick-slide {
+  padding: 0 5px;
+  box-sizing: border-box;
+}
+
+
+
