@@ -2,16 +2,12 @@
 @use "sass:color";
 
 .card {
-    // margin: 0 1rem 1.5rem;
-    width: 200px;
-    //max-width: 360px;
-    height: 200px;
+    width: 30rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     overflow: hidden;
-    margin: 0 6px;
 
     &__header {
         margin-bottom: 1rem;
@@ -71,8 +67,8 @@
     }
 
     &__image {
-    width: 200px;
-    height: 200px;
+    width: 14rem;
+    height: 12rem;
     object-fit: cover;
     border-radius: 0.5rem;
     }

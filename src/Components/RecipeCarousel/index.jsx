@@ -27,6 +27,7 @@ const RecipeCarousel = ({ title, recipes }) => {
         {recipes.map((recipe) => (
           <Card
             key={recipe.id}
+            id={recipe.id}
             title={recipe.title}
             authorName={recipe.author_username}
             image={recipe.picture_url}
