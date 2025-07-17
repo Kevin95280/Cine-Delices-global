@@ -59,7 +59,7 @@ export default function Recipes() {
               </h1>
               <img
                 className="recipe__image"
-                src={recipe.image}
+                src={recipe.picture}
                 alt={recipe.title}
               />
               <p className="recipe__description">{recipe.description}</p>
@@ -75,10 +75,10 @@ export default function Recipes() {
                   Nombres de parts : {recipe.servings}
                 </li>
                 <li className="recipe__info">
-                  Temps de préparation : {recipe.preparationTime}
+                  Temps de préparation : {recipe.preparation_time}
                 </li>
                 <li className="recipe__info">
-                  Temps de cuisson : {recipe.cookingTime}
+                  Temps de cuisson : {recipe.cook_time}
                 </li>
                 <li className="recipe__info">Budget : {recipe.budget}</li>
                 <li className="recipe__info">Difficulté : {recipe.difficulty}</li>
@@ -95,6 +95,7 @@ export default function Recipes() {
               </h2>
               <ul className="recipe__ingredients__list">
                 {/* parcourt du tableau ingrédients afin de récupérer tout le contenu de mon tableau d'objet*/}
+                {/* Le ?. (opérateur optionnel de chaînage) garantit que React ne tentera pas .map() si recipe.ingredients n'existe pas encore */}
                 {recipe?.ingredients?.map((ingredient, index) => (
                   // utilisation d'une clé unique pour pouvoir faire appel à tous les ingrédients
                   <li className="recipe__ingredient" key={index}>
@@ -112,11 +113,11 @@ export default function Recipes() {
               </h2>
               <ol className="recipe__steps__list">
                 {/* parcourt du tableau steps afin de récupérer tout le contenu de mon tableau d'objet*/}
-                {recipe?.steps?.map((step, index) => (
-                  // utilisation d'une clé unique pour pouvoir faire appel à chaque ingrédients
-                  <li className="recipe__step" key={index}>
+                {recipe.steps?.map((step) => (
+                  // utilisation d'une clé unique pour pouvoir faire appel à chaque étape
+                  <li className="recipe__step" key={step.number}>
                     {/* appel à la valeur de la clé unique pour afficher toutes les étapes de préparation */}
-                    {step}
+                    {step.description}
                   </li>
                 ))}
               </ol>
