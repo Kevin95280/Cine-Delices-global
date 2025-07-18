@@ -1,14 +1,18 @@
 import { Helmet } from "react-helmet";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../Authentication";
 import Header from "../../Components/Header";
 import NavBar from "../../Components/Header/NavBar";
 import SearchForm from "../../Components/Header/SearchForm";
 import Footer from "../../Components/Footer";
-import { useEffect, useState } from "react";
+import RecipeRating from "../../Components/Rate";
 
-export default function Recipes() {
+export default function RecipeDetail() {
   // permettra d'afficher la recette en fonction de l'id présent dans l'URL
   const { recipeId } = useParams();
+
   // permet de stocker la recette récupérée depuis l'API
   const [recipe, setRecipe] = useState(null);
 
@@ -26,6 +30,10 @@ export default function Recipes() {
 
     fetchRecipe();
   }, [recipeId]);
+
+  // Récupération des données utilisateur depuis le contexte d'authentification
+  // Cela permet d'afficher la note de l'utilisateur pour la recette
+  const { userData } = useContext(AuthContext);
 
   return (
     <>
@@ -132,6 +140,15 @@ export default function Recipes() {
                 Anecdote :
               </h2>
               <p className="recipe__anecdote__text">{recipe.story}</p>
+            </article>
+
+            <article className="recipe__item recipe__rating" aria-labelledby="recipe-rating">
+              <h2 className="recipe__subtitle" id="recipe-rating">
+                Votre avis :
+              </h2>
+              {/* Composant pour afficher la note de la recette */}
+              {/* On passe l'ID de la recette et l'ID de l'utilisateur pour pouvoir gérer les notes */}
+              <RecipeRating userId={userData?.id} />
             </article>
           </section>
           )}
