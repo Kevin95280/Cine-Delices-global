@@ -117,7 +117,7 @@ export default function RecipeDetail() {
             {/* Étapes de préparation */}
             <article className="recipe__steps" aria-labelledby="recipe-steps">
               <h2 className="recipe__subtitle" id="recipe-steps">
-                Préparation :
+                Étapes de préparation :
               </h2>
               <ol className="recipe__steps__list">
                 {/* parcourt du tableau steps afin de récupérer tout le contenu de mon tableau d'objet*/}

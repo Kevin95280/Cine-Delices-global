@@ -1,15 +1,37 @@
+import { useEffect, useState } from "react";
+import { useAuth } from "../../Authentication";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import Header from "../../Components/Header";
 import Footer from "../../Components/Footer";
 import Array from "../../Components/Array"; // Composant pour afficher les informations utilisateur
 import NavBar from "../../Components/Header/NavBar";
-import { Link, Navigate, useNavigate } from "react-router-dom";
-import { useAuth } from "../../Authentication";
+
 
 
 export default function MyAccount() {
   
   const { userData, isLoadingUser, logout } = useAuth();
+  const [averageRating, setAverageRating] = useState(null);
   const navigate = useNavigate();
+
+useEffect(() => {
+  async function fetchAverageRating() {
+    try {
+      const res = await fetch(`http://localhost:3000/api/users/${userData.id}/average-rating`);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+      setAverageRating(parseFloat(data.average_rating));
+    } catch (err) {
+      console.error("Erreur récupération moyenne :", err.message);
+    }
+  }
+
+  if (userData?.id) {
+    fetchAverageRating();
+  }
+}, [userData?.id]);
+
+
 
   if (isLoadingUser) {
     return (
@@ -111,7 +133,7 @@ return (
     </section>
       <div className="user__stats">
         <p>Ma dernière publication : { userData.last_publication_date ? new Date(userData.last_publication_date).toLocaleDateString("fr-FR") : "Aucune recette publiée" }</p>
-        <p>Note moyenne des publications: {/*user.averageRating*/}</p>
+        <p>Note moyenne des publications :{" "} {averageRating !== null ? `${averageRating} ⭐` : "Non notée"}</p>
       </div>
 
     {/* Actions sur le compte */}
