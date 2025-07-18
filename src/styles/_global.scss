@@ -15,6 +15,14 @@ main {
   padding: 2rem;
 }
 
+h1 {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 18px;
+}
+
 h1,
 h2 {
   font-weight: bold;
@@ -22,12 +30,9 @@ h2 {
   margin-bottom: 0.8rem;
 }
 
-h1 {
-  font-size: 24px;
-}
-
-h2 {
-  font-size: 18px;
+.section {
+  margin-bottom: 3rem;
+  padding: 0 1rem;
 }
 
 a {

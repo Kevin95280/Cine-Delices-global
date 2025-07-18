@@ -8,6 +8,8 @@
 @use '../Components/Array/array';
 @use '../Components/Header/SearchForm/searchform';
 @use '../Components/Header/header';
+@use '../Components/RecipeCarousel/recipeCarousel';
+@use '../Components/Rate/rate';
 
 @use 'pages/Account/AccountForm.scss';
 @use 'pages/Account/MyAccount.scss';
@@ -17,8 +19,8 @@
 @use 'pages/Food/AddRecipe.scss';
 @use 'pages/Food/RecipeDetail.scss';
 
+@use 'pages/Home.scss';
 @use 'pages/TermsAndConditions.scss';
 @use 'pages/PrivacyPolicy.scss';
 @use 'pages/LegalNotice.scss';
 @use 'pages/AboutUs.scss';
-@use '../styles/pages/Home.scss';

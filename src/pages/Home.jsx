@@ -1,12 +1,12 @@
 import Header from "../Components/Header";
 import NavBar from "../Components/Header/NavBar";
 import Footer from "../Components/Footer";
-import Cards from "../Components/Cards";
-import Card from "../Components/Cards/Card";
+import RecipeCarousel from "../Components/RecipeCarousel";
 import SearchForm from "../Components/Header/SearchForm";
 import NavLink from "../Components/NavLink";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../Authentication";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   const { isAuthenticated } = useAuth();
@@ -19,6 +19,35 @@ export default function Home() {
       alert("Vous devez être connecté pour créer une nouvelle recette");
     }
   };
+
+const [recipes, setRecipes] = useState([]);
+const [topRecipes, setTopRecipes] = useState([]);
+const [recentRecipes, setRecentRecipes] = useState([]);
+
+useEffect(() => {
+  const fetchRecipes = async () => {
+    try {
+      const response = await fetch("http://localhost:3000/api/recipes");
+      const data = await response.json();
+
+      // Top recettes : triées par note (du plus élevé au plus bas)
+      const sortedByRating = [...data].sort((a, b) => b.rating - a.rating);
+      setTopRecipes(sortedByRating.slice(0, 10)); // top 10
+
+      // Recettes récentes : triées par date de création
+      const sortedByDate = [...data].sort(
+        (a, b) => new Date(b.created_at) - new Date(a.created_at)
+      );
+      setRecentRecipes(sortedByDate.slice(0, 10)); // les 10 plus récentes
+
+      setRecipes(data);
+    } catch (error) {
+      console.error("Erreur chargement recettes :", error);
+    }
+  };
+
+  fetchRecipes();
+}, []);
 
     return (
 
@@ -39,25 +68,14 @@ export default function Home() {
                     <img src="/assets/logo_pleine_page.png" alt="logo cine-delices" className="logo_fullscreen" />
                     <h1 className="catchphrase">Le goût du cinéma, dans votre assiette.</h1>
                 </div>
-                {/* Section des Top Recettes */}
+                {/* Carousel Top Recettes */}
                 <section className="section">
-                    <Cards title={"Top recettes"}>
-                        {/* Exemple de carte pour les tests */}
-                        <Card title="Recette Test" authorName="Auteur Test" image="../../assets/image-test.jpg" />
-                        <Card title="Recette Test" authorName="Auteur Test" image="../../assets/image-test.jpg" />
-                        <Card title="Recette Test" authorName="Auteur Test" image="../../assets/image-test.jpg" />
-                        {/* Cartes supplémentaires... */}
-                    </Cards>
+                    <RecipeCarousel title="Top recettes" recipes={topRecipes} />
                 </section>
-                {/* Section des Recettes récentes */}
+
+                {/* Carousel Recettes récentes */}
                 <section className="section">
-                    <Cards title={"Recettes récentes"}>
-                        {/* Exemple de carte pour les tests */}
-                        <Card title="Recette Test" authorName="Auteur Test" image="../../assets/image-test.jpg" />
-                        <Card title="Recette Test" authorName="Auteur Test" image="../../assets/image-test.jpg" />
-                        <Card title="Recette Test" authorName="Auteur Test" image="../../assets/image-test.jpg" />
-                        {/* Cartes supplémentaires... */}
-                    </Cards>
+                    <RecipeCarousel title="Recettes récentes" recipes={recentRecipes} />
                 </section>
             </main>
             {/* Footer avec liens utiles */}
