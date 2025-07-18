@@ -1,7 +1,8 @@
 import Slider from "react-slick";
 import Card from "../Cards/Card";
 
-const RecipeCarousel = ({ title, recipes }) => {
+export default function ContentCarousel({ title, items }) {
+
   const settings = {
     dots: false,
     infinite: true,
@@ -24,18 +25,16 @@ const RecipeCarousel = ({ title, recipes }) => {
     <section className="carousel-section">
       <h2 className="carousel-title">{title}</h2>
       <Slider {...settings}>
-        {recipes.map((recipe) => (
+        {items.map((item) => (
           <Card
-            key={recipe.id}
-            id={recipe.id}
-            title={recipe.title}
-            authorName={recipe.author_username}
-            image={recipe.picture_url}
+            key={item.id}
+            id={item.id}
+            title={item.title}
+            authorName={item.author_username}
+            image={item.picture_url || item.poster_path} // picture_url pour les recettes, poster_path pour les films
           />
         ))}
       </Slider>
     </section>
   );
 };
-
-export default RecipeCarousel;

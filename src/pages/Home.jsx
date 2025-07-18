@@ -1,7 +1,7 @@
 import Header from "../Components/Header";
 import NavBar from "../Components/Header/NavBar";
 import Footer from "../Components/Footer";
-import RecipeCarousel from "../Components/RecipeCarousel";
+import RecipeCarousel from "../Components/ContentCarousel";
 import SearchForm from "../Components/Header/SearchForm";
 import NavLink from "../Components/NavLink";
 import { useNavigate } from "react-router-dom";
@@ -70,12 +70,12 @@ useEffect(() => {
                 </div>
                 {/* Carousel Top Recettes */}
                 <section className="section">
-                    <RecipeCarousel title="Top recettes" recipes={topRecipes} />
+                    <RecipeCarousel title="Top recettes" items={topRecipes} />
                 </section>
 
                 {/* Carousel Recettes récentes */}
                 <section className="section">
-                    <RecipeCarousel title="Recettes récentes" recipes={recentRecipes} />
+                    <RecipeCarousel title="Recettes récentes" items={recentRecipes} />
                 </section>
             </main>
             {/* Footer avec liens utiles */}
