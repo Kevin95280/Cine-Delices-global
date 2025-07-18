@@ -67,8 +67,8 @@
     }
 
     &__image {
-    width: 14rem;
-    height: 12rem;
+    width: 12rem;
+    height: 10rem;
     object-fit: cover;
     border-radius: 0.5rem;
     }
@@ -76,10 +76,10 @@
     &__body {
         font-family: vars.$font-main;
 
+
         .card__title {
-            display: inline-block;
             margin-bottom: 0.2rem;
-            font-size: 1rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
             color: vars.$white;
 
