@@ -67,6 +67,7 @@ export default function ContentCarousel({ title, items }) {
               title={truncate(item.title, 18)}
               authorName={item.author_username}
               image={item.picture_url || item.poster_path}
+              type={item.poster_path ? "movie" : "recipe"}
             />
           ))}
         </Slider>
