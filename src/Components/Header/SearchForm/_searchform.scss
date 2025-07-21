@@ -40,6 +40,31 @@
   }
 }
 
+.results__columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Deux colonnes égales */
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.results__column {
+  min-width: 0;   /* Empêche la colonne de forcer sa propre largeur */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.results__column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.results__column li {
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+
+
 @include medium {
   .search__form {
     flex-direction: row;

@@ -7,6 +7,7 @@ import NavLink from "../Components/NavLink";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../Authentication";
 import { useEffect, useState } from "react";
+import ContentCarousel from "../Components/ContentCarousel";
 
 export default function Home() {
   const { isAuthenticated } = useAuth();
@@ -70,12 +71,12 @@ useEffect(() => {
                 </div>
                 {/* Carousel Top Recettes */}
                 <section className="section">
-                    <RecipeCarousel title="Top recettes" items={topRecipes} />
+                    <ContentCarousel title="Top recettes" items={topRecipes} />
                 </section>
 
                 {/* Carousel Recettes récentes */}
                 <section className="section">
-                    <RecipeCarousel title="Recettes récentes" items={recentRecipes} />
+                    <ContentCarousel title="Recettes récentes" items={recentRecipes} />
                 </section>
             </main>
             {/* Footer avec liens utiles */}

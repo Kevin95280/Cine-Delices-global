@@ -1,22 +1,45 @@
 import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 import Header from "../../Components/Header";
 import Footer from "../../Components/Footer";
 import NavBar from "../../Components/Header/NavBar";
 import SearchForm from "../../Components/Header/SearchForm";
-import Cards from "../../Components/Cards"; // Composant carousel pour les recettes associées
-import Card from "../../Components/Cards/Card";
+import ContentCarousel from "../../Components/ContentCarousel";
 
 export default function MovieDetail() {
-const { movieId } = useParams(); // Récupère l'ID du film depuis l'URL (à utiliser plus tard pour l'appel à l'API)
+const { movieId } = useParams(); // Récupère l'ID du film depuis l'URL
 
-// Simule des données de film (sera remplacé par l'appel à l'API)
-const movie = {
-title: "Kill Bill : Volume 1 (2003)",
-synopsis: "Au cours de son mariage, un commando armé massacre l'assistance, laissant pour morte la mariée. Celle-ci, enceinte, survit cependant à ses blessures. Quatre ans plus tard, elle sort du coma et décide de se venger de ses anciens compagnons d'armes, membres du commando. Elle se lance alors dans une quête sanglante et périlleuse...",
-recipes: [
-{ id: 1, title: "Escalopes de dinde à la feta", image: "image-test.jpg" }
-]
-};
+  // États pour le film, chargement et erreurs
+  const [movie, setMovie] = useState(null); 
+  const [recipes, setRecipes] = useState([]); 
+  const [error, setError] = useState(null); 
+
+  // Récupération du film et de ses recettes associées
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        // Film
+        const movieRes = await fetch(`http://localhost:3000/api/movies/${movieId}`);
+        if (!movieRes.ok) throw new Error("Erreur récupération film");
+        const movieData = await movieRes.json();
+        setMovie(movieData);
+
+      // Récupère toutes les recettes
+      const recipeRes = await fetch("http://localhost:3000/api/recipes");
+      if (!recipeRes.ok) throw new Error("Erreur récupération recettes");
+      const recipeData = await recipeRes.json();
+
+      // Filtre les recettes liées au film courant
+      const related = recipeData.filter(recipe => recipe.movie_id == movieId);
+      setRecipes(related);
+    } catch (err) {
+      console.error("Erreur MovieDetail :", err.message);
+      setError("Impossible de charger les données.");
+    }
+  }
+
+    fetchData();
+  }, [movieId]);
 
 return (
 <>
@@ -26,21 +49,31 @@ return (
     <SearchForm />
   </Header>
   <main className="main">
-    <h1>{movie.title}</h1>
 
-    {/* Section Synopsis */}
-    <section>
-      <h2>Synopsis</h2>
-      <p>{movie.synopsis}</p>
-    </section>
+    {/* Affichage de l'erreur */}
+        {error && <p>{error}</p>}
 
-    {/* Section Recettes associées */}
-    <section>
-      <Cards recipes={movie.recipes}>
-        <Card />
-      </Cards>
-    </section>
-  </main>
+        {/* Film trouvé */}
+        {movie && (
+          <>
+            <h1>{movie[0].title}</h1>
+
+            {/* Synopsis */}
+            <section>
+              <h2>Synopsis</h2>
+              <p>{movie[0].overview}</p>
+            </section>
+
+            {/* Recettes associées */}
+            {recipes.length > 0 && (
+              <section>
+                <h2>Recettes inspirées du film</h2>
+                <ContentCarousel items={recipes} />
+              </section>
+            )}
+          </>
+        )}
+      </main>
   {/* Footer avec liens utiles */}
   <Footer />
 </>
