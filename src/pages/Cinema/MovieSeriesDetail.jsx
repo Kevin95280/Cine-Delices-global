@@ -58,10 +58,16 @@ return (
           <>
             <h1>{movie[0].title}</h1>
 
-            {/* Synopsis */}
-            <section>
-              <h2>Synopsis</h2>
-              <p>{movie[0].overview}</p>
+            {/* Synopsis + Affiche */}
+            <section className="movie__synopsis">
+              <div className="movie__image">
+                <img src={movie[0].poster_path} alt={`Affiche de ${movie[0].title}`} />
+              </div>
+
+              <div className="movie__text">
+                <h2>Synopsis</h2>
+                <p>{movie[0].overview}</p>
+              </div>
             </section>
 
             {/* Recettes associées */}

@@ -15,6 +15,11 @@ export default function SearchForm() {
     setError(null); // Réinitialisation de l’erreur au changement
   };
 
+  // Remise à zéro des résultats une fois qu'un item de la liste est sélectionné
+  const handleResultClick = () => {
+  setResults(null);
+};
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -79,7 +84,7 @@ export default function SearchForm() {
                 <ul>
                   {results.recipes.map((recipe) => (
                     <li key={`recipe-${recipe.id}`}>
-                      <Link to={`/recipes/${recipe.id}`}>{recipe.title}</Link>
+                      <Link to={`/recipes/${recipe.id}`} onClick={handleResultClick}>{recipe.title}</Link>
                     </li>
                   ))}
                 </ul>
@@ -95,7 +100,7 @@ export default function SearchForm() {
                 <ul>
                   {results.movies.map((movie) => (
                     <li key={`movie-${movie.id}`}>
-                      <Link to={`/movies-and-series/${movie.id}`}>{movie.title}</Link>
+                      <Link to={`/movies-and-series/${movie.id}`} onClick={handleResultClick}>{movie.title}</Link>
                     </li>
                   ))}
                 </ul>
