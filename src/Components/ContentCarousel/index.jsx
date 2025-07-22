@@ -2,7 +2,8 @@ import { useEffect } from "react";
 import Slider from "react-slick";
 import Card from "../Cards/Card";
 
-export default function RecipeCarousel({ title, recipes }) {
+export default function ContentCarousel({ title, items }) {
+
   const settings = {
     dots: false,
     infinite: true,
@@ -29,12 +30,12 @@ export default function RecipeCarousel({ title, recipes }) {
       img.decode().catch(() => {}); // évite les blocages JS
     };
 
-    if (recipes && recipes.length > 0) {
-      recipes.forEach((recipe) => {
-        if (recipe.picture_url) preloadImage(recipe.picture_url);
+    if (items && items.length > 0) {
+      items.forEach((item) => {
+        if (item.picture_url) preloadImage(item.picture_url);
       });
     }
-  }, [recipes]);
+  }, [items]);
 
 // Fonction utilitaire pour tronquer le texte si nécessaire
 // Limite le titre à XX caractères et ajoute "…" si nécessaire
@@ -45,17 +46,32 @@ export default function RecipeCarousel({ title, recipes }) {
   return (
     <section className="carousel-section">
       <h2 className="carousel-title">{title}</h2>
-      <Slider {...settings}>
-        {recipes.map((recipe) => (
+
+      {/* Rendu statique si une seule recette */}
+      {items.length === 1 ? (
+        <div className="carousel-single">
           <Card
-            key={recipe.id}
-            id={recipe.id}
-            title={truncate(recipe.title, 18)}
-            authorName={recipe.author_username}
-            image={recipe.picture_url}
+            key={items[0].id}
+            id={items[0].id}
+            title={items[0].title}
+            authorName={items[0].author_username}
+            image={items[0].picture_url || items[0].poster_path}
           />
-        ))}
-      </Slider>
+        </div>
+      ) : (
+        <Slider {...settings}>
+          {items.map((item) => (
+            <Card
+              key={item.id}
+              id={item.id}
+              title={truncate(item.title, 18)}
+              authorName={item.author_username}
+              image={item.picture_url || item.poster_path}
+              type={item.poster_path ? "movie" : "recipe"}
+            />
+          ))}
+        </Slider>
+        )}
     </section>
   );
 };
