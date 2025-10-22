@@ -26,7 +26,7 @@ app.set('views', './src/app/views')
 
 // Initialisation des options des cors
 const optionsCORS = {
-    origin: "http://localhost:1234"
+    origin: ['http://localhost:1234', 'https://cine-delices-global-frontend.onrender.com']
 }
 
 // Middleware permettant la gestion des CORS
