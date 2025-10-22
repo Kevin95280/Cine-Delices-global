@@ -4,9 +4,10 @@
   "description": "backend",
   "main": "index.js",
   "type": "module",
-  "scripts": {
-    "dev": "nodemon index.js"
-  },
+"scripts": {
+  "dev": "nodemon index.js",
+  "start": "node index.js"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
