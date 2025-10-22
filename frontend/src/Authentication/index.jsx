@@ -33,6 +33,8 @@ export function AuthProvider({ children }) {
     const [username, setUsername] = useState(null);
     const [userData, setUserData] = useState(null);
 
+    const API_URL = process.env.REACT_APP_API_URL;
+
     // Fonction lancée après chargement du rendu du composant
     useEffect(() => {
         // On récupère le token stocké dans localStorage
