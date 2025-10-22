@@ -17,7 +17,7 @@ export default function MyAccount() {
 useEffect(() => {
   async function fetchAverageRating() {
     try {
-      const res = await fetch(`http://localhost:3000/api/users/${userData.id}/average-rating`);
+      const res = await fetch(`${API_URL}/api/users/${userData.id}/average-rating`);
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = await res.json();
       setAverageRating(parseFloat(data.average_rating));
@@ -67,7 +67,7 @@ useEffect(() => {
     if (!confirmed) return;
 
     try {
-      const response = await fetch(`http://localhost:3000/api/users/${userData.id}`, {
+      const response = await fetch(`${API_URL}/api/users/${userData.id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -98,7 +98,7 @@ useEffect(() => {
   if (!confirmed) return;
 
   try {
-    const response = await fetch(`http://localhost:3000/api/users/${userData.id}`, {
+    const response = await fetch(`${API_URL}/api/users/${userData.id}`, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`

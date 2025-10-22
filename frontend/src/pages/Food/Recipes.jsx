@@ -19,9 +19,9 @@ export default function Recipes() {
         // Utilisation de Promise.all pour charger les recettes en parallèle
         // On attend que toutes les requêtes soient terminées avant de continuer
         const [allRecipes, entrees, plats] = await Promise.all([
-          fetch("http://localhost:3000/api/recipes"),
-          fetch("http://localhost:3000/api/recipes/category/Entrée"),
-          fetch("http://localhost:3000/api/recipes/category/Plat"),
+          fetch(`${API_URL}/api/recipes`),
+          fetch(`${API_URL}/api/recipes/category/Entrée`),
+          fetch(`${API_URL}/api/recipes/category/Plat`),
         ]);
 
         const all = await allRecipes.json();

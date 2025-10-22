@@ -66,7 +66,7 @@ useEffect(() => {
   // Si la saisie est suffisante, on appelle fetchSuggestions() pour aller chercher les films correspondants
   const fetchSuggestions = async () => {
     try {
-      const response = await fetch(`http://localhost:3000/api/movies?search=${encodeURIComponent(movieSearch)}`);
+      const response = await fetch(`${API_URL}/api/movies?search=${encodeURIComponent(movieSearch)}`);
 
       if (!response.ok) {
   throw new Error(`Erreur HTTP ${response.status}`);
@@ -122,7 +122,7 @@ e.preventDefault();
     // On récupère le token d'authentification de l'utilisateur depuis le localStorage
     const token = localStorage.getItem("token");
     // Envoi de la requete au serveur Express
-    const response = await fetch("http://localhost:3000/api/recipes", {
+    const response = await fetch(`${API_URL}/api/recipes`, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${token}`

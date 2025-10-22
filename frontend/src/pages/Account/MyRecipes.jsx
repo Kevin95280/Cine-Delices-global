@@ -12,7 +12,7 @@ const [recipes, setRecipes] = useState([]);
       try {
         const token = localStorage.getItem("token");
 
-        const response = await fetch("http://localhost:3000/api/my-recipes", {
+        const response = await fetch(`${API_URL}/api/my-recipes`, {
           headers: {
             Authorization: `Bearer ${token}`
           }

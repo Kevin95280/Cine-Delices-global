@@ -16,9 +16,9 @@ export default function MoviesSeries() {
     const fetchData = async () => {
       try {
         const [allMovies, horreur, comedie] = await Promise.all([
-          fetch("http://localhost:3000/api/movies"),
-          fetch("http://localhost:3000/api/movies/genre/Horreur"),
-          fetch("http://localhost:3000/api/movies/genre/Comédie"),
+          fetch(`${API_URL}/api/movies`),
+          fetch(`${API_URL}/api/movies/genre/Horreur`),
+          fetch(`${API_URL}/api/movies/genre/Comédie`),
         ]);
 
         const all = await allMovies.json();

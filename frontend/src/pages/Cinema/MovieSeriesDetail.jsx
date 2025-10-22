@@ -19,13 +19,13 @@ const { movieId } = useParams(); // Récupère l'ID du film depuis l'URL
     async function fetchData() {
       try {
         // Film
-        const movieRes = await fetch(`http://localhost:3000/api/movies/${movieId}`);
+        const movieRes = await fetch(`${API_URL}/api/movies/${movieId}`);
         if (!movieRes.ok) throw new Error("Erreur récupération film");
         const movieData = await movieRes.json();
         setMovie(movieData);
 
       // Récupère toutes les recettes
-      const recipeRes = await fetch("http://localhost:3000/api/recipes");
+      const recipeRes = await fetch(`${API_URL}/api/recipes`);
       if (!recipeRes.ok) throw new Error("Erreur récupération recettes");
       const recipeData = await recipeRes.json();
 

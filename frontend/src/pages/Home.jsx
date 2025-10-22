@@ -25,10 +25,12 @@ const [recipes, setRecipes] = useState([]);
 const [topRecipes, setTopRecipes] = useState([]);
 const [recentRecipes, setRecentRecipes] = useState([]);
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 useEffect(() => {
   const fetchRecipes = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api/recipes");
+      const response = await fetch(`${API_URL}/api/recipes`);
       const data = await response.json();
 
       // Top recettes : triées par note (du plus élevé au plus bas)
