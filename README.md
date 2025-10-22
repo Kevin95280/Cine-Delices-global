@@ -29,6 +29,8 @@ Backend : Node.js, Express, PSQL
 Méthodologie : Agile
 
 🚀 Déploiement
+---
+
 Cette version est déployée via Docker sur Render, avec une séparation des services frontend et backend.
 
 🔗 Démo en ligne
