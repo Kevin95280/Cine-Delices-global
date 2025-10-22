@@ -22,11 +22,11 @@ Tester des ajustements techniques en autonomie
 Le projet a été réalisé en méthode agile (Scrum) avec une équipe de 4 développeurs. J’ai occupé le rôle de Scrum Master, garant de la coordination, du suivi des tâches et de la documentation technique.
 
 🛠 Stack technique
+---
+
 Frontend : React.js, SCSS, HTML
 
 Backend : Node.js, Express, PSQL
-
-Méthodologie : Agile
 
 🚀 Déploiement
 ---
