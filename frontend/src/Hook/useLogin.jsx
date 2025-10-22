@@ -13,6 +13,8 @@ export default function useLogin() {
 
     const { login } = useContext(AuthContext)
 
+    const API_URL = process.env.REACT_APP_API_URL;
+
     // handle pour la soumission du formulaire
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -22,7 +24,7 @@ export default function useLogin() {
                 email,
                 password
             }
-            const response = await fetch('http://localhost:3000/api/auth/login', {
+            const response = await fetch(`${API_URL}/api/auth/login`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

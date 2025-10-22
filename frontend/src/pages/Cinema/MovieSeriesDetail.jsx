@@ -14,6 +14,8 @@ const { movieId } = useParams(); // Récupère l'ID du film depuis l'URL
   const [recipes, setRecipes] = useState([]); 
   const [error, setError] = useState(null); 
 
+  const API_URL = process.env.REACT_APP_API_URL;
+
   // Récupération du film et de ses recettes associées
   useEffect(() => {
     async function fetchData() {

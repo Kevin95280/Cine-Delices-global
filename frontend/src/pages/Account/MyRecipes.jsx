@@ -7,6 +7,8 @@ import { useEffect, useState } from "react";
 export default function MyRecipes() {
 const [recipes, setRecipes] = useState([]);
 
+const API_URL = process.env.REACT_APP_API_URL;
+
   useEffect(() => {
     const fetchRecipes = async () => {
       try {

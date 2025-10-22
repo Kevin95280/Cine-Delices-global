@@ -13,6 +13,8 @@ export default function Recipes() {
   const [entrees, setEntrees] = useState([]);
   const [plats, setPlats] = useState([]);
 
+  const API_URL = process.env.REACT_APP_API_URL;
+
   useEffect(() => {
     const fetchData = async () => {
       try {

@@ -12,6 +12,8 @@ export default function MoviesSeries() {
   const [peur, setPeur] = useState([]);
   const [rire, setRire] = useState([]);
 
+  const API_URL = process.env.REACT_APP_API_URL;
+
   useEffect(() => {
     const fetchData = async () => {
       try {

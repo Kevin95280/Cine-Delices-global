@@ -21,6 +21,8 @@ export default function useSignup() {
     const isEditMode = searchParams.get("edit") === "true";
     const { userData } = useAuth();
 
+    const API_URL = process.env.REACT_APP_API_URL;
+
     // fonction de soumission du formulaire
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -34,7 +36,7 @@ export default function useSignup() {
                     password,
                 };
 
-                const response = await fetch(`http://localhost:3000/api/users/${userData.id}`, {
+                const response = await fetch(`${API_URL}/api/users/${userData.id}`, {
                     method: "PATCH",
                     headers: {
                         "Content-Type": "application/json",
@@ -66,7 +68,7 @@ export default function useSignup() {
                         password
                     }
                     // On réalise notre requête sur la route associée côté back
-                    const response = await fetch("http://localhost:3000/api/users/", {
+                    const response = await fetch(`${API_URL}/api/users/`, {
                         // Méthode
                         method: "POST",
                         // Header de la requête

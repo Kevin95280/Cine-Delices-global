@@ -16,6 +16,8 @@ export default function RecipeDetail() {
   // permet de stocker la recette récupérée depuis l'API
   const [recipe, setRecipe] = useState(null);
 
+  const API_URL = process.env.REACT_APP_API_URL;
+
   useEffect(() => {
     const fetchRecipe = async () => {
       try {

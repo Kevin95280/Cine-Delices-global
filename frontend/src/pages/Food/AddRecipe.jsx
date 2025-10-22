@@ -54,6 +54,7 @@ const addStep = () => {
   setSteps([...steps, ""]);
 };
 
+const API_URL = process.env.REACT_APP_API_URL;
 
 // Chargement suggestions dès que l'utilisateur tape (à partir de 2 lettres)
 useEffect(() => {

@@ -14,6 +14,8 @@ export default function MyAccount() {
   const [averageRating, setAverageRating] = useState(null);
   const navigate = useNavigate();
 
+  const API_URL = process.env.REACT_APP_API_URL;
+
 useEffect(() => {
   async function fetchAverageRating() {
     try {
