@@ -16,7 +16,8 @@
   "type": "module",
   "scripts": {
     "start": "npm run copy-public && npx parcel src/index.html --no-cache",
-    "copy-public": "cp -r public/* dist/"
+    "copy-public": "cp -r public/* dist/",
+    "build": "npm run copy-public && npx parcel build src/index.html"
   },
   "dependencies": {
     "bcryptjs": "^3.0.2",
