@@ -44,7 +44,7 @@ export function AuthProvider({ children }) {
             setIsAuthenticated(true);
 
             // Appel à l’API pour récupérer le pseudo
-            fetch("http://localhost:3000/api/users/me", {
+            fetch(`${API_URL}/api/users/me`, {
                 headers: { Authorization: `Bearer ${storedToken}` }
             })
                 // On récupère les données de l'utilisateur
@@ -81,7 +81,7 @@ export function AuthProvider({ children }) {
         localStorage.setItem("token", newToken);
 
         try {
-            const response = await fetch("http://localhost:3000/api/users/me", {
+            const response = await fetch(`${API_URL}/api/users/me`, {
             headers: { Authorization: `Bearer ${newToken}` }
             });
 
