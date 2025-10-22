@@ -1,15 +1,15 @@
 {
-  "name": "frontend",
+  "name": "projet-cine-delices-front",
   "version": "1.0.0",
   "description": "",
-  "homepage": "https://github.com/Kevin95280/Cine-Delices-global.git#readme",
+  "homepage": "https://github.com/O-clock-Behemoth/projet-cine-delices-front#readme",
   "bugs": {
-    "url": "https://github.com/Kevin95280/Cine-Delices-global.git/issues",
+    "url": "https://github.com/O-clock-Behemoth/projet-cine-delices-front/issues",
     "source": "index.html"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Kevin95280/Cine-Delices-global.git"
+    "url": "git+https://github.com/O-clock-Behemoth/projet-cine-delices-front.git"
   },
   "license": "ISC",
   "author": "",
