@@ -19,8 +19,11 @@ export const AuthContext = createContext(null);
 // On crée un hook personnalisé pour accéder au contexte d'authentification
 // Ce hook permet d'utiliser le contexte d'authentification dans n'importe quel composant
 export function useAuth() {
-  return useContext(AuthContext);
+    return useContext(AuthContext);
 }
+
+const API_URL = process.env.REACT_APP_API_URL;
+
 /**
  * Nous initialiserons une fonction qui contiendra le ``Provider``
  * Qui fournira les valeurs récupérées à tous les composants lisant ce contexte
@@ -32,8 +35,6 @@ export function AuthProvider({ children }) {
     const [isLoadingUser, setIsLoadingUser] = useState(true);
     const [username, setUsername] = useState(null);
     const [userData, setUserData] = useState(null);
-
-    const API_URL = process.env.REACT_APP_API_URL;
 
     // Fonction lancée après chargement du rendu du composant
     useEffect(() => {
