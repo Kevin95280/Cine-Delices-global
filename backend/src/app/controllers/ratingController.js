@@ -40,11 +40,11 @@ const ratingController = {
       } else {
         // Premier vote
         query = `
-          UPDATE recipe
-          SET rating_sum = rating_sum + $1,
-              rating_count = rating_count + 1
-          WHERE id = $2
-          RETURNING rating_sum, rating_count
+        UPDATE recipe
+        SET rating_sum = COALESCE(rating_sum, 0) + $1,
+            rating_count = COALESCE(rating_count, 0) + 1
+        WHERE id = $2
+        RETURNING rating_sum, rating_count
         `;
         params = [rating, recipeId];
       }
