@@ -66,13 +66,40 @@ const ratingController = {
           : "Note enregistrée avec succès.",
         rating,
         average_rating,
-        rating_count: rating_count
+        rating_count
       });
     } catch (error) {
       console.error("Erreur rateRecipe:", error);
       res.status(500).json({
         error: error.message || "Erreur lors de la notation de la recette."
       });
+    }
+  }
+
+  // Récupérer les statistiques de notation d'une recette
+  , getRecipeStats: async (req, res) => {
+    try {
+      const recipeId = parseInt(req.params.id, 10);
+      const query = `
+        SELECT rating_sum, rating_count,
+          CASE 
+            WHEN rating_count > 0 THEN ROUND(rating_sum::numeric / rating_count, 2)
+            ELSE 0
+          END AS average_rating
+        FROM recipe
+        WHERE id = $1
+      `;
+      const result = await client.query(query, [recipeId]);
+
+      if (result.rowCount === 0) {
+        return res.status(404).json({ error: "Recette non trouvée." });
+      }
+
+      const { average_rating, rating_count } = result.rows[0];
+      res.status(200).json({ average_rating, rating_count });
+    } catch (error) {
+      console.error("Erreur getRecipeStats:", error);
+      res.status(500).json({ error: "Erreur lors de la récupération des statistiques." });
     }
   }
 };

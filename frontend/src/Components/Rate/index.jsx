@@ -30,7 +30,7 @@ export default function RecipeRating({ userId }) {
 
     const fetchRatingInfo = async () => {
       try {
-        const response = await fetch(`${API_URL}/api/recipes/${recipeId}`);
+        const response = await fetch(`${API_URL}/api/recipes/${recipeId}/ratings`);
         const data = await response.json();
 
         // Vérification que les données contiennent une note moyenne et un nombre de votes
@@ -75,7 +75,7 @@ export default function RecipeRating({ userId }) {
       // Rafraîchir la moyenne après vote
       const refreshAverage = async () => {
         try {
-          const res = await fetch(`${API_URL}/api/recipes/${recipeId}`);
+          const res = await fetch(`${API_URL}/api/recipes/${recipeId}/ratings`);
           const updated = await res.json();
 
           // Vérification que les données mises à jour contiennent une note moyenne et un nombre de votes

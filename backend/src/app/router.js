@@ -66,6 +66,8 @@ router.patch('/api/recipes/:id', recipeController.updateRecipe);
 router.delete('/api/recipes/:id', recipeController.deleteRecipe);
 // Noter une recette
 router.post("/api/recipes/:id/rate", authenticateUser, ratingController.rateRecipe);
+// Récupérer les statistiques de notation d'une recette
+router.get("/api/recipes/:id/ratings", ratingController.getRecipeStats);
 // Récupérer les recettes par catégorie
 router.get("/api/recipes/category/:name", recipeController.getByCategory);
 
