@@ -20,6 +20,8 @@ export default function SearchForm() {
   setResults(null);
 };
 
+  const API_URL = process.env.REACT_APP_API_URL;
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -28,7 +30,7 @@ export default function SearchForm() {
 
     try {
       // Appel à l'API backend
-      const res = await fetch(`http://localhost:3000/api/search?q=${searchTerm}`);
+      const res = await fetch(`${API_URL}/api/search?q=${searchTerm}`);
 
       // Vérifie si la réponse est ok
       if (!res.ok) throw new Error("Erreur lors de la recherche");
