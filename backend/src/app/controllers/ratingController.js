@@ -66,7 +66,7 @@ const ratingController = {
           : "Note enregistrée avec succès.",
         rating,
         average_rating,
-        total_votes: rating_count
+        rating_count: rating_count
       });
     } catch (error) {
       console.error("Erreur rateRecipe:", error);

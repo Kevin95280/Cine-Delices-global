@@ -1,6 +1,8 @@
 import client from '../database.js';
 import Recipe from '../models/Recipe.js';
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 const recipeController = {
   // Créer une nouvelle recette
   createRecipe: async (req, res) => {
@@ -80,7 +82,7 @@ const recipeController = {
         picture_url: isFullUrl
           // Sinon, on la construit avec le chemin local (cas des images uploadées par les utilisateurs)
           ? recipe.picture
-          : `http://localhost:3000/uploads/${recipe.picture}`
+          : `${API_URL}/uploads/${recipe.picture}`
       };
     });
       // On renvoie les recettes enrichies au format JSON
@@ -205,7 +207,7 @@ updateRecipe: async (req, res) => {
               ...recipe,
               picture_url: isFullUrl
                 ? recipe.picture
-                : `http://localhost:3000/uploads/${recipe.picture}`
+                : `${API_URL}/uploads/${recipe.picture}`
             };
           });
 
