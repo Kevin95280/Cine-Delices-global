@@ -11,6 +11,7 @@ export default function RecipeRating({ userId }) {
   const [voteCount, setVoteCount] = useState(0);
   const [canEdit, setCanEdit] = useState(false);
 
+  const API_URL = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
     // Vérification que l'ID de la recette et l'ID de l'utilisateur sont valides
@@ -29,7 +30,7 @@ export default function RecipeRating({ userId }) {
 
     const fetchRatingInfo = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/api/recipes/${recipeId}`);
+        const response = await fetch(`${API_URL}/api/recipes/${recipeId}`);
         const data = await response.json();
 
         // Vérification que les données contiennent une note moyenne et un nombre de votes
@@ -59,7 +60,7 @@ export default function RecipeRating({ userId }) {
     try {
       const token = localStorage.getItem("token");
 
-      const response = await fetch(`http://localhost:3000/api/recipes/${recipeId}/rate`, {
+      const response = await fetch(`${API_URL}/api/recipes/${recipeId}/rate`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -74,7 +75,7 @@ export default function RecipeRating({ userId }) {
       // Rafraîchir la moyenne après vote
       const refreshAverage = async () => {
         try {
-          const res = await fetch(`http://localhost:3000/api/recipes/${recipeId}`);
+          const res = await fetch(`${API_URL}/api/recipes/${recipeId}`);
           const updated = await res.json();
 
           // Vérification que les données mises à jour contiennent une note moyenne et un nombre de votes
