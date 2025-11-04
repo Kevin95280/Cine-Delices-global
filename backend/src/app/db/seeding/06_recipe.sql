@@ -21,11 +21,11 @@ INSERT INTO "recipe"(
 ('Paëlla', 'Riz safrané aux fruits de mer et poulet.', 'Difficile', 'Généreux', 6, 30, 45, 'Un plat espagnol festif.', 'https://images.pexels.com/photos/13647484/pexels-photo-13647484.jpeg', 5, 13),
 ('Ratatouille', 'Mélange de légumes méditerranéens mijotés.', 'Facile', 'Économique', 4, 15, 40, 'Un hommage au film éponyme.', 'https://images.pexels.com/photos/7439978/pexels-photo-7439978.jpeg', 5, 14),
 ('Crêpes sucrées', 'Pâte fine garnie de sucre, confiture ou chocolat.', 'Facile', 'Économique', 10, 10, 20, 'Parfaites pour le goûter.', 'https://images.pexels.com/photos/26898062/pexels-photo-26898062.jpeg', 5, 15),
-('Poulet rôti', 'Poulet entier rôti aux herbes et pommes de terre.', 'Facile', 'Raisonnable', 4, 15, 60, 'Un classique du dimanche.', 'https://images.pexels.com/photos/9967258/pexels-photo-9967258.jpeg', 5, 16),
-('Gâteau au chocolat', 'Moelleux au chocolat noir fondant.', 'Facile', 'Économique', 8, 15, 25, 'Pour les amateurs de cacao.', 'https://images.pexels.com/photos/2957897/pexels-photo-2957897.jpeg', 5, 17),
-('Poulet chorizo', 'Émincé de poulet sauté au chorizo et poivrons.', 'Moyen', 'Raisonnable', 4, 20, 30, 'Un plat relevé et coloré.', 'https://images.pexels.com/photos/20408459/pexels-photo-20408459.jpeg', 5, 18),
-('Salade de chèvre chaud', 'Toasts de chèvre sur lit de salade et noix.', 'Facile', 'Économique', 2, 10, 5, 'Un classique des brasseries.', 'https://images.pexels.com/photos/25524086/pexels-photo-25524086.jpeg', 5, 19),
-('Clafoutis aux cerises', 'Gâteau moelleux aux cerises entières.', 'Facile', 'Économique', 6, 15, 35, 'Un dessert de saison.', 'https://images.pexels.com/photos/20228708/pexels-photo-20228708.jpeg', 5, 20);
+('Poulet rôti', 'Poulet entier rôti aux herbes et pommes de terre.', 'Facile', 'Raisonnable', 4, 15, 60, 'Un classique du dimanche.', 'https://images.pexels.com/photos/9967258/pexels-photo-9967258.jpeg', 6, 16),
+('Gâteau au chocolat', 'Moelleux au chocolat noir fondant.', 'Facile', 'Économique', 8, 15, 25, 'Pour les amateurs de cacao.', 'https://images.pexels.com/photos/2957897/pexels-photo-2957897.jpeg', 6, 17),
+('Poulet chorizo', 'Émincé de poulet sauté au chorizo et poivrons.', 'Moyen', 'Raisonnable', 4, 20, 30, 'Un plat relevé et coloré.', 'https://images.pexels.com/photos/20408459/pexels-photo-20408459.jpeg', 6, 18),
+('Salade de chèvre chaud', 'Toasts de chèvre sur lit de salade et noix.', 'Facile', 'Économique', 2, 10, 5, 'Un classique des brasseries.', 'https://images.pexels.com/photos/25524086/pexels-photo-25524086.jpeg', 6, 19),
+('Clafoutis aux cerises', 'Gâteau moelleux aux cerises entières.', 'Facile', 'Économique', 6, 15, 35, 'Un dessert de saison.', 'https://images.pexels.com/photos/20228708/pexels-photo-20228708.jpeg', 6, 20);
 
 COMMIT;
 
