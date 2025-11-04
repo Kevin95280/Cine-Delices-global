@@ -52,8 +52,11 @@ export default function RecipeRating({ userId }) {
 
     // Cela stocke la note sous une clé unique par utilisateur et recette.
     const key = `rating_${userId}_${recipeId}`;
-    // On récupère la note précédente de l'utilisateur pour cette recette
-    const previousRating = parseFloat(localStorage.getItem(key)) || null;
+    // Récupération de la note précédente pour l'envoyer au backend
+    // Conversion de la note précédente en nombre, ou null si aucune note n'existait
+    const stored = localStorage.getItem(key);
+    const previousRating = stored !== null ? parseFloat(stored) : null;
+
     // On stocke la nouvelle note dans le localStorage
     localStorage.setItem(key, rate);
 
